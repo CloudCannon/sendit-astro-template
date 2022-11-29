@@ -1,0 +1,595 @@
+/********** 
+  9. Feature Page nd Section Styles
+**********/
+.feature,
+.feature-two {
+  position: relative;
+  overflow: hidden;
+
+  .section-header {
+    padding-bottom: $base-padding * 10;
+    @include media-breakpoint-down-xxl {
+      padding-bottom: $base-padding * 7;
+    }
+    @include media-breakpoint-down-sm {
+      padding: $base-padding * 3.2 0 $base-padding * 3.5;
+    }
+    p {
+      width: 72%;
+      margin: 0 auto;
+      @include media-breakpoint-down-xl {
+        width: 90%;
+      }
+    }
+  }
+
+  &-item-banner {
+    position: relative;
+    z-index: 1;
+    .card-image {
+      z-index: 1;
+      text-align: center;
+      img {
+        max-width: 100%;
+        @include media-breakpoint-down-lg {
+          width: 100%;
+        }
+      }
+    }
+    .effect-one,
+    .effect-two,
+    .effect-three {
+      position: absolute;
+      top: -8%;
+      z-index: -1;
+
+      img {
+        @include media-breakpoint-down-xxl {
+          max-width: 100%;
+        }
+      }
+    }
+    .effect-one {
+      left: -11%;
+      @include media-breakpoint-down-lg {
+        left: -4%;
+      }
+    }
+    .effect-two {
+      top: -21%;
+      right: -17%;
+      @include media-breakpoint-down-xxl {
+        right: -9%;
+      }
+      @include media-breakpoint-down-sm {
+        top: -8%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .effect-three {
+      top: -13%;
+      left: -7%;
+    }
+  }
+  &-item-content {
+    h2 {
+      font-size: $base-font-size * 2.8;
+      padding-right: $base-padding * 10;
+      margin-bottom: $base-margin * 2.5;
+      @include media-breakpoint-down-xl {
+        font-size: $base-font-size * 2;
+        padding-right: $base-padding * 0;
+        margin-bottom: $base-margin * 1.5;
+      }
+      @include media-breakpoint-down-sm {
+        font-size: $base-font-size * 1.9;
+        margin-bottom: $base-margin * 1.25;
+      }
+    }
+    p {
+      color: $color-text-light;
+      margin-bottom: $base-margin * 0.7;
+      font-size: 20px;
+      line-height: 33px;
+      letter-spacing: -0.8px;
+      @include media-breakpoint-down-sm {
+        font-size: $base-font-size * 1.1;
+        line-height: 29.7px;
+      }
+    }
+    ul {
+      padding-left: $base-padding;
+
+      li {
+        color: $color-text-light;
+        font-size: 20px;
+        line-height: 33px;
+        list-style: disc;
+        margin-bottom: $base-margin * 1.3;
+        font-weight: 500;
+        letter-spacing: -0.8px;
+        @include media-breakpoint-down-sm {
+          font-size: $base-font-size * 1.1;
+          margin-bottom: $base-margin * 1;
+        }
+      }
+    }
+  }
+
+  /********** 
+  start feature-hero + feature-hero-two section
+  **********/
+
+  &-hero,
+  &-hero-two {
+    background: $color-gray-dark;
+    padding: $base-padding * 8 0 $base-padding * 4;
+    overflow: hidden;
+
+    @include media-breakpoint-down-lg {
+      padding: $base-padding * 9 0 $base-padding * 0;
+      text-align: center;
+    }
+
+    @include media-breakpoint-down-sm {
+      padding: $base-padding * 8.5 0 $base-padding * 0;
+    }
+
+    &-content {
+      h1 {
+        margin-bottom: $base-margin * 1.5;
+
+        @include media-breakpoint-down-xxl {
+          font-size: $base-font-size * 3.9;
+        }
+
+        @include media-breakpoint-down-xl {
+          font-size: $base-font-size * 3.2;
+          line-height: 60px;
+        }
+
+        @include media-breakpoint-down-lg {
+          font-size: $base-font-size * 3.9;
+          line-height: 70px;
+        }
+
+        @include media-breakpoint-down-md {
+          font-size: $base-font-size * 3.5;
+        }
+
+        @include media-breakpoint-down-sm {
+          font-size: $base-font-size * 2.5;
+          line-height: 50px;
+        }
+      }
+
+      p {
+        font-size: $base-font-size * 1.3;
+        font-weight: 500;
+        line-height: 36.3px;
+        letter-spacing: -0.4px;
+        padding-right: 50px;
+        padding-right: $base-padding * 9;
+        margin-bottom: $base-margin * 3.1;
+
+        @include media-breakpoint-down-xxl {
+          padding-right: $base-padding * 5;
+        }
+
+        @include media-breakpoint-down-xl {
+          padding-right: $base-padding * 0;
+        }
+
+        @include media-breakpoint-down-lg {
+          padding: $base-padding * 0 $base-padding * 5;
+        }
+
+        @include media-breakpoint-down-md {
+          padding: $base-padding * 0 $base-padding * 0;
+        }
+      }
+    }
+
+    &-banner {
+      position: relative;
+
+      img {
+        z-index: 1;
+        max-width: 100%;
+      }
+
+      .shape {
+        position: absolute;
+        top: 2%;
+        z-index: -1;
+        right: 0%;
+      }
+    }
+  }
+
+  &-hero-two {
+    background: $color-secondary;
+    padding: $base-padding * 9 0 $base-padding * 4;
+
+    @include media-breakpoint-down-lg {
+      padding: $base-padding * 10 0 $base-padding * 1;
+    }
+
+    @include media-breakpoint-down-sm {
+      padding: $base-padding * 8.4 0 $base-padding * 1;
+    }
+
+    &-content {
+      h1 {
+        padding-right: $base-padding * 2;
+
+        @include media-breakpoint-down-xxl {
+          padding-right: $base-padding * 0;
+        }
+
+        @include media-breakpoint-down-xl {
+          padding-right: $base-padding * 0;
+          font-size: $base-font-size * 3.5;
+        }
+
+        @include media-breakpoint-down-sm {
+          font-size: $base-font-size * 2.5;
+          line-height: 50px;
+        }
+      }
+    }
+
+    &-banner {
+      position: relative;
+
+      .shape {
+        top: -6%;
+        right: 0%;
+      }
+    }
+  }
+
+  /********** 
+  start-feature-two section
+  **********/
+  &-two,
+  &-three {
+    padding: $base-padding * 9.5 0 $base-padding * 5.5;
+    overflow: hidden;
+
+    @include media-breakpoint-down-xxl {
+      padding: $base-padding * 7 0 $base-padding * 7;
+    }
+
+    @include media-breakpoint-down-lg {
+      padding: $base-padding * 5 0 $base-padding * 5;
+    }
+
+    &-banner {
+      position: relative;
+      z-index: 22;
+
+      @include media-breakpoint-down-lg {
+        margin-bottom: $base-margin * 2.5;
+      }
+
+      @include media-breakpoint-down-md {
+        margin-bottom: $base-margin * 1.5;
+      }
+
+      img {
+        position: relative;
+        z-index: 9;
+        max-width: 100%;
+
+        @include media-breakpoint-down-xl {
+          width: 100%;
+        }
+      }
+
+      .shape {
+        position: absolute;
+        bottom: -9%;
+        left: -6%;
+        z-index: -1;
+
+        @include media-breakpoint-down-lg {
+          bottom: 55%;
+          left: -5%;
+        }
+
+        @include media-breakpoint-down-sm {
+          bottom: 35%;
+        }
+      }
+    }
+
+    &-wrapper {
+      position: relative;
+      z-index: 9;
+
+      .shape {
+        position: absolute;
+        top: -9%;
+        right: -10%;
+        z-index: -1;
+
+        @include media-breakpoint-down-lg {
+          top: 60%;
+          right: -40%;
+        }
+      }
+
+      &-content {
+        background: $color-secondary-dark;
+        border-radius: 20px;
+        padding: $base-padding * 5 $base-padding * 3.1 $base-padding * 6;
+
+        @include media-breakpoint-down-xxl {
+          padding: $base-padding * 3 $base-padding * 2 $base-padding * 4.5;
+        }
+
+        @include media-breakpoint-down-xl {
+          padding: $base-padding * 3 $base-padding * 2 $base-padding * 2;
+        }
+
+        @include media-breakpoint-down-sm {
+          padding: $base-padding * 2.5 $base-padding * 2 $base-padding * 2;
+        }
+
+        h2 {
+          padding-right: $base-padding * 0;
+          margin-bottom: $base-margin * 2.5;
+
+          @include media-breakpoint-down-xl {
+            margin-bottom: $base-margin * 1.5;
+            font-size: $base-font-size * 2.5;
+          }
+
+          @include media-breakpoint-down-sm {
+            font-size: $base-font-size * 1.9;
+          }
+        }
+
+        p {
+          font-size: $base-font-size * 1.3;
+          line-height: 33px;
+          color: $color-text-light;
+
+          @include media-breakpoint-down-xl {
+            font-size: $base-font-size * 1.1;
+            line-height: 25px;
+          }
+        }
+
+        .list-unstyled {
+          padding-left: $base-padding * 2;
+
+          @include media-breakpoint-down-xl {
+            padding-left: $base-padding * 1;
+          }
+
+          li {
+            color: $color-text-light;
+            font-size: $base-font-size * 1.25;
+            line-height: 33px;
+            list-style: disc;
+            margin-bottom: $base-margin * 1.3;
+            font-weight: 500;
+            font-family: $font-secondary;
+            letter-spacing: -0.4px;
+
+            @include media-breakpoint-down-xl {
+              font-size: $base-font-size * 1.1;
+              margin-bottom: $base-margin * 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /********** 
+  start-feature-three section
+  **********/
+  &-three {
+    position: relative;
+
+    .feature-accordion {
+      .accordion-two {
+        .accordion-item {
+          position: relative;
+          background: none;
+          border-radius: 0;
+          margin-bottom: 0;
+          border: 0;
+          padding: 0;
+
+          .accordion-header {
+            position: relative;
+            background: $color-anchor-dark;
+            margin-bottom: $base-margin * 1.5;
+            border-radius: 20px;
+            padding: 0;
+
+            .accordion-button {
+              background: $color-anchor-dark;
+              border-radius: 20px;
+              padding: $base-padding * 1.9 $base-padding * 2.5;
+
+              &::after {
+                display: none;
+              }
+            }
+          }
+
+          .accordion-body {
+            background: $color-white;
+            border: 1px solid $color-anchor-dark;
+            box-sizing: border-box;
+            border-radius: 20px;
+            padding: $base-padding * 2 $base-padding * 2.5;
+
+            @include media-breakpoint-down-sm {
+              padding: $base-padding * 2 $base-padding * 1.5;
+            }
+
+            h3 {
+              font-size: $base-font-size * 1.6;
+              line-height: 32.5px;
+              font-weight: 600;
+              margin-bottom: $base-margin * 1.5;
+
+              @include media-breakpoint-down-sm {
+                font-size: $base-font-size * 1.25;
+              }
+            }
+
+            .list-unstyled {
+              padding-left: $base-padding * 2;
+              margin-bottom: 0;
+
+              li {
+                position: relative;
+                color: $color-text-light;
+                font-size: $base-font-size * 1.25;
+                line-height: 32.5px;
+                margin-bottom: $base-margin * 0.8;
+                font-family: $font-secondary;
+                font-weight: 500;
+                letter-spacing: -0.4px;
+                list-style: disc;
+
+                &:last-child {
+                  margin-bottom: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .Learn-more {
+        margin-top: $base-margin * 4.6;
+
+        @include media-breakpoint-down-md {
+          margin-top: $base-margin * 2.5;
+        }
+
+        @include media-breakpoint-down-sm {
+          margin-top: $base-margin * 1.25;
+        }
+      }
+    }
+
+    .feature-item-banner {
+      position: relative;
+      z-index: 1;
+
+      img {
+        z-index: 1;
+      }
+
+      .shape {
+        position: absolute;
+        bottom: -11%;
+        left: -23%;
+        z-index: -1;
+
+        @include media-breakpoint-down-xl {
+          bottom: -4%;
+          left: -23%;
+
+          img {
+            max-width: 100%;
+          }
+        }
+      }
+
+      .shape-two {
+        position: absolute;
+        top: -11%;
+        right: -4%;
+        z-index: -1;
+
+        @include media-breakpoint-down-xxl {
+          right: -10%;
+        }
+
+        @include media-breakpoint-down-lg {
+          right: 40%;
+          top: 85%;
+
+          img {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+
+    &-wrapper {
+      @include media-breakpoint-down-lg {
+        margin-bottom: $base-margin * 2.5;
+      }
+
+      @include media-breakpoint-down-md {
+        margin-bottom: $base-margin * 1.5;
+      }
+
+      .shape {
+        top: 64%;
+        right: 49%;
+        z-index: -1;
+
+        @include media-breakpoint-down-xxl {
+          top: 60%;
+          right: 40%;
+        }
+
+        @include media-breakpoint-down-lg {
+          top: -14%;
+          right: 0%;
+        }
+
+        @include media-breakpoint-down-md {
+          top: -9%;
+          right: -11%;
+        }
+      }
+
+      &-content {
+        background: $color-white;
+        border-radius: 20px;
+        padding: $base-padding * 5 $base-padding * 3.1 $base-padding * 6;
+
+        @include media-breakpoint-down-xxl {
+          padding: $base-padding * 3 $base-padding * 2 $base-padding * 4.5;
+        }
+
+        @include media-breakpoint-down-xl {
+          padding: $base-padding * 3 $base-padding * 1 $base-padding * 2 $base-padding * 2;
+        }
+
+        h2 {
+          font-size: $base-font-size * 2.8;
+          padding-right: $base-padding * 5;
+
+          @include media-breakpoint-down-xl {
+            font-size: $base-font-size * 2.2;
+            padding-right: $base-padding * 0;
+          }
+
+          @include media-breakpoint-down-sm {
+            font-size: $base-font-size * 1.9;
+          }
+        }
+
+        p {
+          font-size: $base-font-size * 1.25;
+        }
+      }
+    }
+  }
+}

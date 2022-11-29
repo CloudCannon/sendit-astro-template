@@ -1,0 +1,80 @@
+{
+    "logo": "/images/footer-logo.svg",
+    "logo_url": "/home",
+    "copyright": "MyCompany. All rights reserved.",
+    "social": [
+        {
+            "link": "https://www.facebook.com/mycompany",
+            "social_icon": "ph-facebook-logo"
+        },
+        {
+            "link": "https://www.instagram.com/mycompany",
+            "social_icon": "ph-instagram-logo"
+        },
+        {
+            "link": "https://www.twitter.com/mycompany",
+            "social_icon": "ph-twitter-logo"
+        },
+        {
+            "link": "https://www.github.com/mycompany",
+            "social_icon": "ph-github-logo"
+        },
+        {
+            "link": "https://www.youtube.com/mycompany",
+            "social_icon": "ph-youtube-logo"
+        }
+    ],
+    "sections": [
+        {
+            "title": "Main Pages",
+            "links": [
+                {
+                    "link": "/",
+                    "text": "Home"
+                },
+                {
+                    "link": "/feature",
+                    "text": "Feature"
+                },
+                {
+                    "link": "/pricing",
+                    "text": "Price"
+                },
+                {
+                    "link": "/about",
+                    "text": "About"
+                }
+            ]
+        },
+        {
+            "title": "Community",
+            "links": [
+                {
+                    "link": "/blog",
+                    "text": "Blog"
+                },
+                {
+                    "link": "/404.html",
+                    "text": "404"
+                },
+                {
+                    "link": "/feed.xml",
+                    "text": "RSS Feed"
+                }
+            ]
+        },
+        {
+            "title": "Company",
+            "links": [
+                {
+                    "link": "/contact",
+                    "text": "Contact"
+                },
+                {
+                    "link": "/privacy",
+                    "text": "Privacy Policy"
+                }
+            ]
+        }
+    ]
+}

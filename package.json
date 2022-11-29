@@ -1,0 +1,24 @@
+{
+  "name": "@example/basics",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^1.2.2",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "astro": "^1.6.11",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "markdown-it": "^13.0.1"
+  }
+}

@@ -1,0 +1,41 @@
+/********** 
+17. galery Page and Section Styles
+**********/
+
+.galery {
+  padding-bottom: $base-padding * 9.3;
+  @include media-breakpoint-down-xxl {
+    padding-bottom: $base-padding * 6;
+  }
+  @include media-breakpoint-down-xl {
+    padding-bottom: $base-padding * 4;
+  }
+  @include media-breakpoint-down-md {
+    padding-bottom: $base-padding * 3.1;
+  }
+  &-items {
+    display: flex;
+    margin-bottom: $base-margin * 5;
+    @include media-breakpoint-down-lg {
+      margin-bottom: $base-margin * 3.1;
+    }
+    @include media-breakpoint-down-md {
+      display: block;
+    }
+  }
+  &-item {
+    .item {
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+  &-content {
+    p {
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 36.3px;
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+# Clean the npm .bin for CI
+rm -rf node_modules
+
+# Install and run generate
+npm i
+npx "@bookshop/generate"

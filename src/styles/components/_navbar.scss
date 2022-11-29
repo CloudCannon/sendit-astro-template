@@ -1,0 +1,327 @@
+/********** 
+  5. Navbar Styles
+**********/
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap; // allow us to do the line break for collapsing content
+  align-items: center;
+  justify-content: space-between; // space out brand from logo
+  padding-top: 1.5rem;
+  padding-right: 5.4rem; // default: null
+  padding-bottom: 1.5rem;
+  padding-left: 5.4rem; // default: null
+  background-color: none;
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.36, 0.03, 0, 0.91);
+
+  @include media-breakpoint-down-xxl {
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+  }
+  @include media-breakpoint-only-lg {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    .btn-links {
+      padding: 0.75rem 1rem;
+    }
+  }
+
+  // Navbar button position fixing
+  .nav-item {
+    list-style: none;
+  }
+}
+@include media-breakpoint-down-lg {
+  .navbar {
+    margin: $base-margin * 0;
+    padding: 1.5rem;
+    border-radius: 0;
+    width: 100%;
+    // width: calc(100% - 32px) !important;
+    background: $color-white;
+  }
+}
+@include media-breakpoint-down-sm {
+  .navbar {
+    padding: 1rem 0;
+  }
+}
+
+.navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-right: 0;
+  font-size: 1.25rem;
+  width: 155px;
+}
+
+@include media-breakpoint-down-sm {
+  .navbar-brand {
+    flex: 1;
+  }
+}
+
+// Custom navbar navigation (doesn't require `.nav`, but does make use of `.nav-link`).
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column; // cannot use `inherit` to get the `.navbar`s value
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  @include media-breakpoint-down-lg {
+    margin-top: $base-margin * 4.5 !important;
+    justify-content: start;
+    align-items: start;
+    // height: calc(100vh - 76px);
+  }
+  .nav-link {
+    padding-right: $base-padding !important;
+    padding-left: $base-padding !important;
+    display: flex;
+    align-items: center;
+    font-weight: $regular-font-weight;
+    font-size: $base-font-size * 1.1;
+    line-height: 18px;
+    z-index: 9;
+    &.active {
+      color: $color-primary;
+    }
+    &:hover {
+      color: $color-primary;
+    }
+    @include media-breakpoint-only-lg {
+      padding-right: 0.75rem !important;
+      padding-left: 0.75rem !important;
+    }
+  }
+  .dropdown {
+    .dropdown-menu {
+      box-sizing: content-box;
+      background: $color-white;
+      min-width: 188px;
+      transition: all 0.3s ease-in-out;
+      border: 0 solid $color-primary-dark;
+      border-radius: 1.25rem;
+      padding: 10px 30px 20px;
+      right: 1.5rem;
+      left: unset;
+      box-shadow: 0px 40px 60px rgba(189, 189, 189, 0.25);
+    }
+    &-toggle {
+      &:after {
+        content: "\f107";
+        font-family: FontAwesome;
+        font-size: 1.4rem;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        border-top: none;
+        padding: $base-padding * 0;
+        margin-right: 0 !important;
+      }
+    }
+    li.dropdown-megamenu-column-items {
+      padding: 1.25rem 0rem;
+      display: flex;
+      &:last-child {
+        padding-bottom: 0.5rem;
+      }
+      &:nth-child(1) {
+        border-bottom: 1px solid $color-secondary-dark;
+      }
+    }
+    &-item {
+      margin-bottom: 0;
+      color: $color-text-light;
+      font-weight: 600;
+      text-align: left;
+      font-size: $base-font-size * 1.1;
+      padding: 0;
+      background: none;
+      &:hover {
+        color: $color-primary;
+      }
+    }
+    .nav-arrow {
+      position: absolute;
+      top: -10px;
+      right: 15px;
+    }
+    .dropdown-megamenu-conatiner {
+      border-bottom: 1px solid $color-secondary-dark;
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  /* Dropdown Menu for large screen */
+  @include media-breakpoint-up-lg {
+    .dropdown {
+      .dropdown-menu {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        transform: scaleY(0);
+        top: 100%;
+        border: 1px solid $color-secondary-light;
+        transform-origin: 0 0 0;
+      }
+
+      &:hover {
+        .dropdown-menu {
+          opacity: 1;
+          visibility: visible;
+          transform: scaleY(1);
+          transform-origin: 0 0 0;
+        }
+      }
+    }
+  }
+
+  /* Dropdown Menu for Small screen */
+
+  @include media-breakpoint-down-lg {
+    .nav-link {
+      margin-bottom: 1.9rem;
+      padding: 0;
+      font-size: $base-font-size * 1.6;
+      position: relative;
+      display: flex;
+      justify-content: start;
+      color: $color-text;
+      font-weight: 600;
+      font-family: $font-primary;
+    }
+
+    .dropdown {
+      width: 100%;
+      transition: all 3s ease-in-out;
+      .dropdown-menu {
+        display: none;
+        height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transform: scaleY(0);
+        top: 100%;
+        transform-origin: 0 0 0;
+        right: 0;
+        transition: all 0.1s ease-in-out;
+        padding: 40px 0px 5px 60px;
+        box-shadow: 0px 0 0 rgba(189, 189, 189, 0.25);
+        margin-bottom: 20px;
+        .dropdown-megamenu-column-items {
+          padding: 0.8rem 0;
+          margin: 0 !important;
+          &:nth-child(1) {
+            border-bottom: 1px solid #e6ebf4;
+          }
+        }
+      }
+      .dropdown-menu.show {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        transform: scaleY(1);
+        transform-origin: 0 0 0;
+        height: auto;
+        text-align: center;
+        background: $color-secondary-dark;
+        width: calc(100% + 2rem);
+        margin-left: -3rem;
+        border-radius: 0;
+        margin-top: -60px;
+      }
+      &-toggle {
+        &:after {
+          font-size: 1rem;
+          position: relative;
+          transform: translateY(-5%);
+          padding: 0;
+          margin: 0;
+        }
+      }
+      &-item {
+        text-align: left;
+      }
+    }
+  }
+}
+
+//Sticky Navbar
+
+.sticky-nav {
+  padding: $base-padding $base-padding * 2 !important;
+  background: $color-white;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+}
+
+@include media-breakpoint-down-lg {
+  .sticky-nav {
+    padding: $base-padding * 1.5 !important;
+  }
+}
+@include media-breakpoint-down-sm {
+  .sticky-nav {
+    padding: $base-padding * 1 $base-padding * 0 !important;
+  }
+}
+/**
+ * Note: I have omitted any vendor-prefixes for clarity.
+ * Adding them is left as an exercise for the reader.
+ */
+
+// Button for toggling the navbar when in its collapsed state
+.navbar-toggler {
+  background-color: transparent; // remove default button style
+  border: none; // remove default button style
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-default {
+  display: none;
+}
+.navbar-toggler .navbar-toggler-default {
+  display: -ms-flexbox;
+  display: flex;
+}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-toggled {
+  display: -ms-flexbox;
+  display: flex;
+}
+.navbar-toggler .navbar-toggler-toggled {
+  display: none;
+}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-toggled {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+  background: $color-header;
+  color: $color-white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  align-items: center;
+  line-height: 60px;
+  justify-content: center;
+  margin-bottom: 50px;
+  @include media-breakpoint-down-sm {
+    .sticky-nav {
+      left: 25px;
+    }
+  }
+  svg {
+    path {
+      stroke: $color-white;
+    }
+  }
+}

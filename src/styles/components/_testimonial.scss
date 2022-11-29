@@ -1,0 +1,67 @@
+/********** 
+  11. Testimonial Section Styles 
+**********/
+.testimonial {
+   background: $color-header;
+   position: relative;
+   border-bottom: 1px solid $color-text;
+   overflow: hidden;
+   padding: 70px 0;
+   @include media-breakpoint-down-sm {
+      border-bottom: none;
+   }
+   &-content {
+      padding-right: 50px;
+      @include media-breakpoint-down-xl {
+         padding-right: 0;
+      }
+      @include media-breakpoint-down-lg {
+         text-align: center;
+         padding-bottom: $base-padding * 3;
+      }
+      h2 {
+         color: $color-white;
+         font-size: $base-font-size * 2.8;
+         margin-bottom: $base-margin * 1.4;
+         span {
+            color: $color-anchor;
+         }
+         @include media-breakpoint-down-xl {
+            font-size: $base-font-size * 2.5;
+         }
+         @include media-breakpoint-down-sm {
+            font-size: $base-font-size * 2;
+         }
+      }
+      p {
+         font-size: 22px;
+         color: $color-cyan-dark;
+         font-weight: 500;
+         line-height: 36.3px;
+         letter-spacing: -0.4px;
+         @include media-breakpoint-down-md {
+            font-size: $base-font-size * 1.25;
+         }
+      }
+   }
+   &-item {
+      background-color: $color-white;
+      padding: 15px 30px;
+      border-radius: 12px;
+      &-person {
+         margin-top: 1rem;
+         .thumb {
+            img {
+               width: 80px;
+               height: 80px;
+               border-radius: 50%;
+               margin-bottom: 15px;
+            }
+         }
+         .content {
+            p {
+            }
+         }
+      }
+   }
+}

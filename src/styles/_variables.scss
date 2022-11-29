@@ -1,0 +1,48 @@
+//Import fonts from https://fonts.google.com/
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+// Font Variables
+$font-primary: "Sora", sans-serif;
+$font-secondary: "Space Grotesk", sans-serif;
+$base-font-size: 1rem;
+$regular-font-weight: 400;
+$medium-font-weight: 500;
+$semibold-font-weight: 600;
+$bold-font-weight: 700;
+$extbold-font-weight: 800;
+$base-letter-spacing: 0.5px;
+
+//Colors Variables
+$color-white: #fff;
+$color-gray: #fcfcfc;
+$color-cyan: #808080;
+$color-cyan-dark: #f3f3f3;
+$color-cyan-light: #5f5f5f;
+$color-gray-light: #fdfdfd;
+$color-gray-dark: #fff4f2;
+$color-primary: #e53b2a;
+$color-primary-light: #e6ebf4;
+$color-primary-dark: #e8e8e8;
+$color-secondary: #fffbf3;
+$color-secondary-dark: #f7f8fa;
+$color-secondary-light: #ffe1dd;
+$color-anchor: #ffba08;
+$color-anchor-dark: #ffebb5;
+
+$color-header: #000;
+$color-header-light: #fffbf3;
+$color-header-dark: #fff7e1;
+$color-text: #282828;
+$color-deactive: #ababab;
+$color-text-dark: #dddddd;
+$color-text-light: #4d4d4d;
+
+// Spacer Variables
+$base-padding: 1rem;
+$base-margin: 1rem;
+
+// Transition Variables
+$base-transition: all 0.5s ease-in-out;
+
+//Others Varibles
+$base-border-width: 1px;
+$base-border-radius: 8px;

@@ -1,0 +1,216 @@
+/********** 
+  2. Button Styles 
+**********/
+.btn {
+  letter-spacing: $base-letter-spacing;
+  font-weight: $extbold-font-weight;
+
+  &:hover {
+    color: $color-white;
+  }
+
+  .btn-check:focus + &,
+  &:focus {
+    color: $color-white !important;
+    outline: 0;
+    box-shadow: none;
+  }
+
+  .btn-check:checked + &,
+  .btn-check:active + &,
+  &:active,
+  &.active {
+    color: $color-white !important;
+    box-shadow: none;
+
+    &:focus {
+      color: $color-white !important;
+      box-shadow: none;
+    }
+  }
+
+  &:disabled,
+  &.disabled,
+  fieldset:disabled & {
+    pointer-events: none;
+    box-shadow: none;
+  }
+}
+
+.btn {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 1rem;
+  transition: all 0.3s ease-in-out;
+
+  &-primary {
+    color: $color-white;
+    background: $color-primary;
+    border: $base-border-width solid $color-primary;
+    font-weight: 700;
+
+    &:hover {
+      color: $color-primary;
+      background: $color-white;
+      border-color: $color-primary;
+    }
+    .btn-check:focus + &,
+    &:focus,
+    &:active,
+    &:active:focus,
+    &:hover:focus {
+      color: $color-white !important;
+      background: $color-primary !important;
+      border: $base-border-width solid transparent;
+    }
+  }
+  &-secondary {
+    position: relative;
+    color: $color-primary;
+    text-align: center;
+    text-transform: capitalize;
+    background: $color-white;
+    border: $base-border-width solid $color-primary;
+    transition: 0.3s all ease-in-out;
+    padding: 1rem 1.9rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      margin-right: 10px;
+      transition: 0.3s all ease-in-out;
+      path {
+        transition: 0.3s all ease-in-out;
+        fill: $color-primary;
+      }
+    }
+
+    &:hover {
+      border: $base-border-width solid $color-primary;
+      background: $color-primary;
+      color: $color-white;
+      svg {
+        path {
+          fill: $color-white;
+        }
+      }
+    }
+    btn-check:focus + &,
+    &:focus,
+    &:active,
+    &:active:focus,
+    &:hover:focus {
+      color: $color-white !important;
+      background: $color-primary;
+      border: $base-border-width solid $color-primary;
+      svg {
+        path {
+          fill: $color-white;
+        }
+      }
+    }
+  }
+
+  &-links {
+    background: transparent;
+    color: $color-primary;
+    border: 1px solid rgba(229, 59, 42, 0.3);
+    position: relative;
+    transition: all 0.3s ease-in-out;
+
+    .btn-check:focus + &,
+    &:focus,
+    &:active,
+    &:active:focus,
+    &:hover:focus,
+    &:hover {
+      color: $color-white;
+      background: $color-primary;
+      border: $base-border-width solid rgba(229, 59, 42, 0.3);
+    }
+  }
+  &-white {
+    color: $color-primary;
+    background: $color-white;
+    border: 1px solid $color-secondary-light;
+    font-weight: 700;
+
+    &:hover {
+      background: $color-primary;
+      color: $color-white;
+      border-color: $color-primary;
+    }
+    .btn-check:focus + &,
+    &:focus,
+    &:active,
+    &:active:focus,
+    &:hover:focus {
+      color: $color-white !important;
+      background: $color-primary !important;
+      border: $base-border-width solid transparent;
+    }
+  }
+}
+
+// Button Sizes
+//
+
+.btn-lg,
+.btn-group-lg > .btn {
+  padding: 1.3rem 2.1rem;
+  font-size: 1.1rem;
+  line-height: 28.44px;
+  border-radius: 20px;
+}
+
+.btn-sm,
+.btn-group-sm > .btn {
+  padding: 0.9rem 1.9rem;
+  font-size: 1.1rem;
+  font-weight: $semibold-font-weight;
+  border-radius: 12px;
+}
+.btn-link {
+  text-decoration: underline;
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+/* button label Styles */
+
+.btn-submit {
+  background: $color-white;
+  color: $color-primary;
+  line-height: 1.6;
+  font-size: $base-font-size * 0.875;
+  border: 1px solid $color-primary;
+  padding: $base-padding * 1.25 $base-padding * 2.125 !important;
+  &:active,
+  &:focus,
+  &:hover,
+  &:checked + .btn:focus,
+  &:active + .btn:focus,
+  &:active:focus {
+    background: $color-primary;
+    color: $color-white !important;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+}
+.btn-social {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: $color-white;
+  padding: $base-padding * 1.25 $base-padding * 1.5 !important;
+
+  svg {
+    margin-right: $base-margin * 0.5;
+  }
+  &:active,
+  &:focus,
+  &:hover {
+    background: transparent;
+    color: $color-white !important;
+  }
+}

@@ -1,0 +1,114 @@
+/********** 
+ 07. cta Page and Section Styles
+**********/
+
+.cta {
+  text-align: center;
+  background: $color-header;
+  .section-header {
+    @include media-breakpoint-down-sm {
+      padding: $base-padding * 4.2 0 $base-padding * 6.3;
+    }
+    h2 {
+      color: $color-white;
+      margin-bottom: $base-margin * 1.5;
+    }
+    p {
+      color: $color-secondary-dark;
+      width: 70%;
+      margin: 0 auto $base-margin * 2.5;
+      @include media-breakpoint-down-xl {
+        width: 80%;
+      }
+      @include media-breakpoint-down-sm {
+        width: 100%;
+        color: $color-primary-light;
+      }
+    }
+  }
+  &-subscribe-form {
+    .from-group {
+      position: relative;
+      .input-group {
+        padding: 0;
+        .form-control {
+          position: relative;
+          color: $color-white;
+          border-radius: 24px;
+          border-bottom-right-radius: 24px !important;
+          border-top-right-radius: 24px !important;
+          padding: 35px 200px 31px 33px;
+          background: rgba(229, 59, 42, 0.15);
+          border: 1.20519px solid $color-primary;
+          z-index: 0;
+          @include media-breakpoint-down-sm {
+            padding: 20px 180px 20px 20px;
+          }
+          &:focus {
+            box-shadow: none;
+            background: $color-header;
+          }
+        }
+        ::placeholder {
+          color: $color-secondary-light;
+        }
+        .subscribe {
+          position: absolute;
+          z-index: 1;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 10px;
+          .btn-lg {
+            padding: $base-padding * 1.2 $base-padding * 2.2;
+            @include media-breakpoint-down-sm {
+              padding: $base-padding * 0.7 $base-padding * 1;
+            }
+          }
+        }
+      }
+    }
+  }
+  // start cta two section
+  &-two {
+    padding: $base-padding * 0 0 $base-padding * 8.5;
+    background: $color-gray-dark;
+    @include media-breakpoint-down-xl {
+      padding: $base-padding * 0 0 $base-padding * 3;
+    }
+    .section-header {
+      padding-top: $base-padding * 6.2;
+      @include media-breakpoint-down-xl {
+        padding-top: $base-padding * 3;
+      }
+      h2 {
+        color: $color-header;
+      }
+      p {
+        color: $color-text-light;
+      }
+    }
+
+    .cta-subscribe-form {
+      .from-group {
+        .input-group {
+          .form-control {
+            &:focus {
+              border-color: $color-header;
+            }
+          }
+          .subscribe {
+            .btn-lg {
+              padding: $base-padding * 1.2 $base-padding * 2.2;
+              @include media-breakpoint-down-sm {
+                padding: $base-padding * 0.7 $base-padding * 1;
+              }
+            }
+          }
+          ::placeholder {
+            color: $color-primary;
+          }
+        }
+      }
+    }
+  }
+}

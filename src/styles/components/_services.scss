@@ -1,0 +1,255 @@
+/********** 
+ 21.  Services page & section
+**********/
+
+.services {
+  padding-bottom: $base-padding * 4.5;
+  @include media-breakpoint-down-xl {
+    padding-bottom: $base-padding * 1;
+  }
+  @include media-breakpoint-down-sm {
+    padding-bottom: $base-padding * 4.3;
+  }
+  .section-header {
+    @include media-breakpoint-down-sm {
+      padding: $base-padding * 6 0 $base-padding * 1.5;
+    }
+    h2 {
+      width: 80%;
+      margin: 0 auto $base-margin * 1.5;
+      @include media-breakpoint-down-xl {
+        width: 100%;
+      }
+      @include media-breakpoint-down-sm {
+        margin: 0 auto $base-margin * 0.6;
+      }
+    }
+  }
+  .card {
+    margin-bottom: $base-margin * 5;
+    @include media-breakpoint-down-lg {
+      text-align: center;
+    }
+
+    @include media-breakpoint-down-md {
+      margin-bottom: $base-margin * 3.2;
+    }
+    @include media-breakpoint-down-sm {
+      text-align: left;
+    }
+    &-icon {
+      margin-bottom: $base-margin * 3.1;
+      @include media-breakpoint-down-sm {
+        margin-bottom: $base-margin * 1.9;
+      }
+      img {
+        max-width: 100%;
+        @include media-breakpoint-down-lg {
+          width: 100%;
+        }
+      }
+    }
+    &-body {
+      padding: 0;
+      @include media-breakpoint-down-lg {
+        padding: 0 $base-padding * 5;
+      }
+      @include media-breakpoint-down-sm {
+        padding: 0;
+      }
+    }
+    &-title {
+      color: $color-text;
+      margin-bottom: $base-margin * 1;
+      font-size: $base-font-size * 1.6;
+      font-weight: $semibold-font-weight;
+    }
+    &-text {
+      font-size: 18px;
+      line-height: 29.7px;
+      letter-spacing: -0.008px;
+      font-weight: 500;
+      color: $color-text-light;
+      @include media-breakpoint-down-lg {
+        padding: 0 $base-padding * 5;
+      }
+      @include media-breakpoint-down-md {
+        padding: 0;
+      }
+    }
+  }
+  .same-card {
+    padding: $base-padding * 3.8 $base-padding * 5 $base-padding * 3
+      $base-padding * 5;
+    @include media-breakpoint-down-xxl {
+      padding: $base-padding * 3.8 $base-padding * 3 $base-padding * 3
+        $base-padding * 3;
+    }
+    @include media-breakpoint-down-xl {
+      padding: $base-padding * 2;
+    }
+    @include media-breakpoint-down-lg {
+      margin-bottom: $base-margin * 2;
+    }
+    @include media-breakpoint-down-sm {
+      padding: $base-padding * 0;
+    }
+    .card-title {
+      font-weight: $bold-font-weight;
+      font-size: $base-font-size * 2.8;
+      margin-bottom: $base-margin * 4.4;
+      line-height: 52.5px;
+      @include media-breakpoint-down-xl {
+        font-size: $base-font-size * 2.5;
+      }
+    }
+  }
+
+  &-two {
+    background: $color-gray-dark;
+    position: relative;
+    padding: $base-padding * 9.4 0 $base-padding * 8.1;
+    @include media-breakpoint-down-xxl {
+      padding: $base-padding * 5 0 $base-padding * 6;
+    }
+    @include media-breakpoint-down-lg {
+      padding: $base-padding * 5 0 $base-padding * 3;
+    }
+    @include media-breakpoint-down-md {
+      padding: $base-padding * 3.1 0 $base-padding * 3;
+    }
+    .navbar {
+      background-color: $color-white;
+      position: sticky;
+      top: 150px;
+      padding: 0;
+      border-radius: 20px;
+      z-index: 1;
+      @include media-breakpoint-down-lg {
+        display: none;
+      }
+    }
+    .nav-pills .nav-link.active,
+    .nav-pills .show > .nav-link {
+      background: none;
+      color: $color-header;
+      &::after {
+        background: $color-primary;
+      }
+      &::before {
+        background: $color-secondary-light;
+      }
+    }
+
+    &-nav {
+      display: block;
+      background-color: none;
+
+      .nav-pills {
+        display: block;
+        padding: $base-padding * 4.4 $base-padding * 4;
+        @include media-breakpoint-down-xl {
+          padding: $base-padding * 4.4 $base-padding * 2;
+        }
+
+        .nav-item {
+          padding-bottom: $base-padding * 5;
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            background: $color-primary-light;
+            width: 2px;
+            height: 120px;
+            border-radius: 0;
+            top: 1px;
+            left: -16px;
+            transform: translateY(11%);
+            @include media-breakpoint-down-xxl {
+              left: -12px;
+            }
+          }
+          &:last-child {
+            padding-bottom: 0px;
+            &::before {
+              display: none;
+            }
+          }
+          a {
+            font-size: 26px;
+            position: relative;
+            color: $color-text-light;
+            font-family: $font-primary;
+            font-weight: 600;
+            margin-bottom: 0px;
+            padding: 0;
+            &::after {
+              position: absolute;
+              content: "";
+              background: $color-text-light;
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              top: 50%;
+              left: -5%;
+              transform: translate(-50%, -50%);
+            }
+            &::before {
+              position: absolute;
+              content: "";
+              background: $color-primary-light;
+              width: 15px;
+              height: 15px;
+              border-radius: 50%;
+              top: 50%;
+              left: -5%;
+              transform: translate(-50%, -50%);
+            }
+          }
+        }
+      }
+    }
+
+    // start services-two-items
+    &-items {
+      .card {
+        background: none;
+        padding: 0;
+        margin-bottom: $base-margin * 6.2;
+        @include media-breakpoint-down-xl {
+          margin-bottom: $base-margin * 3.1;
+        }
+        @include media-breakpoint-down-lg {
+          margin-bottom: $base-margin * 2.5;
+        }
+        h3 {
+          color: $color-text-light;
+          font-size: $base-font-size * 2.8;
+          margin-bottom: $base-margin * 2.5;
+          @include media-breakpoint-down-lg {
+            font-size: $base-font-size * 2.2;
+          }
+          @include media-breakpoint-down-md {
+            font-size: $base-font-size * 1.9;
+          }
+        }
+        &-body {
+          padding: 0;
+          .card-text,
+          p {
+            margin-bottom: 50px;
+            font-size: $base-font-size * 1.4;
+            line-height: 36.3px;
+            color: $color-text-light;
+          }
+          .card-banner {
+            margin-bottom: 50px;
+          }
+          p {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

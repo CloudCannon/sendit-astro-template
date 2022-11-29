@@ -1,0 +1,157 @@
+/********** 
+ 19. Contact Form Page Styles
+**********/
+.contact {
+  padding-bottom: $base-padding * 9.4;
+  @include media-breakpoint-down-xl {
+    padding-bottom: $base-padding * 5;
+  }
+  &-hero {
+    background: $color-secondary-dark;
+    padding: $base-padding * 17.4 0 $base-padding * 9.6;
+    @include media-breakpoint-down-xl {
+      padding: $base-padding * 13 0 $base-padding * 5;
+    }
+    @include media-breakpoint-down-lg {
+      padding: $base-padding * 12 0 $base-padding * 20;
+      text-align: center;
+    }
+    @include media-breakpoint-down-md {
+      padding: $base-padding * 10 0 $base-padding * 68;
+    }
+    @include media-breakpoint-down-sm {
+      padding: $base-padding * 8.5 0 $base-padding * 66;
+    }
+
+    &-content {
+      h1 {
+        font-size: $base-font-size * 4;
+        margin-bottom: $base-margin * 1.5;
+        @include media-breakpoint-down-sm {
+          font-size: $base-font-size * 2.5;
+          line-height: 50px;
+        }
+      }
+      p {
+        font-size: $base-font-size * 1.4;
+        color: $color-text-light;
+        font-weight: 500;
+        line-height: 36.3px;
+        width: 80%;
+        @include media-breakpoint-down-lg {
+          width: 100%;
+        }
+      }
+    }
+  }
+  &-form-Information {
+    .address {
+      padding-top: $base-padding * 5;
+      @include media-breakpoint-down-md {
+        padding-top: $base-padding * 3.1;
+      }
+      h3 {
+        font-size: $base-font-size * 1.6;
+        font-weight: 600;
+        margin-bottom: $base-margin * 0.8;
+      }
+      p {
+        font-size: $base-font-size * 1.25;
+        color: $color-text-light;
+        margin-bottom: $base-margin * 2.6;
+        @include media-breakpoint-down-md {
+          margin-bottom: $base-margin * 1.5;
+        }
+      }
+      .item {
+        background: $color-secondary-dark;
+        border-radius: 10px;
+        padding: $base-padding * 0.9 $base-padding * 1.25;
+        h3 {
+          font-size: $base-font-size * 0.8;
+          font-weight: 300;
+          color: $color-text-light;
+          margin-bottom: $base-margin * 0.3;
+        }
+        a {
+          display: flex;
+          justify-content: space-between;
+          font-size: $base-font-size * 1.25;
+          color: $color-header;
+          font-family: $font-secondary;
+          font-weight: 700;
+          span {
+            margin-bottom: $base-margin * 0.7;
+          }
+        }
+      }
+    }
+  }
+  &-form {
+    position: relative;
+    z-index: 1;
+    form {
+      border: 1px solid $color-secondary-dark;
+      box-shadow: 0px 0px 80px rgba(150, 0, 0, 0.06);
+      border-radius: 20px;
+      z-index: 1;
+      margin-top: -$base-margin * 28.2;
+      padding: $base-padding * 4.2 $base-padding * 3.3 $base-padding * 3.1;
+      background: $color-white;
+      @include media-breakpoint-down-xl {
+        margin-top: -$base-margin * 22;
+      }
+      @include media-breakpoint-down-lg {
+        margin-top: -$base-margin * 17;
+      }
+      @include media-breakpoint-down-md {
+        margin-top: -$base-margin * 64;
+        padding: $base-padding * 2.5 $base-padding * 1.25 $base-padding * 1.25;
+      }
+      @include media-breakpoint-down-sm {
+        margin-top: -$base-margin * 63;
+      }
+      h3 {
+        font-size: $base-font-size * 1.9;
+        margin-bottom: $base-margin * 3;
+      }
+      .label {
+        margin-bottom: $base-margin * 0.8;
+        font-weight: 600;
+        color: $color-text;
+      }
+      .form-control {
+        padding: 19px 20px;
+        font-size: $base-font-size * 0.9;
+        font-weight: 600;
+        color: $color-header;
+        background: $color-secondary-dark;
+        border: 1px solid $color-text-dark;
+        border-radius: 10px;
+        margin-bottom: $base-margin * 1.9;
+
+        &:focus {
+          background: $color-header-dark;
+          border: 1px solid $color-anchor;
+          outline: 0;
+          box-shadow: none;
+        }
+      }
+      textarea {
+        resize: none;
+      }
+      ::placeholder {
+        color: $color-cyan;
+      }
+    }
+    .effect {
+      position: absolute;
+      top: -10%;
+      left: -14%;
+      z-index: -1;
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}

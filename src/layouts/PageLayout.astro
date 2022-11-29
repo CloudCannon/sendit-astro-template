@@ -1,0 +1,31 @@
+---
+import type { MarkdownLayoutProps } from 'astro';
+import Layout from './Layout.astro';
+
+type Props = MarkdownLayoutProps<{
+	title: string;
+	content_blocks: Array<Record<string, any>>
+}>;
+
+const props = Astro.props.frontmatter ?? Astro.props;
+const components = (await Astro.glob('../components/**/*.jsx'))
+	.reduce((acc, component) => {
+		acc[component.default.name] = component.default;
+		return acc
+	}, {});
+---
+<Layout {...props}>
+	<main>
+		{props.content_blocks.map((block) => {
+			const name = block._bookshop_name
+				.split('/')
+				.map(
+					(word: string) => word.charAt(0).toUpperCase() + word.slice(1)
+				)
+				.join('');
+			// return <p>{name}</p>
+			const Component = components[name]
+			return <Component block={block}/>;
+		})}
+	</main>
+</Layout>

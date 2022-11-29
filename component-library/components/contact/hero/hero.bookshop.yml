@@ -1,0 +1,22 @@
+# Metadata about this component, to be used in the CMS
+spec:
+  structures:
+    - content_blocks
+  label: Contact Hero
+  description: Contact Hero section
+  icon: "contact_support"
+  tags: ["hero"]
+
+# Defines the structure of this component, as well as the default values
+blueprint:
+  title: Let&#39;s talk.
+  description: We take our commitment to our users seriously. Have a question or
+    suggestion? Feel free to drop us a message!
+
+# Overrides any fields in the blueprint when viewing this component in the component browser
+preview:
+
+# Any extra CloudCannon inputs configuration to apply to the blueprint
+_inputs:
+  description:
+    type: markdown

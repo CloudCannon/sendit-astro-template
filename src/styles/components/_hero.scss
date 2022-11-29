@@ -1,0 +1,85 @@
+/********** 
+ 6. Hero Section Styles
+**********/
+.hero-two {
+  position: relative;
+  background: $color-gray-dark;
+  padding: $base-padding * 11.3 0 $base-padding * 5;
+  z-index: 1;
+  overflow: hidden;
+  @include media-breakpoint-down-xl {
+    padding: $base-padding * 8 0 $base-padding * 2;
+  }
+  @include media-breakpoint-down-lg {
+    padding: $base-padding * 6 0 $base-padding * 5;
+  }
+  @include media-breakpoint-down-md {
+    padding: $base-padding * 6 0 $base-padding * 5;
+  }
+  @include media-breakpoint-down-sm {
+    padding: $base-padding * 5.5 0 $base-padding * 5;
+  }
+  &-shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  &-content {
+    padding-left: $base-padding * 18;
+    @include media-breakpoint-down-xxxl {
+      padding-left: $base-padding * 9;
+    }
+    @include media-breakpoint-down-xxl {
+      padding-left: $base-padding * 5;
+    }
+    @include media-breakpoint-down-lg {
+      padding: 0 $base-padding * 4 $base-padding * 6;
+      text-align: center;
+    }
+    @include media-breakpoint-down-md {
+      padding: 0 $base-padding * 3 $base-padding * 6;
+    }
+    @include media-breakpoint-down-sm {
+      padding: 0 $base-padding * 0 $base-padding * 6;
+    }
+    h1 {
+      line-height: 80px;
+      @include media-breakpoint-down-lg {
+        font-size: $base-font-size * 4;
+        line-height: 80px;
+      }
+      @include media-breakpoint-down-md {
+        font-size: $base-font-size * 3;
+        line-height: 60px;
+      }
+      @include media-breakpoint-down-sm {
+        font-size: $base-font-size * 2.5;
+        line-height: 50px;
+      }
+    }
+    p {
+      font-size: $base-padding * 1.4;
+    }
+  }
+  &-banner {
+    position: relative;
+    text-align: right;
+    max-width: 100%;
+    margin-right: -13px;
+    z-index: 1;
+    img {
+      border-radius: 0px;
+    }
+    &-shape {
+      position: absolute;
+      top: -26%;
+      left: 3%;
+      z-index: -1;
+      @include media-breakpoint-down-lg {
+        top: -27%;
+        left: -22%;
+      }
+    }
+  }
+}

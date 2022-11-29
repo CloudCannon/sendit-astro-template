@@ -1,0 +1,55 @@
+# Metadata about this component, to be used in the CMS
+spec:
+  structures:
+    - content_blocks
+  label: Sign Up
+  description: Login section
+  icon: "login"
+  tags: []
+
+# Defines the structure of this component, as well as the default values
+blueprint:
+  title: Create Account
+  form:
+    fullname:
+      heading: Full Name
+      placeholder: Your Name
+    email:
+      heading: Email Address
+      placeholder: Your Email
+    password:
+      heading: Password
+    retype_password:
+      heading: Retype Password
+    checkbox_text: By registering, you accept our Conditions, Use Policy and
+      Privacy Notice.
+    sign_up_text: Create an Account
+    log_in_button:
+      link: /login
+      text: Log In
+
+# Overrides any fields in the blueprint when viewing this component in the component browser
+preview:
+
+# Any extra CloudCannon inputs configuration to apply to the blueprint
+_inputs: 
+  fullname:
+    options:
+      preview:
+        icon: person
+  email:
+    options:
+      preview:
+        icon: email
+  password:
+    options:
+      preview:
+        icon: password
+  retype_password:
+    options:
+      preview:
+        icon: password
+  log_in_button:
+    options:
+      preview:
+        icon: login

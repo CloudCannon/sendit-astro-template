@@ -1,0 +1,86 @@
+// Media quaries with min width
+@mixin media-breakpoint-up-sm {
+  @media (min-width: 576px) {
+    @content;
+  }
+}
+@mixin media-breakpoint-up-md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin media-breakpoint-up-lg {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+@mixin media-breakpoint-up-xl {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin media-breakpoint-up-xxl {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+@mixin media-breakpoint-up-xxxl {
+  @media (min-width: 1700px) {
+    @content;
+  }
+}
+
+//media Quaries with max width
+
+@mixin media-breakpoint-down-sm {
+  @media (max-width: 575.98px) {
+    @content;
+  }
+}
+@mixin media-breakpoint-down-md {
+  @media (max-width: 767.98px) {
+    @content;
+  }
+}
+@mixin media-breakpoint-down-lg {
+  @media (max-width: 991.98px) {
+    @content;
+  }
+}
+@mixin media-breakpoint-down-xl {
+  @media (max-width: 1199.98px) {
+    @content;
+  }
+}
+@mixin media-breakpoint-down-xxl {
+  @media (max-width: 1399.98px) {
+    @content;
+  }
+}
+@mixin media-breakpoint-down-xxxl {
+  @media (max-width: 1699.98px) {
+    @content;
+  }
+}
+
+//Media quearies in between two width
+@mixin media-breakpoint-only-sm {
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    @content;
+  }
+}
+@mixin media-breakpoint-only-md {
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    @content;
+  }
+}
+@mixin media-breakpoint-only-lg {
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    @content;
+  }
+}
+@mixin media-breakpoint-only-xl {
+  @media (min-width: 1200px) and (max-width: 1399.98px) {
+    @content;
+  }
+}

@@ -1,0 +1,23 @@
+# Metadata about this component, to be used in the CMS
+spec:
+  structures:
+    - content_blocks
+  label: Header
+  description: Header section
+  icon: "task"
+  tags: []
+
+# Defines the structure of this component, as well as the default values
+blueprint:
+  title: Sendit
+  title_suffix: Features
+  description: Sendit is the most complete solution to create beautiful email designs, manage mails and send them out at the best price.
+  remove_top_padding: false
+
+# Overrides any fields in the blueprint when viewing this component in the component browser
+preview:
+
+# Any extra CloudCannon inputs configuration to apply to the blueprint
+_inputs:
+  description:
+    type: markdown

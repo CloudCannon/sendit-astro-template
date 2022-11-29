@@ -1,0 +1,20 @@
+# Metadata about this component, to be used in the CMS
+spec:
+  structures:
+    - content_blocks
+  label: Home Video
+  description: Home Video section
+  icon: "videocam"
+  tags: []
+
+# Defines the structure of this component, as well as the default values
+blueprint:
+  image: "/images/video/video-thum.jpg"
+  image_alt: Thumbnail for video
+  video_url: "https://vimeo.com/45830194"
+
+# Overrides any fields in the blueprint when viewing this component in the component browser
+preview:
+
+# Any extra CloudCannon inputs configuration to apply to the blueprint
+_inputs: {}

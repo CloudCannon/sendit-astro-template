@@ -1,0 +1,66 @@
+# Metadata about this component, to be used in the CMS
+spec:
+  structures:
+    - content_blocks
+  label: Form
+  description: Form section
+  icon: "check_box"
+  tags: []
+
+# Defines the structure of this component, as well as the default values
+blueprint:
+  address:
+    heading: Office Address
+    address: "1421 San Pedro St, Los Angeles, CA 90015"
+  phone:
+    heading: "Phone"
+    cell: "(546) 232 - 9872"
+    image: /images/contact/call-add.svg
+    image_alt: call-add
+  email:
+    heading: "Email"
+    email: "hello@example.com"
+    image: /images/contact/directbox-send.svg
+    image_alt: send-box
+  form:
+    heading: "Say Hello"
+    fullname:
+      heading: "Full Name"
+      placeholder: "Enter First Name"
+    phone_number:
+      heading: "Phone number"
+      placeholder: "Enter Phone Number"
+    email:
+      heading: "Email Address"
+      placeholder: "Enter Email Address"
+    message:
+      heading: "Your Messages"
+      placeholder: "Any Message"
+    submit_button:
+      text: "Send message"
+
+# Overrides any fields in the blueprint when viewing this component in the component browser
+preview:
+
+# Any extra CloudCannon inputs configuration to apply to the blueprint
+_inputs: 
+  fullname:
+    options:
+      preview:
+        icon: person
+  phone:
+    options:
+      preview:
+        icon: phone
+  email:
+    options:
+      preview:
+        icon: email
+  message:
+    options:
+      preview:
+        icon: drive_file_rename_outline
+  submit_button:
+    options:
+      preview:
+        icon: send

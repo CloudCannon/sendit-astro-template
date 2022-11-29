@@ -1,0 +1,172 @@
+/********** 
+ 22. Sing-up Section Styles
+**********/
+
+.sing-up {
+  background: $color-header-light;
+  &-body {
+    background: $color-primary;
+    border-radius: 1.25rem;
+    padding: 70px 80px 50px;
+    max-width: 650px;
+    margin: 0 auto;
+    @include media-breakpoint-down-xxl {
+      padding: 70px 100px 100px;
+    }
+    @include media-breakpoint-down-xl {
+      padding: 70px;
+    }
+    @include media-breakpoint-down-md {
+      padding: 50px 30px;
+    }
+    h2 {
+      font-size: $base-font-size * 3.125;
+      color: $color-white;
+      line-height: 1.4;
+      text-align: center;
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid $color-primary-light;
+    }
+  }
+
+  &-items {
+    .form-control {
+      display: block;
+      width: 100%;
+      padding: 10px 20px;
+      font-size: 1.125rem;
+      font-weight: 500;
+      line-height: 1.6;
+      color: $color-white;
+      background-color: rgba(255, 255, 255, 0.2);
+      background-clip: padding-box;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      appearance: none;
+      border-radius: 10px;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      &:focus {
+        color: $color-white;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-color: $color-white;
+        outline: 0;
+        box-shadow: none;
+      }
+    }
+    .form-check {
+      opacity: 0.8;
+      .forget-password {
+        color: $color-white;
+      }
+    }
+    .form-check-input {
+      background-color: transparent;
+      border-color: $color-white;
+      border-radius: 4px;
+      &:focus {
+        box-shadow: none;
+      }
+    }
+    .create-account {
+      font-size: $base-font-size * 1.25;
+      font-weight: $semibold-font-weight;
+      line-height: 1.75;
+      text-align: center;
+      color: $color-white;
+      display: block;
+      margin-top: $base-margin * 0.5;
+    }
+    .input-group-text {
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 1px solid #ced4da;
+      border-left-width: 0;
+      margin-left: 0 !important;
+      cursor: pointer;
+    }
+    .has-right-icon {
+      border-right-width: 0;
+    }
+    label {
+      color: $color-white;
+      font-size: $base-font-size;
+      font-weight: $medium-font-weight;
+      line-height: 1.4;
+      margin-bottom: $base-margin * 0.75;
+    }
+    textarea {
+      min-height: 210px;
+      resize: none;
+      margin-bottom: 50px;
+    }
+    ::placeholder {
+      color: $color-white;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+  &-radio-button {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    @include media-breakpoint-down-xl {
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    @include media-breakpoint-down-md {
+      justify-content: flex-start;
+    }
+    @include media-breakpoint-down-sm {
+    }
+    &-item {
+      label {
+        margin-bottom: 0;
+        @include media-breakpoint-down-xl {
+          margin-bottom: $base-margin * 0.75;
+        }
+        @include media-breakpoint-down-md {
+          padding: 10px 8px;
+          margin-right: $base-margin * 0.25;
+        }
+      }
+    }
+  }
+  .btn-check:checked[type="radio"] + label {
+    background: $color-white;
+    color: $color-primary !important;
+  }
+
+  .input-group-password {
+    display: block;
+    .form-control {
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 10px !important;
+      &:focus {
+        color: $color-white;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-color: $color-white;
+        outline: 0;
+        box-shadow: none;
+      }
+    }
+    .input-group-text {
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      border: 0;
+      background: transparent;
+      z-index: 11;
+      transform: translateY(-50%);
+      margin-right: 10px;
+      font-size: $base-font-size * 1.5;
+      color: $color-white;
+      padding: 0;
+    }
+  }
+  .divider {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  }
+}
