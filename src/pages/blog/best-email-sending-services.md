@@ -6,7 +6,7 @@ tags:
   - technology
   - blog
 author: Wendy Parkes
-thumbImg:
+thumb_image:
   image: /images/blog/blog-thumb-3.jpg
   image_alt: Staff meeting
 featured_image:

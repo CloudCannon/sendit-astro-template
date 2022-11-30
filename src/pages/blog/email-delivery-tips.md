@@ -6,7 +6,7 @@ tags:
   - email
   - blog
 author: Gerard Hopper
-thumbImg:
+thumb_image:
   image: /images/blog/blog-thumb-1.jpg
   image_alt: Arial shot of people working
 featured_image:

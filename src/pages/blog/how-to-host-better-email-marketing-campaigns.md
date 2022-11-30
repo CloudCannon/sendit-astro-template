@@ -6,7 +6,7 @@ tags:
   - marketing
   - blog
 author: Arther Conal
-thumbImg:
+thumb_image:
   image: /images/blog/blog-thumb-2.jpg
   image_alt: People conversing
 featured_image:

@@ -6,7 +6,7 @@ tags:
   - marketing
   - blog
 author: Aaron Britt
-thumbImg:
+thumb_image:
   image: /images/blog/blog-thumb-6.jpg
   image_alt: People working on laptops and looking at charts
 featured_image:

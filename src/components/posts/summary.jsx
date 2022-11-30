@@ -1,6 +1,6 @@
 export default function PostSummary({ post }) {
   const {
-    frontmatter: { thumbImg, tags, title },
+    frontmatter: { thumb_image, tags, title },
     url,
   } = post;
   return (
@@ -10,8 +10,8 @@ export default function PostSummary({ post }) {
           <div className="blog-post-thumb">
             <a href={url}>
               <img
-                src={thumbImg.image}
-                alt={thumbImg.image_alt}
+                src={thumb_image.image}
+                alt={thumb_image.image_alt}
                 loading="lazy"
               />
             </a>

@@ -16,7 +16,7 @@ type Props = MarkdownLayoutProps<{
 }>;
 
 const props = Astro.props.frontmatter ?? Astro.props;
-const { title, date, featured_image, author, seo } = props;
+const { title, date, featured_image, author } = props;
 
 const wordCount = Astro.props.rawContent().split(" ").length;
 const readingTime = Math.floor(wordCount / 183);
@@ -25,22 +25,6 @@ const posts = await Astro.glob("../pages/blog/**/*.md");
 ---
 
 <Layout {...props}>
-  <!-- <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "headline": {title},
-        "image": [{seo?.featured_image || featured_image.image || null}],
-        "datePublished": {date},
-        "dateModified": {date},
-        "author": [
-          {
-            "@type": "Person",
-            "name": {author},
-          },
-        ],
-    }
-  </script> -->
   <section class="blog-details">
     <div class="container">
       <div class="row">
@@ -104,7 +88,7 @@ const posts = await Astro.glob("../pages/blog/**/*.md");
 				<article class="blog-post">
 				<div class="blog-post-thumb">
 					<a href="{{.Permalink | relURL}}">
-						<img src="{{.Params.thumbImg.image_path}}" alt="blog-thum" />
+						<img src="{{.Params.thumb_image.image_path}}" alt="blog-thum" />
 					</a>
 				</div>
 				<div class="blog-post-content">

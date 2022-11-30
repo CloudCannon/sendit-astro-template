@@ -6,7 +6,7 @@ tags:
   - marketing
   - blog
 author: Wendy Parkes
-thumbImg:
+thumb_image:
   image: /images/blog/blog-thumb-4.jpg
   image_alt: Group of people working
 featured_image:

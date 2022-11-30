@@ -6,7 +6,7 @@ tags:
   - marketing
   - blog
 author: Miyah Kelley
-thumbImg:
+thumb_image:
   image: /images/blog/blog-thumb-5.jpg
   image_alt: Group of people discussing something shwon on a laptop
 featured_image:
