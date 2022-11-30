@@ -1,35 +1,89 @@
 ---
-import '../styles/theme.scss';
-import Footer from './footer';
-import Navigation from './navigation';
-export interface Props {
-	title: string;
+import "../styles/theme.scss";
+import Footer from "@components/layouts/footer";
+import Navigation from "@components/layouts/navigation";
+import { SEO } from "astro-seo";
+import site from "@data/site.json";
+
+export interface SEOProps {
+  page_description: string;
+  feature_image: string;
+  feature_image_alt: string;
+  description: string;
+  canonical_url: string;
+  no_index: boolean;
+  open_graph_type: string;
+  author_twitter_handle: string;
 }
 
-const { title } = Astro.props;
+export interface Props {
+  title: string;
+  seo: SEOProps;
+}
+
+const { seo } = Astro.props;
+const baseUrl = Astro.site;
+const title = Astro.props.title
+  ? `${Astro.props.title} | ${site.site_title}`
+  : site.site_title;
+const description = seo?.page_description || site.description;
+const image = seo?.feature_image || site.image;
+const image_alt = seo?.feature_image_alt || site.image_alt;
+const canonicalURL = new URL(seo?.canonical_url ?? Astro.url.pathname, baseUrl);
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link href="/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
-		<link href="/vendor/phosphor-icons/css/phosphor.css" rel="stylesheet" />
-		<link href="/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<Navigation client:load pageTitle={title}/>
-		<slot />
-		<Footer/>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="/vendor/phosphor-icons/css/phosphor.css" rel="stylesheet" />
+    <link href="/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/touch-icon.png" sizes="192x192" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
 
-	<script src="/vendor/jQuery/jquery.min.js" async></script>
-	<script src="/vendor/bootstrap/bootstrap.bundle.min.js" async></script>
-	<script src="/vendor/counter-up/countup.js" async></script>
-	<script src="/vendor/magnific-popup/magnific-popup.min.js" async></script>
-	<script src="/js/script.js" async></script>
+    <SEO
+      noindex={seo?.no_index || false}
+      title={title}
+      description={description}
+      canonical={canonicalURL.toString()}
+      openGraph={{
+        basic: {
+          title: Astro.props.title,
+          url: baseUrl?.toString(),
+          type: `${seo?.open_graph_type || "website"}`,
+          image: image,
+        },
+        optional: {
+          description: description,
+        },
+        image: {
+          url: image,
+          alt: image_alt,
+        },
+      }}
+      twitter={{
+        creator: `${seo?.author_twitter_handle || site.twitter_site}`,
+        site: `${site.twitter_site}`,
+        card: "summary_large_image",
+      }}
+    />
+  </head>
+  <body>
+    <Navigation client:load pageUrl={canonicalURL} />
+    <slot />
+    <Footer />
+
+    <script src="/vendor/jQuery/jquery.min.js" async></script>
+    <script src="/vendor/bootstrap/bootstrap.bundle.min.js" async></script>
+    <script src="/vendor/counter-up/countup.js" async></script>
+    <script src="/vendor/magnific-popup/magnific-popup.min.js" async></script>
+    <script src="/js/script.js" async></script>
+  </body>
 </html>

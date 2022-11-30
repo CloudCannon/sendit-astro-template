@@ -1,10 +1,9 @@
 {
-	"baseurl": "https://example.com/",
-    "site_title": "Sendit",
-    "description": "A polished, marketing website template built with NextJS",
-    "favicon_icon": "/images/favicon.ico",
-    "favicon_image": "/images/favicon.png",
-    "twitter_site": "@twitter_site",
-    "image": "/images/feature/feature-hero.png",
-    "image_alt": "/images/feature/feature-hero.png"
+  "site_title": "Sendit",
+  "description": "A polished, marketing website template built with NextJS",
+  "favicon_icon": "/images/favicon.ico",
+  "favicon_image": "/images/favicon.png",
+  "twitter_site": "@twitter_site",
+  "image": "/images/feature/feature-hero.png",
+  "image_alt": "/images/feature/feature-hero.png"
 }

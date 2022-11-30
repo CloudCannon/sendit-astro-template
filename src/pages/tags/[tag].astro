@@ -1,0 +1,23 @@
+---
+import BlogList from "@components/blog/list";
+import Layout from "@layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const tags: Record<string, any> = {};
+  const posts = await Astro.glob("../blog/**/*.md");
+  posts.forEach(({ frontmatter }) =>
+    frontmatter.tags.forEach((tag: string) => (tags[tag] = true))
+  );
+  return Object.keys(tags).map((tag) => ({ params: { tag } }));
+}
+
+const tag = Astro.params.tag;
+const page = (await Astro.glob("../blog.md"))[0].frontmatter;
+const filteredPosts = (await Astro.glob("../blog/**/*.md")).filter((post) =>
+  post.frontmatter.tags.includes(tag)
+);
+---
+
+<Layout title={page.title} seo={page.seo}>
+  <BlogList page={page} posts={filteredPosts} />
+</Layout>

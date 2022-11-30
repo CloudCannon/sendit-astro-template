@@ -1,0 +1,128 @@
+---
+import type { MarkdownLayoutProps } from "astro";
+import Layout, { SEOProps } from "@layouts/Layout.astro";
+import PostSummary from "@components/posts/summary";
+import { DateTime } from "luxon";
+
+type Props = MarkdownLayoutProps<{
+  title: string;
+  date: string;
+  featured_image: {
+    image: string;
+    image_alt: string;
+  };
+  author: string;
+  seo: SEOProps;
+}>;
+
+const props = Astro.props.frontmatter ?? Astro.props;
+const { title, date, featured_image, author, seo } = props;
+
+const wordCount = Astro.props.rawContent().split(" ").length;
+const readingTime = Math.floor(wordCount / 183);
+
+const posts = await Astro.glob("../pages/blog/**/*.md");
+---
+
+<Layout {...props}>
+  <!-- <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": {title},
+        "image": [{seo?.featured_image || featured_image.image || null}],
+        "datePublished": {date},
+        "dateModified": {date},
+        "author": [
+          {
+            "@type": "Person",
+            "name": {author},
+          },
+        ],
+    }
+  </script> -->
+  <section class="blog-details">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <article class="blog-single">
+            <div class="inner-blog-details">
+              <h2 class="w-xxl-70 w-xl-80 w-100">{title}</h2>
+              <div class="inner-blog-details-meta">
+                <ul class="list-unstyled">
+                  <li class="list-inline-item">
+                    <p>
+                      {
+                        DateTime.fromISO(date).toLocaleString(
+                          DateTime.DATE_FULL
+                        )
+                      }
+                    </p>
+                  </li>
+                  <li class="list-inline-item">
+                    <p>{author}</p>
+                  </li>
+                  <li class="list-inline-item">
+                    <p>{readingTime} <span>minutes</span></p>
+                  </li>
+                  <li class="list-inline-item">
+                    <p>{wordCount} <span>words</span></p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="rounded-box mb-xxl-11 mb-8">
+              <img
+                src={featured_image.image}
+                class="w-100"
+                alt={featured_image.image_alt}
+              />
+            </div>
+            <div style={{ "max-width": "900px", margin: "0 auto" }}>
+              <slot />
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blog-related position-relative">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="blog-section">
+            <h2 class="blog-section-title">Recent Blog</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        {posts.map((post, i) => <PostSummary post={post} key={i} />)}
+        {
+          /* {{ range ( where site.RegularPages "Section" "blog" | first 3 ) }}
+			<div class="col-lg-4 col-md-6">
+				<article class="blog-post">
+				<div class="blog-post-thumb">
+					<a href="{{.Permalink | relURL}}">
+						<img src="{{.Params.thumbImg.image_path}}" alt="blog-thum" />
+					</a>
+				</div>
+				<div class="blog-post-content">
+					<div class="blog-post-tag">
+						{{ range .Params.categories }} {{ $href := print (absURL "categories/") (urlize
+						.) }}
+						<a href="{{ $href }}">{{ . | humanize }}</a>
+						{{ end }}
+					</div>
+					<div class="blog-post-title">
+						<a href="{{.Permalink | relURL}}">{{.Params.title}}</a>
+					</div>
+				</div>
+				</article>
+			</div>
+			{{ end }} */
+        }
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,5 +1,5 @@
 ---
-layout: "../layouts/PageLayout.astro"
+layout: "@layouts/PageLayout.astro"
 title: About
 seo:
   page_description:

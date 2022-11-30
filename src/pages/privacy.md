@@ -1,6 +1,5 @@
 ---
-layout: "../layouts/PageLayout.astro"
-permalink: /privacy/
+layout: "@layouts/PageLayout.astro"
 title: Privacy
 seo:
   page_description:

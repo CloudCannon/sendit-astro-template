@@ -1,5 +1,5 @@
 ---
-layout: "../layouts/PageLayout.astro"
+layout: "@layouts/PageLayout.astro"
 title: Login
 seo:
   page_description:

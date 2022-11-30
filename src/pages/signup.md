@@ -1,7 +1,6 @@
 ---
-layout: "../layouts/PageLayout.astro"
+layout: "@layouts/PageLayout.astro"
 title: Sign Up
-permalink: /signup/
 seo:
   page_description:
   canonical_url:

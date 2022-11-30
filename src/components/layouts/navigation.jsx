@@ -1,7 +1,7 @@
-import { useEffect, useRef } from "react";
-import navigation from "../../data/navigation.json";
+import { useEffect } from "react";
+import navigation from "@data/navigation.json";
 
-export default function Navigation({ pageTitle }) {
+export default function Navigation({ pageUrl }) {
   useEffect(() => {
     window.addEventListener("scroll", isSticky);
     return () => {
@@ -17,6 +17,7 @@ export default function Navigation({ pageTitle }) {
       $("#mainnavigationBar").removeClass("sticky-nav");
     }
   };
+
   const handleClick = (event) => {
     const navbar = $("#mainnavigationBar");
     navbar.toggleClass("bg-nav");
@@ -118,9 +119,7 @@ export default function Navigation({ pageTitle }) {
                     <a
                       href={`${link.link}`}
                       className={`nav-link ${
-                        pageTitle?.toLowerCase() === link.text.toLowerCase()
-                          ? "active"
-                          : ""
+                        pageUrl.pathname === link.link ? "active" : ""
                       }`}
                     >
                       {link.text}

@@ -58,7 +58,7 @@ export default function ContactForm({ block, dataBinding }) {
                     {block.form.fullname && (
                       <>
                         <div className="col-md-12">
-                          <label for="Name" className="label">
+                          <label htmlFor="Name" className="label">
                             {block.form.fullname.heading}
                           </label>
                           <input
@@ -75,7 +75,7 @@ export default function ContactForm({ block, dataBinding }) {
                     {block.form.phone_number && (
                       <>
                         <div className="col-md-12">
-                          <label for="phone-number" className="label">
+                          <label htmlFor="phone-number" className="label">
                             {block.form.phone_number.heading}
                           </label>
                           <input
@@ -92,7 +92,7 @@ export default function ContactForm({ block, dataBinding }) {
                     {block.form.email && (
                       <>
                         <div className="col-md-12">
-                          <label for="email" className="label">
+                          <label htmlFor="email" className="label">
                             {block.form.email.heading}
                           </label>
                           <input
@@ -109,7 +109,7 @@ export default function ContactForm({ block, dataBinding }) {
                     {block.form.message && (
                       <>
                         <div className="col-md-12">
-                          <label for="message" className="label">
+                          <label htmlFor="message" className="label">
                             {block.form.message.heading}
                           </label>
                           <textarea
@@ -118,7 +118,7 @@ export default function ContactForm({ block, dataBinding }) {
                             name="message"
                             placeholder={block.form.message.placeholder}
                             rows="8"
-                            spellcheck="false"
+                            spellCheck="false"
                           />
                         </div>
                       </>
