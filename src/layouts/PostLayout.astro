@@ -81,30 +81,10 @@ const posts = await Astro.glob("../pages/blog/**/*.md");
         </div>
       </div>
       <div class="row">
-        {posts.map((post, i) => <PostSummary post={post} key={i} />)}
         {
-          /* {{ range ( where site.RegularPages "Section" "blog" | first 3 ) }}
-			<div class="col-lg-4 col-md-6">
-				<article class="blog-post">
-				<div class="blog-post-thumb">
-					<a href="{{.Permalink | relURL}}">
-						<img src="{{.Params.thumb_image.image_path}}" alt="blog-thum" />
-					</a>
-				</div>
-				<div class="blog-post-content">
-					<div class="blog-post-tag">
-						{{ range .Params.categories }} {{ $href := print (absURL "categories/") (urlize
-						.) }}
-						<a href="{{ $href }}">{{ . | humanize }}</a>
-						{{ end }}
-					</div>
-					<div class="blog-post-title">
-						<a href="{{.Permalink | relURL}}">{{.Params.title}}</a>
-					</div>
-				</div>
-				</article>
-			</div>
-			{{ end }} */
+          posts
+            .slice(0, 3)
+            .map((post, i) => <PostSummary post={post} key={i} />)
         }
       </div>
     </div>
