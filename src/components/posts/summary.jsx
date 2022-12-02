@@ -20,7 +20,7 @@ export default function PostSummary({ post }) {
             <div className="blog-post-tag @@category">
               {tags.slice(0, 2).map((tag, i) => (
                 <a href={`/tags/${tag.toLowerCase()}`} key={i}>
-                  ({tag})
+                  {tag[0].toUpperCase() + tag.slice(1)}
                 </a>
               ))}
             </div>

@@ -12,7 +12,10 @@ export async function getStaticPaths() {
 }
 
 const tag = Astro.params.tag;
-const page = (await Astro.glob("../blog.md"))[0].frontmatter;
+const page = (await Astro.glob("../_blog.md"))[0].frontmatter;
+page.title = tag[0].toUpperCase() + tag.slice(1);
+page.description = "";
+
 const filteredPosts = (await Astro.glob("../blog/**/*.md")).filter((post) =>
   post.frontmatter.tags.includes(tag)
 );
