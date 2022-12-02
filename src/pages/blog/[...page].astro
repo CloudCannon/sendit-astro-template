@@ -1,5 +1,6 @@
 ---
 import BlogList from "@components/blog/list";
+import BlogPagination from "@components/blog/pagination";
 import Layout from "@layouts/Layout.astro";
 
 export async function getStaticPaths({ paginate }) {
@@ -10,9 +11,11 @@ export async function getStaticPaths({ paginate }) {
 }
 
 const page = (await Astro.glob("../_blog.md"))[0];
-const { data: posts } = Astro.props.page;
+const pagination = Astro.props.page;
+const { data: posts } = pagination;
 ---
 
 <Layout {...page.frontmatter}>
   <BlogList posts={posts} page={page.frontmatter} />
+  <BlogPagination pagination={pagination} />
 </Layout>

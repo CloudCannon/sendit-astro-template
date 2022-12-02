@@ -24,7 +24,7 @@ module.exports = {
     },
     pages: {
       path: "src/pages",
-      url: "/[slug]",
+      url: (filePath, parsed, {buildUrl}) => buildUrl(filePath, parsed, '/[slug]/').replace(/^\/_/,'/'),
       output: true,
       icon: "wysiwyg",
       _enabled_editors: ["visual"],
