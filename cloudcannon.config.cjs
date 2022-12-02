@@ -34,6 +34,9 @@ module.exports = {
           path: "schemas/page.md",
           new_preview_url: '/'
         },
+        paginated_collection: {
+          path: "schemas/paginated-collection.md",
+        },
       },
       filter: {
         base: "strict"
