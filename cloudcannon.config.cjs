@@ -28,6 +28,13 @@ module.exports = {
       output: true,
       icon: "wysiwyg",
       _enabled_editors: ["visual"],
+      add_options: [
+        {
+          name: 'New Page',
+          schema: 'default',
+          icon: 'note_add'
+        }
+      ],
       schemas: {
         default: {
           name: "New Page",
