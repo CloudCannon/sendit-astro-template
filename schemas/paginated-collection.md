@@ -2,8 +2,7 @@
 _schema: paginated_collection
 title:
 description:
-pagination:
-  size: 2
+page_size: 2
 seo:
   page_description:
   canonical_url:
