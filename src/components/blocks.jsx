@@ -3,8 +3,8 @@ const components = import.meta.glob("../components/**/*.jsx", {
   eager: true,
 });
 
-export default function Blocks({ content_blocks }) {
-  const [blocks, setBlocks] = useState(content_blocks);
+export default function Blocks({ contentBlocks, dataBinding }) {
+  const [blocks, setBlocks] = useState(contentBlocks);
 
   const onCloudCannonLoad = (CloudCannon) => {
     CloudCannon.enableEvents();
@@ -16,7 +16,7 @@ export default function Blocks({ content_blocks }) {
       const latestValue = await CloudCannon.value({
         keepMarkdownAsHTML: false,
       });
-      setBlocks(latestValue.content_blocks ?? []);
+      setBlocks(latestValue.contentBlocks ?? []);
     } catch (fetchError) {
       console.warn("Failed to fetch latest page props", fetchError);
     }
@@ -41,6 +41,12 @@ export default function Blocks({ content_blocks }) {
   return blocks.map((block, i) => {
     const name = `./${block._bookshop_name}.jsx`;
     const Component = components[name].default;
-    return <Component block={block} key={i} />;
+    return (
+      <Component
+        block={block}
+        key={i}
+        data-binding={dataBinding ? `${dataBinding}[${i}]` : null}
+      />
+    );
   });
 }

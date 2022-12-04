@@ -17,9 +17,13 @@ const liveRender = import.meta.env.PUBLIC_LIVE_RENDER === "true";
   <main>
     {
       liveRender ? (
-        <Blocks content_blocks={props.content_blocks} client:load />
+        <Blocks
+          contentBlocks={props.content_blocks}
+          dataBinding={"#content_blocks"}
+          client:load
+        />
       ) : (
-        <Blocks content_blocks={props.content_blocks} />
+        <Blocks contentBlocks={props.content_blocks} dataBinding={null} />
       )
     }
   </main>

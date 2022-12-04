@@ -15,6 +15,13 @@ module.exports = {
       output: true,
       url: "/blog/[slug]",
       _enabled_editors: ["content", "visual"],
+      add_options: [
+        {
+          name: 'Add New Post',
+          schema: 'default',
+          icon: 'post_add'
+        }
+      ],
       schemas: {
         default: {
           name: "New Post",
@@ -30,7 +37,7 @@ module.exports = {
       _enabled_editors: ["visual"],
       add_options: [
         {
-          name: 'New Page',
+          name: 'Add New Page',
           schema: 'default',
           icon: 'note_add'
         }
@@ -61,15 +68,10 @@ module.exports = {
       comment:
         "Added at the end of the title and highlighted in a different color",
     },
-    // pagination.data: {
-    //   hidden: true
-    // },
-    // pagination.alias: {
-    //   hidden: true
-    // },
-    // pagination.size: {
-    //   type: "number"
-    // },
+    page_size: {
+      type: "number",
+      comment: 'The number of collection items to list per page'
+    },
     "social[*].icon": {
       type: "select",
       options: {
