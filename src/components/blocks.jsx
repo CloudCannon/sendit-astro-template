@@ -45,7 +45,7 @@ export default function Blocks({ contentBlocks, dataBinding }) {
       <Component
         block={block}
         key={i}
-        data-binding={dataBinding ? `${dataBinding}[${i}]` : null}
+        dataBinding={dataBinding ? `${dataBinding}[${i}]` : null}
       />
     );
   });
