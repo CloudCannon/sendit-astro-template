@@ -1,6 +1,6 @@
 # Sendit
 
-Sendit is a polished, marketing website template for Astro. Browse through a [live demo]().
+Sendit is a polished, marketing website template for Astro. Browse through a [live demo](https://top-quail.cloudvent.net/).
 
 ![Sendit template screenshot](public/images/_screenshot.png)
 
