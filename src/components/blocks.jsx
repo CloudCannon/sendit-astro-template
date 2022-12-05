@@ -3,7 +3,7 @@ const components = import.meta.glob("../components/**/*.jsx", {
   eager: true,
 });
 
-export default function Blocks({ contentBlocks }) {
+export default function Blocks({ contentBlocks, dataBinding }) {
   const [blocks, setBlocks] = useState(contentBlocks);
 
   const onCloudCannonLoad = (CloudCannon) => {
@@ -16,7 +16,7 @@ export default function Blocks({ contentBlocks }) {
       const latestValue = await CloudCannon.value({
         keepMarkdownAsHTML: false,
       });
-      setBlocks(latestValue.contentBlocks ?? []);
+      setBlocks(latestValue.content_blocks ?? []);
     } catch (fetchError) {
       console.warn("Failed to fetch latest page props", fetchError);
     }
@@ -45,7 +45,7 @@ export default function Blocks({ contentBlocks }) {
       <Component
         block={block}
         key={i}
-        //dataBinding={dataBinding ? `${dataBinding}[${i}]` : null}
+        dataBinding={dataBinding ? `${dataBinding}[${i}]` : null}
       />
     );
   });
