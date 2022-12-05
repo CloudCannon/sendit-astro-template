@@ -3,65 +3,81 @@
 **********/
 .blog {
    margin-top: -$base-margin * 22;
+
    @include media-breakpoint-down-xxl {
       margin-top: -$base-margin * 19.5;
    }
+
    @include media-breakpoint-down-xl {
       margin-top: -$base-margin * 10.5;
    }
+
    @include media-breakpoint-down-sm {
       margin-top: -$base-margin * 11;
    }
+
    // start block hero section
    &-hero {
       background: $color-header-light;
       text-align: center;
+
       h1 {
          margin-bottom: $base-margin * 1.5;
+
          @include media-breakpoint-down-lg {
             font-size: $base-font-size * 3.5;
          }
+
          @include media-breakpoint-down-md {
             font-size: $base-font-size * 2.9;
             line-height: 60px;
          }
+
          @include media-breakpoint-down-sm {
             font-size: $base-font-size * 2.5;
             line-height: 50px;
          }
       }
+
       p {
          font-size: $base-font-size * 1.4;
          line-height: 36.3px;
          font-weight: 500;
+
          @include media-breakpoint-down-sm {
             font-size: $base-font-size * 1.25;
          }
       }
    }
+
    .section-header {
       @include media-breakpoint-down-md {
          padding: $base-padding * 4 0 $base-padding * 4.1;
       }
    }
+
    // start block section
    &-post {
       position: relative;
       margin-bottom: $base-margin * 3.2;
+
       &-thumb {
          border-radius: 20px;
          margin-bottom: $base-margin * 1.9;
          overflow: hidden;
+
          img {
             transform: scale(1) rotate(0deg);
             border-radius: 20px;
             width: 100%;
             transition: 0.5s ease-in-out;
          }
+
          :hover {
             transform: scale(1.02);
          }
       }
+
       &-tag {
          a {
             background: $color-secondary-light;
@@ -72,9 +88,11 @@
             color: $color-primary;
             font-weight: 500;
             margin-bottom: $base-margin * 0.9;
+            margin-right: $base-margin * 0.9;
             font-family: $font-primary;
          }
       }
+
       &-title {
          a {
             color: $color-text;
@@ -86,17 +104,21 @@
             margin-bottom: $base-margin * 1.1;
             display: block;
             transition: all 0.3s ease-in-out;
+
             @include media-breakpoint-down-xl {
                font-size: 22px;
             }
+
             @include media-breakpoint-down-md {
                font-size: 26px;
             }
+
             &:hover {
                color: $color-primary;
             }
          }
       }
+
       &-meta {
          ul {
             padding: 0;
@@ -114,6 +136,7 @@
                   padding-left: $base-padding * 0.5;
                   margin-left: $base-margin * 1.5;
                }
+
                &::after {
                   position: absolute;
                   content: '';
@@ -129,58 +152,74 @@
          }
       }
    }
+
    .more-blogs {
       a {
          font-weight: 700;
       }
    }
+
    // start block two section
    &-two {
       // padding-bottom: $base-padding * 12.5;
       margin-top: 0;
+
       .section-header {
          padding-bottom: $base-padding * 1;
+
          p {
             width: 72%;
             margin: 0 auto;
          }
       }
    }
+
    // start block details section
    &-details {
       position: relative;
       padding: $base-padding * 14.4 0 $base-padding * 4.4;
+
       @include media-breakpoint-down-xxl {
          padding: $base-padding * 12 0 $base-padding * 4.4;
       }
+
       @include media-breakpoint-down-xl {
          padding: $base-padding * 10 0 $base-padding * 2;
       }
+
       @include media-breakpoint-down-sm {
          padding: $base-padding * 8.5 0 $base-padding * 2;
       }
+
       article {
          position: relative;
+
          .inner-blog-details {
             @include media-breakpoint-down-sm {
                text-align: center;
                margin-bottom: $base-margin * 3.1;
             }
+
             h2 {
                font-size: $base-font-size * 2.8;
                margin-bottom: $base-margin * 1.5;
+
                @include media-breakpoint-down-md {
                   font-size: $base-font-size * 2.5;
                }
             }
+
             &-meta {
                margin-bottom: $base-margin * 1.9;
+
                ul {
                   margin-bottom: 0;
+
                   li:not(:first-child) {
                      position: relative;
                      padding-left: $base-padding * 0.4;
                      margin-left: $base-margin * 1.2;
+
                      &::after {
                         position: absolute;
                         content: '';
@@ -192,25 +231,29 @@
                         transform: translate(-50%, -50%);
                      }
                   }
+
                   li p {
-                    font-size: $base-font-size;
-                    color: $color-text-light;
-                    font-family: $font-primary;
-                    font-weight: 600;
-                    margin-bottom: 0;
+                     font-size: $base-font-size;
+                     color: $color-text-light;
+                     font-family: $font-primary;
+                     font-weight: 600;
+                     margin-bottom: 0;
                   }
                }
             }
          }
+
          h3 {
             font-size: $base-font-size * 1.9;
             margin-bottom: $base-margin * 1.5;
             line-height: 43px;
          }
+
          p {
             font-size: $base-font-size * 1.1;
             margin-bottom: $base-margin * 5;
             line-height: 29px;
+
             @include media-breakpoint-down-xl {
                margin-bottom: $base-margin * 3.1;
             }
@@ -218,20 +261,25 @@
 
          ul {
             margin-bottom: 0;
+
             li {
                list-style: decimal;
+
                &::marker {
                   font-size: $base-font-size * 1.6;
                }
+
                h4 {
                   font-size: $base-font-size * 1.6;
                   margin: 0 0 $base-margin * 1.25 $base-margin * 0.5;
                   font-weight: 600;
                }
+
                p {
                   margin-bottom: $base-margin * 3;
                   font-size: $base-font-size * 1.1;
                   font-weight: 500;
+
                   @include media-breakpoint-down-xl {
                      margin-bottom: $base-margin * 2;
                   }
@@ -239,31 +287,38 @@
             }
          }
       }
+
       .social-icon {
          position: fixed;
          z-index: 999;
          top: 50%;
          left: 2%;
+
          @include media-breakpoint-down-xxxl {
             left: 1%;
          }
+
          @include media-breakpoint-down-xxl {
             left: 0%;
          }
+
          @include media-breakpoint-down-md {
             display: none;
          }
+
          .icon {
             position: relative;
             transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             margin-bottom: $base-margin;
             display: inline-block;
             z-index: 99;
+
             svg {
                path {
                   fill: $color-text-light;
                }
             }
+
             .tooltip {
                position: absolute;
                left: 20px;
@@ -279,6 +334,7 @@
                width: max-content;
                z-index: -1;
                cursor: pointer;
+
                &:before {
                   position: absolute;
                   content: '';
@@ -291,12 +347,14 @@
                   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
                }
             }
+
             &:hover {
                svg {
                   path {
                      fill: $color-primary;
                   }
                }
+
                .tooltip {
                   left: 45px;
                   visibility: visible;
@@ -305,11 +363,13 @@
          }
       }
    }
+
    &-pagination {
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 50px 0px;
+
       .page-link {
          display: inline-block;
          padding: 20px 27px !important;
@@ -319,13 +379,16 @@
          font-size: 20px;
 
          border-radius: 20px !important;
+
          &.active {
             background: #e53b2a !important;
             border-color: #e53b2a !important;
          }
+
          svg {
             margin-right: -2px;
          }
+
          &:hover {
             svg {
                g {
@@ -335,18 +398,23 @@
          }
       }
    }
+
    /* start Related Blog Style */
    &-related {
       padding: $base-padding * 7 0 $base-padding * 5;
       background: $color-gray-dark;
+
       @include media-breakpoint-down-xl {
          padding: $base-padding * 5 0 $base-padding * 0;
       }
+
       @include media-breakpoint-down-lg {
          padding: $base-padding * 3.1 0 $base-padding * 2;
       }
+
       h2 {
          margin-bottom: $base-margin * 3;
+
          @include media-breakpoint-down-lg {
             font-size: $base-font-size * 2.5;
          }
