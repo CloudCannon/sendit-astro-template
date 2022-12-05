@@ -75,9 +75,9 @@ export default function PricingTier({ tier, dataBinding }) {
           </ul>
           <div className="link">
             {tier.button && (
-              <Link href={tier.button.link} className="btn btn-lg btn-white">
+              <a href={tier.button.link} className="btn btn-lg btn-white">
                 {tier.button.text}
-              </Link>
+              </a>
             )}
           </div>
         </div>
