@@ -1,7 +1,7 @@
 {
 	"site_name": "Sendit",
-	"site_title": "Sendit Template NextJS",
-	"description": "A polished, marketing website template built with Eleventy.",
+	"site_title": "Sendit Template Astro",
+	"description": "A polished, marketing website template built with Astro.",
 	"author": "",
 	"author_email": "",
 	"images": [
