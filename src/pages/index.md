@@ -15,7 +15,7 @@ content_blocks:
     title: Scale your
     title_suffix: Business
     description: We have an extensive library of pre-written sales emails, proven marketing templates, and more to get you started on your next project.
-    alternateStyle: false
+    alternate_style: false
     numbers:
       - prefix: $
         number: 200

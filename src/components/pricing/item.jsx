@@ -1,12 +1,18 @@
-export default function PricingTier({ tier }) {
+export default function PricingTier({ tier, dataBinding }) {
   let pricing = "";
   if (tier.has_discount) {
     pricing = (
       <>
         <div className="price">
-          <p className="pricingtable">${tier.discount_price}</p>
+          <p className="pricingtable">
+            {tier.currency_symbol}
+            {tier.discount_price}
+          </p>
           <div className="discount">
-            <p>${tier.price}</p>
+            <p>
+              {tier.currency_symbol}
+              {tier.price}
+            </p>
             <div className="vector vector-one">
               <img
                 src="/images/pricing/Vector1.svg"
@@ -30,7 +36,10 @@ export default function PricingTier({ tier }) {
       <>
         <div className="price">
           <p>
-            <span>${tier.price}</span>
+            <span>
+              {tier.currency_symbol}
+              {tier.price}
+            </span>
           </p>
           <div className="shape">
             <img
@@ -44,17 +53,21 @@ export default function PricingTier({ tier }) {
     );
   }
   return (
-    <div className="col-lg-4">
-      <div className={`card pricing-item ${tier.is_active ? "active" : ""}`}>
+    <div className="col-lg-4" data-cms-bind={dataBinding}>
+      <div
+        className={`card pricing-item ${tier.highlight_tier ? "active" : ""}`}
+      >
         <h5 className="card-title">{tier.tier}</h5>
         <p className="card-text">{tier.description}</p>
         {pricing}
         <div className="card-body">
           <ul className="list-unstyled">
-            {tier.feature.map((feature, i) => (
-              <li key={i} className={feature.is_active ? "" : "deactive"}>
+            {tier.features.map((feature, i) => (
+              <li key={i} className={feature.active_feature ? "" : "deactive"}>
                 <i
-                  className={`ph-check ${feature.is_active ? "" : "deactive"}`}
+                  className={`ph-check ${
+                    feature.active_feature ? "" : "deactive"
+                  }`}
                 ></i>
                 {feature.item}
               </li>
@@ -62,9 +75,9 @@ export default function PricingTier({ tier }) {
           </ul>
           <div className="link">
             {tier.button && (
-              <a href={tier.button.link} className="btn btn-lg btn-white">
+              <Link href={tier.button.link} className="btn btn-lg btn-white">
                 {tier.button.text}
-              </a>
+              </Link>
             )}
           </div>
         </div>

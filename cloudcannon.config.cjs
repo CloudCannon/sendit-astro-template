@@ -17,10 +17,10 @@ module.exports = {
       _enabled_editors: ["content", "visual"],
       add_options: [
         {
-          name: 'Add New Post',
-          schema: 'default',
-          icon: 'post_add'
-        }
+          name: "Add New Post",
+          schema: "default",
+          icon: "post_add",
+        },
       ],
       schemas: {
         default: {
@@ -31,29 +31,30 @@ module.exports = {
     },
     pages: {
       path: "src/pages",
-      url: (filePath, parsed, {buildUrl}) => buildUrl(filePath, parsed, '/[slug]/').replace(/^\/_/,'/'),
+      url: (filePath, parsed, { buildUrl }) =>
+        buildUrl(filePath, parsed, "/[slug]/").replace(/^\/_/, "/"),
       output: true,
       icon: "wysiwyg",
       _enabled_editors: ["visual"],
       add_options: [
         {
-          name: 'Add New Page',
-          schema: 'default',
-          icon: 'note_add'
-        }
+          name: "Add New Page",
+          schema: "default",
+          icon: "note_add",
+        },
       ],
       schemas: {
         default: {
           name: "New Page",
           path: "schemas/page.md",
-          new_preview_url: '/'
+          new_preview_url: "/",
         },
         paginated_collection: {
           path: "schemas/paginated-collection.md",
         },
       },
       filter: {
-        base: "strict"
+        base: "strict",
       },
     },
   },
@@ -70,7 +71,28 @@ module.exports = {
     },
     page_size: {
       type: "number",
-      comment: 'The number of collection items to list per page'
+      comment: "The number of collection items to list per page",
+    },
+    social: {
+      options: {
+        preview: {
+          icon: "link",
+        },
+      },
+    },
+    links: {
+      options: {
+        preview: {
+          icon: "link",
+        },
+      },
+    },
+    items: {
+      options: {
+        preview: {
+          icon: "link",
+        },
+      },
     },
     "social[*].icon": {
       type: "select",

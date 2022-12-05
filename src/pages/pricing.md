@@ -17,86 +17,89 @@ content_blocks:
   - _bookshop_name: pricing/table
     pricing_tier:
       - tier: Free
+        highlight_tier: false
         description: Everything you need to get started.
+        currency_symbol: $
         price: 0
         has_discount: false
         discount_price: 0
-        is_active: false
-        feature:
+        features:
           - item: 1 Email Campaign
-            is_active: true
+            active_feature: true
           - item: 1 Year Premium Support
-            is_active: true
+            active_feature: true
           - item: Regular Update for 1 Year
-            is_active: true
+            active_feature: true
           - item: 90+ Widgets & Extensions
-            is_active: true
+            active_feature: true
           - item: 23+ Templates
-            is_active: true
+            active_feature: true
           - item: Over 800 Section Blocks
-            is_active: false
+            active_feature: false
           - item: Support
-            is_active: false
+            active_feature: false
           - item: 3 filters
-            is_active: false
+            active_feature: false
           - item: Unlimited activity history
-            is_active: false
+            active_feature: false
         button:
           link: /signup
           text: Try This Free
       - tier: Pro
+        highlight_tier: true
         description: More collaborative power and unlimited boards for fast-growing.
+        currency_symbol: $
         price: 199
         has_discount: true
         discount_price: 125
-        is_active: true
-        feature:
+        features:
           - item: 1 Email Campaign
-            is_active: true
+            active_feature: true
           - item: 1 Year Premium Support
-            is_active: true
+            active_feature: true
           - item: Regular Update for 1 Year
-            is_active: true
+            active_feature: true
           - item: 90+ Widgets & Extensions
-            is_active: true
+            active_feature: true
           - item: 23+ Templates
-            is_active: true
+            active_feature: true
           - item: Over 800 Section Blocks
-            is_active: true
+            active_feature: true
           - item: Support
-            is_active: false
+            active_feature: false
           - item: 3 filters
-            is_active: false
+            active_feature: false
           - item: Unlimited activity history
-            is_active: false
+            active_feature: false
         button:
           link: /signup
           text: Try This Free
       - tier: Business
+        highlight_tier: false
         description: For starters Includes unlimited members
+        currency_symbol: $
         price: 499
         has_discount: true
         discount_price: 350
-        is_active: false
-        feature:
+        features:
           - item: 1 Email Campaign
-            is_active: true
+            active_feature: true
           - item: 1 Year Premium Support
-            is_active: true
+            active_feature: true
           - item: Regular Update for 1 Year
-            is_active: true
+            active_feature: true
           - item: 90+ Widgets & Extensions
-            is_active: true
+            active_feature: true
           - item: 23+ Templates
-            is_active: true
+            active_feature: true
           - item: Over 800 Section Blocks
-            is_active: true
+            active_feature: true
           - item: Support
-            is_active: true
+            active_feature: true
           - item: 3 filters
-            is_active: true
+            active_feature: true
           - item: Unlimited activity history
-            is_active: true
+            active_feature: true
         button:
           link: /signup
           text: Try This Free

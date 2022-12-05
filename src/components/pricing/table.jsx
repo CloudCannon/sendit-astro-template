@@ -9,7 +9,13 @@ export default function PricingTable({ block, dataBinding }) {
       <div className="container">
         <div className="row">
           {block.pricing_tier.map((tier, i) => (
-            <PricingItem tier={tier} key={i} />
+            <PricingItem
+              tier={tier}
+              key={i}
+              dataBinding={
+                dataBinding ? `${dataBinding}.pricing_tier[${i}]` : null
+              }
+            />
           ))}
         </div>
       </div>
