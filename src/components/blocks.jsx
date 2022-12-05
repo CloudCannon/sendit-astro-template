@@ -3,7 +3,7 @@ const components = import.meta.glob("../components/**/*.jsx", {
   eager: true,
 });
 
-export default function Blocks({ contentBlocks, dataBinding }) {
+export default function Blocks({ contentBlocks }) {
   const [blocks, setBlocks] = useState(contentBlocks);
 
   const onCloudCannonLoad = (CloudCannon) => {
