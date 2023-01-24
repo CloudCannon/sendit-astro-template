@@ -10,7 +10,7 @@ fs.readFile('./data/theme.json', 'utf8', function(err, dataFile){
     // parse file to JSON so that the variables can be accessed
     dataFile = JSON.parse(dataFile);
 
-    var variablesFile = './styles/_variables.scss'
+    var variablesFile = './src/styles/_variables.scss'
 
     // TODO: Check if dataFile.primary_theme_color is set
     // Open variables.scss and search/replace "$theme: ..." with color from data file
