@@ -9,7 +9,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "prebuild:fetch-theme-color": "node fetch-theme-color.js"
+    "prebuild:fetch-theme-color": "node fetch-theme-color.cjs"
   },
   "dependencies": {
     "@astrojs/react": "^1.2.2",
