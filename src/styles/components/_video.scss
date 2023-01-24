@@ -1,23 +1,26 @@
 /********** 
-  12. video Section Styles 
+  12. Video Section Styles 
 **********/
-
 .video {
   position: relative;
   padding-top: $base-padding * 13;
   overflow: hidden;
+
   @include media-breakpoint-down-xxl {
     padding-top: $base-padding * 8;
   }
+
   @include media-breakpoint-down-xl {
     padding-top: $base-padding * 4;
   }
+
   .banner {
     position: relative;
     z-index: 1;
+
     &::after {
       position: absolute;
-      content: "";
+      content: '';
       background: $color-primary;
       width: 100%;
       height: 100%;
@@ -26,49 +29,69 @@
       left: 0;
       opacity: 0.2;
     }
+
     .effect-one,
     .effect-two {
-      img {
-        @include media-breakpoint-down-md {
-          width: 70%;
-        }
+      @include media-breakpoint-down-md {
+        mask-size: 70%;
+        -webkit-mask-size: 70%;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
       }
     }
+
     .effect-one {
+      -webkit-mask-image: url(/images/video/effect-one.png);
+      mask-image: url(/images/video/effect-one.png);
+      background: $color-background-effects;
       position: absolute;
       top: 54%;
       left: -89px;
       z-index: -1;
+      width: 669px;
+      height: 339px;
+
       @include media-breakpoint-down-xl {
         top: 37%;
       }
+
       @include media-breakpoint-down-lg {
         top: 30%;
       }
+
       @include media-breakpoint-down-md {
         top: 40%;
       }
     }
 
     .effect-two {
+      -webkit-mask-image: url(/images/video/effect-two.png);
+      mask-image: url(/images/video/effect-two.png);
+      background: $color-background-effects;
       position: absolute;
       top: -96px;
       right: -80px;
       z-index: -1;
+      width: 583px;
+      height: 398px;
+
       @include media-breakpoint-down-lg {
         top: -70px;
       }
+
       @include media-breakpoint-down-md {
         right: -234px;
       }
     }
   }
+
   &-iframe {
     position: absolute;
     left: 50%;
     top: 50%;
     z-index: 1;
   }
+
   &-icon {
     a {
       position: absolute;
@@ -81,6 +104,7 @@
       outline: none;
       transform: translate(-50%, -50%);
     }
+
     svg {
       position: absolute;
       text-align: center;
@@ -94,7 +118,7 @@
 
   &-iframe::before,
   &-iframe::after {
-    content: "";
+    content: '';
     background: $color-white;
     border-radius: 50%;
     position: absolute;
@@ -113,6 +137,7 @@
     height: 110px;
     opacity: 0.5;
   }
+
   &-iframe::before {
     width: 140px;
     height: 140px;

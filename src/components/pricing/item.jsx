@@ -21,13 +21,7 @@ export default function PricingTier({ tier, dataBinding }) {
               />
             </div>
           </div>
-          <div className="shape top-0">
-            <img
-              src="/images/pricing/shape-two.png"
-              alt="shape"
-              loading="lazy"
-            />
-          </div>
+          <div className="shape-two top-0"></div>
         </div>
       </>
     );
@@ -41,13 +35,7 @@ export default function PricingTier({ tier, dataBinding }) {
               {tier.price}
             </span>
           </p>
-          <div className="shape">
-            <img
-              src="/images/pricing/shape-one.png"
-              alt="shape"
-              loading="lazy"
-            />
-          </div>
+          <div className="shape-one"></div>
         </div>
       </>
     );

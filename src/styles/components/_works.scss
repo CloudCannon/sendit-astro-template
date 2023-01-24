@@ -1,56 +1,67 @@
 /********** 
-14. works Section Styles 
+14. Works Section Styles 
 **********/
-
 .works {
   padding: $base-padding * 9.4 $base-padding * 0 $base-padding * 3.2;
   overflow: hidden;
+
   @include media-breakpoint-down-xxl {
     padding: $base-padding * 6 $base-padding * 0 $base-padding * 3.2;
   }
+
   @include media-breakpoint-down-xl {
     padding: $base-padding * 6 $base-padding * 0 $base-padding * 0;
   }
+
   @include media-breakpoint-down-lg {
     padding: $base-padding * 4 $base-padding * 0 $base-padding * 0;
   }
+
   &-content {
     @include media-breakpoint-down-lg {
       padding-bottom: $base-padding * 5;
       text-align: center;
     }
+
     h2 {
       margin-bottom: $base-margin * 1.5;
       font-size: $base-font-size * 2.8;
       line-height: 56.25px;
+
       @include media-breakpoint-down-md {
         font-size: $base-font-size * 1.9;
       }
     }
+
     p {
       font-size: $base-font-size * 1.4;
       font-weight: 500;
       line-height: 36.3px;
       margin-bottom: $base-margin * 3.1;
       width: 80%;
+
       @include media-breakpoint-down-xxl {
         width: 90%;
       }
+
       @include media-breakpoint-down-xl {
         width: 100%;
         font-size: $base-font-size * 1.2;
       }
+
       @include media-breakpoint-down-lg {
         margin-bottom: $base-margin * 1.5;
       }
     }
   }
+
   &-banner {
     position: relative;
     z-index: 1;
+
     &::after {
       position: absolute;
-      content: "";
+      content: '';
       background: $color-primary;
       width: 100%;
       height: 100%;
@@ -59,25 +70,42 @@
       left: 0;
       opacity: 0.2;
     }
+
     .effect {
+      -webkit-mask-image: url(/images/works/effect.png);
+      mask-image: url(/images/works/effect.png);
+      background: $color-background-effects;
       position: absolute;
       top: -96px;
       left: -89px;
       z-index: -1;
+      mask-repeat: no-repeat;
+      -webkit-mask-repeat: no-repeat;
+      mask-size: contain;
+      -webkit-mask-size: contain;
+      width: 125%;
+      height: 125%;
+
       @include media-breakpoint-down-xxl {
-        img {
-          max-width: 100%;
-        }
+        width: 120%;
+        height: 120%;
+      }
+
+      @include media-breakpoint-down-sm {
+        top: -75px;
       }
     }
+
     .video {
       position: relative;
+
       &-iframe {
         position: absolute;
         left: 50%;
         top: 50%;
         z-index: 1;
       }
+
       &-icon {
         a {
           position: absolute;
@@ -90,6 +118,7 @@
           outline: none;
           transform: translate(-50%, -50%);
         }
+
         svg {
           position: absolute;
           text-align: center;
@@ -103,7 +132,7 @@
 
       &-iframe::before,
       &-iframe::after {
-        content: "";
+        content: '';
         background: $color-white;
         border-radius: 50%;
         position: absolute;
@@ -122,6 +151,7 @@
         height: 110px;
         opacity: 0.5;
       }
+
       &-iframe::before {
         width: 140px;
         height: 140px;

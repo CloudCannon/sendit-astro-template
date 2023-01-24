@@ -21,7 +21,11 @@ export default function Footer({}) {
                   {footer.social.map((link, i) => (
                     <li key={i}>
                       <a href={`${link.link}`}>
-                        <i className={link.social_icon}></i>
+                        <i className={link.icon} aria-hidden="true">
+                          <span className="visually-hidden">
+                            {link.icon_alt}
+                          </span>
+                        </i>
                       </a>
                     </li>
                   ))}

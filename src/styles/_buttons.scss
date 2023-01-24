@@ -9,15 +9,15 @@
     color: $color-white;
   }
 
-  .btn-check:focus + &,
+  .btn-check:focus+&,
   &:focus {
     color: $color-white !important;
     outline: 0;
     box-shadow: none;
   }
 
-  .btn-check:checked + &,
-  .btn-check:active + &,
+  .btn-check:checked+&,
+  .btn-check:active+&,
   &:active,
   &.active {
     color: $color-white !important;
@@ -55,7 +55,8 @@
       background: $color-white;
       border-color: $color-primary;
     }
-    .btn-check:focus + &,
+
+    .btn-check:focus+&,
     &:focus,
     &:active,
     &:active:focus,
@@ -65,6 +66,7 @@
       border: $base-border-width solid transparent;
     }
   }
+
   &-secondary {
     position: relative;
     color: $color-primary;
@@ -77,9 +79,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
     svg {
       margin-right: 10px;
       transition: 0.3s all ease-in-out;
+
       path {
         transition: 0.3s all ease-in-out;
         fill: $color-primary;
@@ -90,13 +94,15 @@
       border: $base-border-width solid $color-primary;
       background: $color-primary;
       color: $color-white;
+
       svg {
         path {
           fill: $color-white;
         }
       }
     }
-    btn-check:focus + &,
+
+    btn-check:focus+&,
     &:focus,
     &:active,
     &:active:focus,
@@ -104,6 +110,7 @@
       color: $color-white !important;
       background: $color-primary;
       border: $base-border-width solid $color-primary;
+
       svg {
         path {
           fill: $color-white;
@@ -115,11 +122,11 @@
   &-links {
     background: transparent;
     color: $color-primary;
-    border: 1px solid rgba(229, 59, 42, 0.3);
+    border: 1px solid $color-secondary-light;
     position: relative;
     transition: all 0.3s ease-in-out;
 
-    .btn-check:focus + &,
+    .btn-check:focus+&,
     &:focus,
     &:active,
     &:active:focus,
@@ -127,9 +134,10 @@
     &:hover {
       color: $color-white;
       background: $color-primary;
-      border: $base-border-width solid rgba(229, 59, 42, 0.3);
+      border: $base-border-width solid $color-secondary-light;
     }
   }
+
   &-white {
     color: $color-primary;
     background: $color-white;
@@ -141,7 +149,8 @@
       color: $color-white;
       border-color: $color-primary;
     }
-    .btn-check:focus + &,
+
+    .btn-check:focus+&,
     &:focus,
     &:active,
     &:active:focus,
@@ -157,7 +166,7 @@
 //
 
 .btn-lg,
-.btn-group-lg > .btn {
+.btn-group-lg>.btn {
   padding: 1.3rem 2.1rem;
   font-size: 1.1rem;
   line-height: 28.44px;
@@ -165,14 +174,16 @@
 }
 
 .btn-sm,
-.btn-group-sm > .btn {
+.btn-group-sm>.btn {
   padding: 0.9rem 1.9rem;
   font-size: 1.1rem;
   font-weight: $semibold-font-weight;
   border-radius: 12px;
 }
+
 .btn-link {
   text-decoration: underline;
+
   &:hover {
     color: $color-primary;
   }
@@ -187,17 +198,19 @@
   font-size: $base-font-size * 0.875;
   border: 1px solid $color-primary;
   padding: $base-padding * 1.25 $base-padding * 2.125 !important;
+
   &:active,
   &:focus,
   &:hover,
-  &:checked + .btn:focus,
-  &:active + .btn:focus,
+  &:checked+.btn:focus,
+  &:active+.btn:focus,
   &:active:focus {
     background: $color-primary;
     color: $color-white !important;
     border: 1px solid rgba(255, 255, 255, 0.4);
   }
 }
+
 .btn-social {
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.4);
@@ -207,6 +220,7 @@
   svg {
     margin-right: $base-margin * 0.5;
   }
+
   &:active,
   &:focus,
   &:hover {

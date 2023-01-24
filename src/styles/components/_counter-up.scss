@@ -73,6 +73,7 @@
 
   &-content {
     position: relative;
+    height: 100%;
 
     @include media-breakpoint-down-lg {
 
@@ -93,6 +94,7 @@
     &-item {
       border-top: 1px solid $color-primary-light;
       border-right: 1px solid $color-primary-light;
+
       padding: $base-padding * 2.6 $base-padding * 2 0;
 
       @include media-breakpoint-down-xxl {

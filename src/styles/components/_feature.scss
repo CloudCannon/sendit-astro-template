@@ -1,5 +1,5 @@
 /********** 
-  9. Feature Page nd Section Styles
+  9. Feature Page and Section Styles
 **********/
 .feature,
 .feature-two {
@@ -8,15 +8,19 @@
 
   .section-header {
     padding-bottom: $base-padding * 10;
+
     @include media-breakpoint-down-xxl {
       padding-bottom: $base-padding * 7;
     }
+
     @include media-breakpoint-down-sm {
       padding: $base-padding * 3.2 0 $base-padding * 3.5;
     }
+
     p {
       width: 72%;
       margin: 0 auto;
+
       @include media-breakpoint-down-xl {
         width: 90%;
       }
@@ -26,79 +30,98 @@
   &-item-banner {
     position: relative;
     z-index: 1;
+
     .card-image {
       z-index: 1;
       text-align: center;
+
       img {
         max-width: 100%;
+
         @include media-breakpoint-down-lg {
           width: 100%;
         }
       }
     }
+
     .effect-one,
-    .effect-two,
-    .effect-three {
+    .effect-two {
       position: absolute;
       top: -8%;
       z-index: -1;
 
-      img {
-        @include media-breakpoint-down-xxl {
-          max-width: 100%;
-        }
-      }
+      mask-repeat: no-repeat;
+      -webkit-mask-repeat: no-repeat;
+      mask-size: contain;
+      -webkit-mask-size: contain;
     }
+
     .effect-one {
+      -webkit-mask-image: url(/images/feature/effect-1.png);
+      mask-image: url(/images/feature/effect-1.png);
+      background: $color-background-effects;
       left: -11%;
+      width: 110%;
+      height: 125%;
+
       @include media-breakpoint-down-lg {
         left: -4%;
+        width: 102%;
+        height: 117%;
       }
     }
+
     .effect-two {
+      -webkit-mask-image: url(/images/feature/effect-2.png);
+      mask-image: url(/images/feature/effect-2.png);
+      background: $color-background-effects;
+      width: 132%;
+      height: 130%;
       top: -21%;
       right: -17%;
+
       @include media-breakpoint-down-xxl {
         right: -9%;
+        width: 105%;
       }
+
       @include media-breakpoint-down-sm {
         top: -8%;
-        img {
-          width: 100%;
-        }
       }
     }
-    .effect-three {
-      top: -13%;
-      left: -7%;
-    }
   }
+
   &-item-content {
     h2 {
       font-size: $base-font-size * 2.8;
       padding-right: $base-padding * 10;
       margin-bottom: $base-margin * 2.5;
+
       @include media-breakpoint-down-xl {
         font-size: $base-font-size * 2;
         padding-right: $base-padding * 0;
         margin-bottom: $base-margin * 1.5;
       }
+
       @include media-breakpoint-down-sm {
         font-size: $base-font-size * 1.9;
         margin-bottom: $base-margin * 1.25;
       }
     }
+
     p {
       color: $color-text-light;
       margin-bottom: $base-margin * 0.7;
       font-size: 20px;
       line-height: 33px;
       letter-spacing: -0.8px;
+
       @include media-breakpoint-down-sm {
         font-size: $base-font-size * 1.1;
         line-height: 29.7px;
       }
     }
+
     ul {
       padding-left: $base-padding;
 
@@ -110,6 +133,7 @@
         margin-bottom: $base-margin * 1.3;
         font-weight: 500;
         letter-spacing: -0.8px;
+
         @include media-breakpoint-down-sm {
           font-size: $base-font-size * 1.1;
           margin-bottom: $base-margin * 1;
@@ -201,10 +225,17 @@
       }
 
       .shape {
+        -webkit-mask-image: url(/images/feature/effect-4.png);
+        mask-image: url(/images/feature/effect-4.png);
+        background: $color-background-effects;
         position: absolute;
         top: 2%;
         z-index: -1;
         right: 0%;
+
+        img {
+          visibility: hidden;
+        }
       }
     }
   }
@@ -468,18 +499,6 @@
               }
             }
           }
-        }
-      }
-
-      .Learn-more {
-        margin-top: $base-margin * 4.6;
-
-        @include media-breakpoint-down-md {
-          margin-top: $base-margin * 2.5;
-        }
-
-        @include media-breakpoint-down-sm {
-          margin-top: $base-margin * 1.25;
         }
       }
     }

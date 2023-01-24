@@ -168,7 +168,7 @@
     }
   }
 
-  .btn-check:checked[type="radio"]+label {
+  .btn-check:checked[type='radio']+label {
     background: $color-white;
     color: $color-primary !important;
   }

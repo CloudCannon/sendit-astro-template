@@ -24,20 +24,15 @@ export default function AboutVideo({ block, dataBinding }) {
           </div>
           <div className="col-lg-6">
             {block.video && (
-              <div className="works-banner rounded-box">
+              <div className="works-banner">
                 <img
                   src={block.video.image}
                   className="w-100"
                   alt={block.video.image_alt}
                   loading="lazy"
+                  style={{ "border-radius": "20px" }}
                 />
-                <div className="effect">
-                  <img
-                    src="/images/works/effect.png"
-                    alt="effect"
-                    loading="lazy"
-                  />
-                </div>
+                <div className="effect"></div>
                 <div className="video-iframe d-flex align-items-center justify-content-center">
                   <div className="video-icon me-sm-9 me-8">
                     <a className="popup-vimeo" href={block.video.link}>

@@ -12,13 +12,7 @@ export default function GlobalFeature({ block, dataBinding }) {
               <div className="card-image">
                 <img src={block.image} alt={block.image_alt} loading="lazy" />
               </div>
-              <div className="effect-one">
-                <img
-                  src="/images/feature/effect-1.png"
-                  alt="effect-image"
-                  loading="lazy"
-                />
-              </div>
+              <div className="effect-one"></div>
             </div>
           </div>
           <div className="col-lg-6">
@@ -69,13 +63,7 @@ export default function GlobalFeature({ block, dataBinding }) {
               <div className="card-image">
                 <img src={block.image} alt={block.image_alt} loading="lazy" />
               </div>
-              <div className="effect-two">
-                <img
-                  src="/images/feature/effect-2.png"
-                  alt="effect-image"
-                  loading="lazy"
-                />
-              </div>
+              <div className="effect-two"></div>
             </div>
           </div>
         </div>

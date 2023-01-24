@@ -144,13 +144,7 @@ export default function ContactForm({ block, dataBinding }) {
                   </form>
                 </>
               )}
-              <div className="effect">
-                <img
-                  src="/images/contact/effects.png"
-                  alt="effects"
-                  loading="lazy"
-                />
-              </div>
+              <div className="effect"></div>
             </div>
           </div>
         </div>

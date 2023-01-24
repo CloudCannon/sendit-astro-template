@@ -43,20 +43,11 @@ export default function AboutHero({ block, dataBinding }) {
           <div className="col-xl-7 col-lg-12">
             <div className="about-hero-two-banner">
               {block.hero_images.map((image, i) => (
-                <div
-                  className={`rounded-box ${renderPlacer(image.placement)}`}
-                  key={i}
-                >
+                <div className={`${renderPlacer(image.placement)}`} key={i}>
                   <img src={image.image} alt={image.image_alt} loading="lazy" />
                 </div>
               ))}
-              <div className="pattern">
-                <img
-                  src="/images/about/patterns-two.png"
-                  alt="patterns"
-                  loading="lazy"
-                />
-              </div>
+              <div className="pattern"></div>
             </div>
           </div>
         </div>
