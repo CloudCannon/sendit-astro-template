@@ -79,10 +79,11 @@ const canonicalURL = new URL(seo?.canonical_url ?? Astro.url.pathname, baseUrl);
     <slot />
     <Footer />
 
-    <script src="/vendor/jQuery/jquery.min.js" async></script>
-    <script src="/vendor/bootstrap/bootstrap.bundle.min.js" async></script>
-    <script src="/vendor/counter-up/countup.js" async></script>
-    <script src="/vendor/magnific-popup/magnific-popup.min.js" async></script>
+    <script src="/vendor/jQuery/jquery.min.js" is:inline></script>
+    <script src="/vendor/bootstrap/bootstrap.bundle.min.js" is:inline></script>
+    <script src="/vendor/counter-up/countup.js" is:inline></script>
+    <script src="/vendor/magnific-popup/magnific-popup.min.js" is:inline
+    ></script>
     <script src="/js/script.js" async></script>
   </body>
 </html>

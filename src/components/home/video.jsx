@@ -20,7 +20,7 @@ export default function HomeVideo({ block, dataBinding }) {
               <div className="effect-two"></div>
               <div className="video-iframe d-flex align-items-center justify-content-center">
                 <div className="video-icon me-sm-9 me-8">
-                  <a className="popup-vimeo" href={block.videoUrl}>
+                  <a className="popup-vimeo" href={block.video_url}>
                     <svg
                       width="28"
                       height="32"

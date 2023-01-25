@@ -9,12 +9,12 @@ thumb_image:
   image: /images/blog/blog-thumb-1.jpg
   image_alt: Arial shot of people working
 featured_image:
-  image: /images/blog/featured-image-1.jpg
+  image: /images/blog/featured-image.jpg
   image_alt: Child using a computer
 seo:
   page_description:
   canonical_url:
-  featured_image: /images/blog/featured-image-1.jpg
+  featured_image: /images/blog/featured-image.jpg
   featured_image_alt:
   author_twitter_handle:
   open_graph_type: article

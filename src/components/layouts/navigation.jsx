@@ -1,22 +1,19 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import navigation from "@data/navigation.json";
 
 export default function Navigation({ pageUrl }) {
+  const [isSticky, setSticky] = useState(false);
+
+  const handleScroll = () => {
+    setSticky(window.scrollY >= 70);
+  };
+
   useEffect(() => {
-    window.addEventListener("scroll", isSticky);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener("scroll", isSticky);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  const isSticky = () => {
-    const windscroll = $(window).scrollTop();
-    if (windscroll >= 70) {
-      $("#mainnavigationBar").addClass("sticky-nav");
-    } else {
-      $("#mainnavigationBar").removeClass("sticky-nav");
-    }
-  };
 
   const handleClick = (event) => {
     const navbar = $("#mainnavigationBar");
@@ -27,7 +24,9 @@ export default function Navigation({ pageUrl }) {
     <>
       <header>
         <nav
-          className="navbar navbar-expand-lg position-fixed w-100 zindex-dropdown"
+          className={`navbar navbar-expand-lg position-fixed w-100 zindex-dropdown${
+            isSticky ? " sticky-nav" : ""
+          }`}
           id="mainnavigationBar"
         >
           <div className="container-fluid">
