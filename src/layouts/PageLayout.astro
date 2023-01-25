@@ -7,12 +7,12 @@ type Props =
   | {
       title: string;
       content_blocks: Array<Record<string, any>>;
-      seo: SEOProps;
+      seo?: SEOProps;
     }
   | MarkdownLayoutProps<{
       title: string;
       content_blocks: Array<Record<string, any>>;
-      seo: SEOProps;
+      seo?: SEOProps;
     }>;
 
 const props = Astro.props.frontmatter ?? Astro.props;

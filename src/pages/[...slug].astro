@@ -18,6 +18,13 @@ export async function getStaticPaths() {
     return { params: { slug }, props: { page } };
   });
 }
+
+const page = Astro.props.page;
+if (!page.data.content_blocks) {
+  throw new Error(
+    `Tried to output page with unsupported schema: ${page.data._schema}`
+  );
+}
 ---
 
-<PageLayout {...Astro.props.page.data} />
+<PageLayout {...page.data} />
