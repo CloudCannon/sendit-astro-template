@@ -1,6 +1,10 @@
 ---
 import PageLayout from "@layouts/PageLayout.astro";
-import { getCollection } from "astro:content";
+import { getCollection, CollectionEntry } from "astro:content";
+
+export interface Props {
+  page: CollectionEntry<"pages">;
+}
 
 export async function getStaticPaths() {
   const pages = await getCollection(
@@ -10,10 +14,10 @@ export async function getStaticPaths() {
   return pages.map((page) => {
     const slug = page.slug.replace(/index$/, "");
     if (slug.length === 0)
-      return { params: { slug: undefined }, props: { ...page } };
-    return { params: { slug }, props: { ...page } };
+      return { params: { slug: undefined }, props: { page } };
+    return { params: { slug }, props: { page } };
   });
 }
 ---
 
-<PageLayout {...Astro.props.data} />
+<PageLayout {...Astro.props.page.data} />
