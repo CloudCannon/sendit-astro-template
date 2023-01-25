@@ -1,14 +1,14 @@
 export default function PostSummary({ post }) {
   const {
-    frontmatter: { thumb_image, tags, title },
-    url,
+    data: { thumb_image, tags, title },
+    slug,
   } = post;
   return (
     <>
       <div className="col-lg-4 col-md-6">
         <article className="blog-post">
           <div className="blog-post-thumb">
-            <a href={url}>
+            <a href={`/blog/${slug}`}>
               <img
                 src={thumb_image.image}
                 alt={thumb_image.image_alt}
@@ -25,7 +25,7 @@ export default function PostSummary({ post }) {
               ))}
             </div>
             <div className="blog-post-title">
-              <a href={url}>{title}</a>
+              <a href={`/blog/${slug}`}>{title}</a>
             </div>
           </div>
         </article>

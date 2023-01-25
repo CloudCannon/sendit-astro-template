@@ -11,7 +11,7 @@ module.exports = {
       disable_add_folder: true,
     },
     posts: {
-      path: "src/pages/blog",
+      path: "src/content/blog",
       output: true,
       url: "/blog/[slug]",
       _enabled_editors: ["content", "visual"],
@@ -30,7 +30,7 @@ module.exports = {
       },
     },
     pages: {
-      path: "src/pages",
+      path: "src/content/pages",
       url: (filePath, parsed, { buildUrl }) =>
         buildUrl(filePath, parsed, "/[slug]/").replace(/^\/_/, "/"),
       output: true,

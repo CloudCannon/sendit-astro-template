@@ -1,5 +1,4 @@
 ---
-layout: "@layouts/PageLayout.astro"
 title: Pricing
 seo:
   page_description:

@@ -1,0 +1,20 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const pages = await getCollection(
+    "pages",
+    ({ slug }) => !slug.split("/").pop()?.startsWith("_")
+  );
+  return pages.map((page) => {
+    console.log(page);
+    const slug = page.slug.replace(/index$/, "");
+    if (slug.length === 0)
+      return { params: { slug: undefined }, props: { ...page } };
+    return { params: { slug }, props: { ...page } };
+  });
+}
+---
+
+<PageLayout {...Astro.props.data} />

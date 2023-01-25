@@ -1,27 +1,39 @@
 ---
-import type { MarkdownLayoutProps } from "astro";
 import Layout, { SEOProps } from "@layouts/Layout.astro";
 import PostSummary from "@components/posts/summary";
-import { DateTime } from "luxon";
+import { getCollection } from "astro:content";
+import type { MarkdownLayoutProps } from "astro";
 
-type Props = MarkdownLayoutProps<{
-  title: string;
-  date: string;
-  featured_image: {
-    image: string;
-    image_alt: string;
-  };
-  author: string;
-  seo: SEOProps;
-}>;
+type Props =
+  | {
+      title: string;
+      date: Date;
+      featured_image: {
+        image: string;
+        image_alt: string;
+      };
+      author: string;
+      seo: SEOProps;
+      body: string;
+    }
+  | MarkdownLayoutProps<{
+      title: string;
+      date: Date;
+      featured_image: {
+        image: string;
+        image_alt: string;
+      };
+      author: string;
+      seo: SEOProps;
+    }>;
 
 const props = Astro.props.frontmatter ?? Astro.props;
 const { title, date, featured_image, author } = props;
-
-const wordCount = Astro.props.rawContent().split(" ").length;
+const content = Astro.props.body ?? Astro.props.rawContent();
+const wordCount = content.split(" ").length;
 const readingTime = Math.floor(wordCount / 183);
 
-const posts = await Astro.glob("../pages/blog/**/*.md");
+const posts = await getCollection("blog");
 ---
 
 <Layout {...props}>
@@ -37,9 +49,11 @@ const posts = await Astro.glob("../pages/blog/**/*.md");
                   <li class="list-inline-item">
                     <p>
                       {
-                        DateTime.fromISO(date).toLocaleString(
-                          DateTime.DATE_FULL
-                        )
+                        date.toLocaleDateString(undefined, {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })
                       }
                     </p>
                   </li>
@@ -81,11 +95,7 @@ const posts = await Astro.glob("../pages/blog/**/*.md");
         </div>
       </div>
       <div class="row">
-        {
-          posts
-            .slice(0, 3)
-            .map((post, i) => <PostSummary post={post} key={i} />)
-        }
+        {posts.slice(0, 3).map((post, i) => <PostSummary post={post} />)}
       </div>
     </div>
   </section>

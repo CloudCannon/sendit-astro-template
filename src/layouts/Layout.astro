@@ -6,14 +6,13 @@ import { SEO } from "astro-seo";
 import site from "@data/site.json";
 
 export interface SEOProps {
-  page_description: string;
-  feature_image: string;
-  feature_image_alt: string;
-  description: string;
-  canonical_url: string;
-  no_index: boolean;
-  open_graph_type: string;
-  author_twitter_handle: string;
+  page_description: string | null;
+  featured_image: string | null;
+  featured_image_alt: string | null;
+  canonical_url: string | null;
+  no_index: boolean | null;
+  open_graph_type: string | null;
+  author_twitter_handle: string | null;
 }
 
 export interface Props {
@@ -27,8 +26,8 @@ const title = Astro.props.title
   ? `${Astro.props.title} | ${site.site_title}`
   : site.site_title;
 const description = seo?.page_description || site.description;
-const image = seo?.feature_image || site.image;
-const image_alt = seo?.feature_image_alt || site.image_alt;
+const image = seo?.featured_image || site.image;
+const image_alt = seo?.featured_image_alt || site.image_alt;
 const canonicalURL = new URL(seo?.canonical_url ?? Astro.url.pathname, baseUrl);
 ---
 

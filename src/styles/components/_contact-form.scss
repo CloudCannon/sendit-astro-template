@@ -115,7 +115,7 @@
       box-shadow: 0px 0px 80px rgba(150, 0, 0, 0.06);
       border-radius: 20px;
       z-index: 1;
-      margin-top: -$base-margin * 28.2;
+      margin-top: $base-margin;
       padding: $base-padding * 4.2 $base-padding * 3.3 $base-padding * 3.1;
       background: $color-white;
 
@@ -189,5 +189,11 @@
       width: 115%;
       height: 100%;
     }
+  }
+}
+
+.contact-hero+.contact {
+  .contact-form>form {
+    margin-top: -$base-margin * 28.2;
   }
 }

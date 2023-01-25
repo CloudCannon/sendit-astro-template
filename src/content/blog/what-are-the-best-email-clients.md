@@ -1,21 +1,20 @@
 ---
-layout: "@layouts/PostLayout.astro"
-date: 2022-03-10T00:00:00Z
-title: Email delivery tips
+date: 2022-03-07T00:00:00Z
+title: What are the best email clients?
 tags:
-  - email
+  - marketing
   - blog
-author: Gerard Hopper
+author: Wendy Parkes
 thumb_image:
-  image: /images/blog/blog-thumb-1.jpg
-  image_alt: Arial shot of people working
+  image: /images/blog/blog-thumb-4.jpg
+  image_alt: Group of people working
 featured_image:
-  image: /images/blog/featured-image-1.jpg
-  image_alt: Child using a computer
+  image: /images/blog/featured-image-4.jpg
+  image_alt: Person drinking coffee
 seo:
   page_description:
   canonical_url:
-  featured_image: /images/blog/featured-image-1.jpg
+  featured_image: /images/blog/featured-image-4.jpg
   featured_image_alt:
   author_twitter_handle:
   open_graph_type: article

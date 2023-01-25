@@ -1,23 +1,24 @@
 ---
 import BlogList from "@components/blog/list";
 import Layout from "@layouts/Layout.astro";
+import { getCollection, getEntryBySlug } from "astro:content";
 
 export async function getStaticPaths() {
   const tags: Record<string, any> = {};
-  const posts = await Astro.glob("../blog/**/*.md");
-  posts.forEach(({ frontmatter }) =>
-    frontmatter.tags.forEach((tag: string) => (tags[tag] = true))
+  const posts = await getCollection("blog");
+  posts.forEach(({ data }) =>
+    data.tags.forEach((tag: string) => (tags[tag] = true))
   );
   return Object.keys(tags).map((tag) => ({ params: { tag } }));
 }
 
-const tag = Astro.params.tag;
-const page = (await Astro.glob("../_blog.md"))[0].frontmatter;
+const tag = Astro.params.tag ?? "";
+const page = (await getEntryBySlug("pages", "_blog")).data;
 page.title = tag[0].toUpperCase() + tag.slice(1);
 page.description = "";
 
-const filteredPosts = (await Astro.glob("../blog/**/*.md")).filter((post) =>
-  post.frontmatter.tags.includes(tag)
+const filteredPosts = await getCollection("blog", (post) =>
+  post.data.tags.includes(tag)
 );
 ---
 

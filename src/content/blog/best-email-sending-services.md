@@ -1,21 +1,20 @@
 ---
-layout: "@layouts/PostLayout.astro"
-date: 2022-03-09T00:00:00Z
-title: How to host better email marketing campaigns?
+date: 2022-03-11T00:00:00Z
+title: Best email sending services
 tags:
-  - marketing
+  - technology
   - blog
-author: Arther Conal
+author: Wendy Parkes
 thumb_image:
-  image: /images/blog/blog-thumb-2.jpg
-  image_alt: People conversing
+  image: /images/blog/blog-thumb-3.jpg
+  image_alt: Staff meeting
 featured_image:
-  image: /images/blog/featured-image-2.jpg
-  image_alt: Children looking at a computer
+  image: /images/blog/featured-image-5.jpg
+  image_alt: Laptop, phone and coffee
 seo:
   page_description:
   canonical_url:
-  featured_image: /images/blog/featured-image-2.jpg
+  featured_image: /images/blog/featured-image-5.jpg
   featured_image_alt:
   author_twitter_handle:
   open_graph_type: article

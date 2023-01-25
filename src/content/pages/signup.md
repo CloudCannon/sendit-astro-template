@@ -1,5 +1,4 @@
 ---
-layout: "@layouts/PageLayout.astro"
 title: Sign Up
 seo:
   page_description:

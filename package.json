@@ -15,7 +15,7 @@
     "@astrojs/react": "^1.2.2",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
-    "astro": "^1.6.11",
+    "astro": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -23,7 +23,6 @@
     "@astrojs/rss": "^1.0.3",
     "@types/luxon": "^3.1.0",
     "astro-seo": "^0.6.0",
-    "luxon": "^3.1.1",
     "markdown-it": "^13.0.1",
     "sass": "^1.56.1"
   }

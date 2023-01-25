@@ -1,21 +1,20 @@
 ---
-layout: "@layouts/PostLayout.astro"
-date: 2022-06-10T00:00:00Z
-title: 5 things to improve you email templates
+date: 2022-03-10T00:00:00Z
+title: Email delivery tips
 tags:
-  - marketing
+  - email
   - blog
-author: Aaron Britt
+author: Gerard Hopper
 thumb_image:
-  image: /images/blog/blog-thumb-6.jpg
-  image_alt: People working on laptops and looking at charts
+  image: /images/blog/blog-thumb-1.jpg
+  image_alt: Arial shot of people working
 featured_image:
-  image: /images/blog/featured-image-2.jpg
-  image_alt: Children looking at a laptop
+  image: /images/blog/featured-image-1.jpg
+  image_alt: Child using a computer
 seo:
   page_description:
   canonical_url:
-  featured_image: /images/blog/featured-image-2.jpg
+  featured_image: /images/blog/featured-image-1.jpg
   featured_image_alt:
   author_twitter_handle:
   open_graph_type: article

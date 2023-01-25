@@ -1,21 +1,20 @@
 ---
-layout: "@layouts/PostLayout.astro"
-date: 2022-03-07T00:00:00Z
-title: What are the best email clients?
+date: 2022-04-14T00:00:00Z
+title: 7 things you didn't know about email
 tags:
   - marketing
   - blog
-author: Wendy Parkes
+author: Miyah Kelley
 thumb_image:
-  image: /images/blog/blog-thumb-4.jpg
-  image_alt: Group of people working
+  image: /images/blog/blog-thumb-5.jpg
+  image_alt: Group of people discussing something shwon on a laptop
 featured_image:
-  image: /images/blog/featured-image-4.jpg
+  image: /images/blog/featured-image-3.jpg
   image_alt: Person drinking coffee
 seo:
   page_description:
   canonical_url:
-  featured_image: /images/blog/featured-image-4.jpg
+  featured_image: /images/blog/featured-image-3.jpg
   featured_image_alt:
   author_twitter_handle:
   open_graph_type: article
