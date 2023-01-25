@@ -3,7 +3,6 @@ const md = new MarkdownIt({ html: true });
 
 export default function PrivacyPrivacy({ block, dataBinding }) {
   const handleClick = (event) => {
-    console.log("click navlink");
     Array.from(document.querySelectorAll(".privacy-nav .nav-link")).forEach(
       (element) => {
         element.classList.remove("active");

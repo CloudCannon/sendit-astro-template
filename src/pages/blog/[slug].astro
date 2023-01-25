@@ -15,7 +15,6 @@ if (!post) {
   throw new Error("Failed to get post with slug: " + Astro.params.slug);
 }
 const { Content } = await post.render();
-console.log(post);
 ---
 
 <PostLayout {...post.data} body={post.body}>

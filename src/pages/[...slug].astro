@@ -8,7 +8,6 @@ export async function getStaticPaths() {
     ({ slug }) => !slug.split("/").pop()?.startsWith("_")
   );
   return pages.map((page) => {
-    console.log(page);
     const slug = page.slug.replace(/index$/, "");
     if (slug.length === 0)
       return { params: { slug: undefined }, props: { ...page } };
