@@ -1,14 +1,10 @@
-/********** 
+/**********
   13. Pricing Page and Section Styles
 **********/
 .pricing,
 .pricing-two {
   position: relative;
-  margin-top: -$base-margin * 21.5;
-
-  @include media-breakpoint-down-md {
-    margin-top: -$base-margin * 25;
-  }
+  margin-top: $base-margin;
 
   .card {
     transition: all 0.3s ease-in-out;
@@ -133,14 +129,14 @@
       }
 
       .shape-one {
-        -webkit-mask-image: url(/images/pricing/shape-one.png);
-        mask-image: url(/images/pricing/shape-one.png);
+        -webkit-mask-image: url(/static/images/pricing/shape-one.png);
+        mask-image: url(/static/images/pricing/shape-one.png);
         background: $color-background-effects;
       }
 
       .shape-two {
-        -webkit-mask-image: url(/images/pricing/shape-two.png);
-        mask-image: url(/images/pricing/shape-two.png);
+        -webkit-mask-image: url(/static/images/pricing/shape-two.png);
+        mask-image: url(/static/images/pricing/shape-two.png);
         background: $color-background-effects;
       }
 
@@ -212,7 +208,7 @@
           }
         }
 
-        .deactive {
+        .inactive {
           color: $color-deactive;
         }
       }
@@ -530,7 +526,7 @@
                 }
               }
 
-              .deactive {
+              .inactive {
                 color: $color-secondary-light;
               }
             }
@@ -547,5 +543,14 @@
         border-color: $color-white;
       }
     }
+  }
+}
+
+.pricing-inner+.pricing,
+.pricing-inner+.pricing-two {
+  margin-top: -$base-margin * 21.5;
+
+  @include media-breakpoint-down-md {
+    margin-top: -$base-margin * 25;
   }
 }

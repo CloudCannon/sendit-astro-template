@@ -2,8 +2,8 @@
 spec:
   structures:
     - content_blocks
-  label: Privacy
-  description: Privacy section
+  label: Privacy Policy
+  description: Privacy policy section
   icon: "lock"
   tags: []
 

@@ -2,7 +2,7 @@
 
 .privacy {
 	position: relative;
-	margin-top: -$base-margin * 33.5;
+	margin-top: $base-margin;
 	padding-bottom: $base-padding * 7.5;
 	z-index: 99;
 
@@ -11,7 +11,6 @@
 	}
 
 	@include media-breakpoint-down-md {
-		margin-top: -$base-margin * 35.8;
 		padding-bottom: $base-padding * 0;
 	}
 
@@ -106,8 +105,6 @@
 
 	// start services-two-items
 	&-items {
-		scroll-margin-top: 100px;
-
 		.card {
 			background: none;
 			padding: 0;
@@ -155,5 +152,13 @@
 				}
 			}
 		}
+	}
+}
+
+.privacy-hero+.privacy {
+	margin-top: -$base-margin * 33.5;
+
+	@include media-breakpoint-down-md {
+		margin-top: -$base-margin * 35.8;
 	}
 }

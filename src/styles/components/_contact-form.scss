@@ -1,6 +1,3 @@
-/********** 
- 19. Contact Form Page Styles
-**********/
 .contact {
   padding-bottom: $base-padding * 9.4;
 
@@ -119,21 +116,8 @@
       padding: $base-padding * 4.2 $base-padding * 3.3 $base-padding * 3.1;
       background: $color-white;
 
-      @include media-breakpoint-down-xl {
-        margin-top: -$base-margin * 22;
-      }
-
-      @include media-breakpoint-down-lg {
-        margin-top: -$base-margin * 17;
-      }
-
       @include media-breakpoint-down-md {
-        margin-top: -$base-margin * 64;
         padding: $base-padding * 2.5 $base-padding * 1.25 $base-padding * 1.25;
-      }
-
-      @include media-breakpoint-down-sm {
-        margin-top: -$base-margin * 63;
       }
 
       h3 {
@@ -175,8 +159,8 @@
     }
 
     .effect {
-      -webkit-mask-image: url(/images/contact/effects.png);
-      mask-image: url(/images/contact/effects.png);
+      -webkit-mask-image: url(/static/images/contact/effects.png);
+      mask-image: url(/static/images/contact/effects.png);
       background: $color-background-effects;
       position: absolute;
       top: -10%;
@@ -195,5 +179,21 @@
 .contact-hero+.contact {
   .contact-form>form {
     margin-top: -$base-margin * 28.2;
+
+    @include media-breakpoint-down-xl {
+      margin-top: -$base-margin * 22;
+    }
+
+    @include media-breakpoint-down-lg {
+      margin-top: -$base-margin * 17;
+    }
+
+    @include media-breakpoint-down-md {
+      margin-top: -$base-margin * 64;
+    }
+
+    @include media-breakpoint-down-sm {
+      margin-top: -$base-margin * 63;
+    }
   }
 }

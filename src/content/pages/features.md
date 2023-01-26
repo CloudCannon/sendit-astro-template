@@ -1,5 +1,5 @@
 ---
-title: Feature
+title: Features
 seo:
   page_description:
   canonical_url:
