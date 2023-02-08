@@ -19,7 +19,7 @@ content_blocks:
     image_alt: Reports dashboard
     button:
       text: Try This Free
-      link: /signup
+      link: /signup/
   - _bookshop_name: global/counter
     title: Scale your
     title_suffix: Business
@@ -49,7 +49,7 @@ content_blocks:
     image_alt: Thumbnail for video
     video_url: https://vimeo.com/45830194
   - _bookshop_name: global/header
-    title: 'Sendit '
+    title: "Sendit "
     title_suffix: Features
     remove_top_padding: true
     description: >-
@@ -117,5 +117,5 @@ content_blocks:
         message: >-
           I can't imagine life without Sendit now, I have no idea how we were
           surviving before.
-layout: '@layouts/PageLayout.astro'
+layout: "@layouts/PageLayout.astro"
 ---
