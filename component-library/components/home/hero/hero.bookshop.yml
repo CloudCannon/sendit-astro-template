@@ -15,7 +15,7 @@ blueprint:
   image_alt: Dashboard with reports
   button:
     text: Try This Free
-    url: /signup
+    link: /signup
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
