@@ -1,15 +1,15 @@
 ---
 date:
-title:
+title: ''
 tags:
   - blog
 author: Gerard Hopper
 thumb_image:
-  image:
-  image_alt:
+  image: ''
+  image_alt: ''
 featured_image:
-  image:
-  image_alt:
+  image: ''
+  image_alt: ''
 seo:
   page_description:
   canonical_url:
