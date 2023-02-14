@@ -2,6 +2,7 @@
 date:
 title:
 tags:
+  - blog
 author: Gerard Hopper
 thumb_image:
   image:
