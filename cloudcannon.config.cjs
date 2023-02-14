@@ -72,6 +72,11 @@ module.exports = {
           path: "schemas/paginated-collection.md",
         },
       },
+      _inputs: {
+        content_blocks: {
+          empty_type: "array",
+        },
+      },
       filter: {
         base: "strict",
       },
