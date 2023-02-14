@@ -117,5 +117,4 @@ content_blocks:
         message: >-
           I can't imagine life without Sendit now, I have no idea how we were
           surviving before.
-layout: "@layouts/PageLayout.astro"
 ---

@@ -1,12 +1,15 @@
 ---
 date:
-title:
-categories:
+title: ''
+tags:
+  - blog
 author: Gerard Hopper
 thumb_image:
-  image_path:
+  image: ''
+  image_alt: ''
 featured_image:
-  image_path:
+  image: ''
+  image_alt: ''
 seo:
   page_description:
   canonical_url:
@@ -15,5 +18,4 @@ seo:
   author_twitter_handle:
   open_graph_type: article
   no_index: false
-layout: "@layouts/PostLayout.astro"
 ---

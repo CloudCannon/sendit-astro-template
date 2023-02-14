@@ -28,6 +28,25 @@ module.exports = {
           path: "schemas/post.md",
         },
       },
+      _inputs: {
+        title: {
+          empty_type: "string",
+        },
+        image: {
+          empty_type: "string",
+        },
+        image_alt: {
+          empty_type: "string",
+        },
+        author: {
+          empty_type: "string",
+        },
+        tags: {
+          type: "multiselect",
+          allow_create: true,
+          empty_type: "array",
+        },
+      }
     },
     pages: {
       path: "src/content/pages",
@@ -51,6 +70,11 @@ module.exports = {
         },
         paginated_collection: {
           path: "schemas/paginated-collection.md",
+        },
+      },
+      _inputs: {
+        content_blocks: {
+          empty_type: "array",
         },
       },
       filter: {
