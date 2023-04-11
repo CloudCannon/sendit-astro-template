@@ -9,7 +9,7 @@ spec:
 
 # Defines the structure of this component, as well as the default values
 blueprint:
-  title: Email Marketing is Future for Grow Your Business Revenues
+  title: Email Marketing is the Future for Growing Your Business Revenues
   description: We believe that a good email marketing strategy is the key to growth. So we’re helping you grow your business with tools and resources that make email marketing easy.
   image: /images/hero/hero-image-2.png
   image_alt: Dashboard with reports
