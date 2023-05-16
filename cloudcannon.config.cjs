@@ -13,7 +13,7 @@ module.exports = {
     posts: {
       path: "src/content/blog",
       output: true,
-      url: "/blog/[slug]",
+      url: "/blog/[slug]/",
       _enabled_editors: ["content", "visual"],
       add_options: [
         {

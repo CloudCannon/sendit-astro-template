@@ -1,7 +1,7 @@
 import MarkdownIt from "markdown-it";
 const md = new MarkdownIt({ html: true });
 
-export default function GlobalFaqItem({ faq, i, dataBinding }) {
+export default function GlobalFaqItem({ faq, i }) {
   const handleClick = (event) => {
     var current = document.getElementsByClassName("shows");
     if (current[0]) {
@@ -11,10 +11,7 @@ export default function GlobalFaqItem({ faq, i, dataBinding }) {
   };
 
   return (
-    <div
-      className={`accordion-item ${i === 0 ? "shows" : ""}`}
-      data-cms-bind={dataBinding}
-    >
+    <div className={`accordion-item ${i === 0 ? "shows" : ""}`}>
       <span>0{i + 1}</span>
       <h2 className="accordion-header" id={`heading${i}`} onClick={handleClick}>
         <button

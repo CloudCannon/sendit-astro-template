@@ -9,14 +9,19 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "prebuild:fetch-theme-color": "node fetch-theme-color.cjs"
+    "prebuild:fetch-theme-color": "node fetch-theme-color.cjs",
+    "bookshop": "npx @bookshop/generate --bookshop src/components"
   },
   "dependencies": {
-    "@astrojs/react": "^1.2.2",
+    "@astrojs/react": "^2.1.3",
+    "@bookshop/astro-bookshop": "3.6.0-beta.0",
+    "@bookshop/astro-engine": "3.6.0-beta.0",
+    "@bookshop/generate": "3.6.0-beta.0",
     "@makotot/ghostui": "^2.0.0",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
-    "astro": "^2.1.3",
+    "astro": "^2.4.5",
+    "punycode": "^2.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

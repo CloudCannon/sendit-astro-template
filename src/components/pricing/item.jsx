@@ -1,4 +1,4 @@
-export default function PricingTier({ tier, dataBinding }) {
+export default function PricingTier({ tier }) {
   let pricing = "";
   if (tier.has_discount) {
     pricing = (
@@ -41,7 +41,7 @@ export default function PricingTier({ tier, dataBinding }) {
     );
   }
   return (
-    <div className="col-lg-4" data-cms-bind={dataBinding}>
+    <div className="col-lg-4">
       <div
         className={`card pricing-item ${tier.highlight_tier ? "active" : ""}`}
       >

@@ -1,9 +1,9 @@
 import MarkdownIt from "markdown-it";
 const md = new MarkdownIt({ html: true });
 
-export default function HomeHero({ block, dataBinding }) {
+export default function HomeHero(block) {
   return (
-    <section className="hero-two" data-cms-bind={dataBinding}>
+    <section className="hero-two">
       <div className="hero-two-shape"></div>
       <div className="container-fluid">
         <div className="row align-items-center">

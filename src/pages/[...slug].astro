@@ -9,7 +9,7 @@ export interface Props {
 export async function getStaticPaths() {
   const pages = await getCollection(
     "pages",
-    ({ slug }) => !slug.split("/").pop()?.startsWith("_")
+    ({ data }) => !data.hidden
   );
   return pages.map((page) => {
     const slug = page.slug.replace(/index$/, "");
@@ -27,4 +27,4 @@ if (!page.data.content_blocks) {
 }
 ---
 
-<PageLayout {...page.data} />
+<PageLayout frontmatter={page.data} />

@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { Scrollspy } from "@makotot/ghostui";
 const md = new MarkdownIt({ html: true });
 
-export default function PrivacyPrivacy({ block, dataBinding }) {
+export default function PrivacyPrivacy(block) {
   const sectionRefs = [];
   block.terms_and_conditions.map((privacy, i) =>
     sectionRefs.push(useRef(null))
@@ -17,7 +17,7 @@ export default function PrivacyPrivacy({ block, dataBinding }) {
     event.currentTarget.classList.add("active");
   };
   return (
-    <section className="privacy" data-cms-bind={dataBinding}>
+    <section className="privacy">
       <div className="container">
         <div className="row">
           <Scrollspy sectionRefs={sectionRefs} offset={-90}>

@@ -1,9 +1,9 @@
 import MarkdownIt from "markdown-it";
 const md = new MarkdownIt({ html: true });
 
-export default function GlobalTestimonial({ block, dataBinding }) {
+export default function GlobalTestimonial(block) {
   return (
-    <section className="testimonial" data-cms-bind={dataBinding}>
+    <section className="testimonial">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-lg-8 mx-auto text-center mb-5">
@@ -21,32 +21,33 @@ export default function GlobalTestimonial({ block, dataBinding }) {
         </div>
         <div className="row">
           {block.slider.map((slide, i) => (
-            <div
-              className="col-lg-4 col-md-6 mb-5"
-              key={i}
-              data-cms-bind={dataBinding ? `${dataBinding}.slider[${i}]` : null}
-            >
-              <div className="testimonial-item">
-                <div className="testimonial-item-person">
-                  <div className="thumb">
-                    <img
-                      src={slide.image}
-                      alt="logo"
-                      className={slide.image_alt}
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="content">
-                    <h3>{slide.author}</h3>
-                    <p>{slide.designation}</p>
-                  </div>
-                </div>
-                <p>{slide.message}</p>
-              </div>
-            </div>
+            <Testimonial slide={slide} i={i} key={i} />
           ))}
         </div>
       </div>
     </section>
+  );
+}
+function Testimonial({ slide, i }) {
+  return (
+    <div className="col-lg-4 col-md-6 mb-5" key={i}>
+      <div className="testimonial-item">
+        <div className="testimonial-item-person">
+          <div className="thumb">
+            <img
+              src={slide.image}
+              alt="logo"
+              className={slide.image_alt}
+              loading="lazy"
+            />
+          </div>
+          <div className="content">
+            <h3>{slide.author}</h3>
+            <p>{slide.designation}</p>
+          </div>
+        </div>
+        <p>{slide.message}</p>
+      </div>
+    </div>
   );
 }

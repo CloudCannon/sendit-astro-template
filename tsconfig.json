@@ -3,9 +3,18 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@data/*": ["data/*"],
-      "@components/*": ["src/components/*"],
-      "@layouts/*": ["src/layouts/*"],
+      "@data/*": [
+        "data/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@shared/*": [
+        "src/shared/astro/*"
+      ],
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"

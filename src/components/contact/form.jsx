@@ -1,6 +1,6 @@
-export default function ContactForm({ block, dataBinding }) {
+export default function ContactForm(block) {
   return (
-    <section className="contact" data-cms-bind={dataBinding}>
+    <section className="contact">
       <div className="container">
         <div className="row">
           <div className="col-lg-5 me-auto order-2 order-lg-1">

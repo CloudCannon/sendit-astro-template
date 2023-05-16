@@ -1,14 +1,13 @@
 import MarkdownIt from "markdown-it";
 const md = new MarkdownIt({ html: true });
 
-export default function GlobalCounter({ block, dataBinding }) {
+export default function GlobalCounter(block) {
   return (
     <section
       className={`counter-up ${
         block.alternate_style ? "counter-up-two pb-xxl-14 pb-lg-13" : ""
       }`}
       id="counter-up"
-      data-cms-bind={dataBinding}
     >
       <div className="container">
         <div className="row">
@@ -27,13 +26,7 @@ export default function GlobalCounter({ block, dataBinding }) {
           <div className="col-12">
             <div className="counter-up-wrapper d-grid">
               {block.numbers.map((number, i) => (
-                <div
-                  className="counter-up-content"
-                  key={i}
-                  data-cms-bind={
-                    dataBinding ? `${dataBinding}.numbers[${i}]` : null
-                  }
-                >
+                <div className="counter-up-content" key={i}>
                   <div className="counter-up-content-item">
                     <div className="counter-percent">
                       {number.prefix && (

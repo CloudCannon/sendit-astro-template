@@ -1,9 +1,9 @@
 import MarkdownIt from "markdown-it";
 const md = new MarkdownIt({ html: true });
 
-export default function AboutVideo({ block, dataBinding }) {
+export default function AboutVideo(block) {
   return (
-    <section className="works" data-cms-bind={dataBinding}>
+    <section className="works">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-lg-6">

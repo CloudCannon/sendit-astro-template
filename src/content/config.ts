@@ -32,6 +32,7 @@ const blogCollection = defineCollection({
 
 const pageSchema = z.object({
   _schema: z.any().optional(),
+  hidden: z.boolean().optional().default(false),
   title: z.string(),
   content_blocks: z.array(z.any()),
   page_size: z.undefined(),
@@ -41,6 +42,7 @@ const pageSchema = z.object({
 
 const paginatedCollectionSchema = z.object({
   _schema: z.literal("paginated_collection"),
+  hidden: z.literal(true).optional().default(true),
   title: z.string(),
   description: z.string().optional(),
   page_size: z.number().positive(),

@@ -1,7 +1,7 @@
 import MarkdownIt from "markdown-it";
 const md = new MarkdownIt({ html: true });
 
-export default function GlobalFeature({ block, dataBinding }) {
+export default function GlobalFeature(block) {
   let content = "";
   if (block.reversed) {
     content = (
@@ -71,7 +71,7 @@ export default function GlobalFeature({ block, dataBinding }) {
     );
   }
   return (
-    <section className="feature pt-sm-10 pt-5 pb-4" data-cms-bind={dataBinding}>
+    <section className="feature pt-sm-10 pt-5 pb-4">
       <div className="container">{content}</div>
     </section>
   );

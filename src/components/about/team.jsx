@@ -1,6 +1,6 @@
-export default function AboutTeam({ block, dataBinding }) {
+export default function AboutTeam(block) {
   return (
-    <div className="team" data-cms-bind={dataBinding}>
+    <div className="team">
       <div className="container">
         <div className="row">
           <div className="col-lg-10 col-xl-7 mx-auto">
@@ -11,13 +11,7 @@ export default function AboutTeam({ block, dataBinding }) {
         </div>
         <div className="row">
           {block.team_members.map((member, i) => (
-            <div
-              className="col-lg-3 col-md-6"
-              key={i}
-              data-cms-bind={
-                dataBinding ? `${dataBinding}.team_members[${i}]` : null
-              }
-            >
+            <div className="col-lg-3 col-md-6" key={i}>
               <div className="team-member">
                 <div className="team-member-thumb rounded-box">
                   <img
