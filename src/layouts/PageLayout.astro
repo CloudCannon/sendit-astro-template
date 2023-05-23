@@ -1,5 +1,5 @@
 ---
-import Blocks from "@shared/blocks";
+import Page from "@shared/page";
 import Layout, { SEOProps } from "./Layout.astro";
 
 type Props = {
@@ -17,5 +17,5 @@ const props = Astro.props.frontmatter;
 ---
 
 <Layout {...props}>
-  <Blocks bookshop:live contentBlocks={props.content_blocks} />
+  <Page bookshop:live contentBlocks={props.content_blocks} />
 </Layout>

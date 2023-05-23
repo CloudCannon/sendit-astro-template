@@ -2,7 +2,7 @@ const components = import.meta.glob("../../components/**/*.jsx", {
   eager: true,
 });
 
-export default function Blocks({ contentBlocks }) {
+export default function Page({ contentBlocks }) {
   return (
     <main>
       {contentBlocks.map((block, i) => {
