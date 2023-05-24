@@ -33,15 +33,15 @@
           "text": "Home"
         },
         {
-          "link": "/features",
+          "link": "/features/",
           "text": "Features"
         },
         {
-          "link": "/pricing",
+          "link": "/pricing/",
           "text": "Price"
         },
         {
-          "link": "/about",
+          "link": "/about/",
           "text": "About"
         }
       ]
@@ -50,7 +50,7 @@
       "title": "Community",
       "links": [
         {
-          "link": "/blog",
+          "link": "/blog/",
           "text": "Blog"
         },
         {
@@ -63,11 +63,11 @@
       "title": "Company",
       "links": [
         {
-          "link": "/contact",
+          "link": "/contact/",
           "text": "Contact"
         },
         {
-          "link": "/privacy",
+          "link": "/privacy/",
           "text": "Privacy Policy"
         }
       ]
