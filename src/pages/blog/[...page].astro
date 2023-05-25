@@ -6,11 +6,11 @@ import { getCollection, getEntryBySlug } from "astro:content";
 
 export async function getStaticPaths({ paginate }: { paginate: Function }) {
   const posts = await getCollection("blog");
-  const page = await getEntryBySlug("pages", "_blog");
+  const page = await getEntryBySlug("pages", "blog");
   return paginate(posts, { pageSize: page.data.page_size });
 }
 
-const page = await getEntryBySlug("pages", "_blog");
+const page = await getEntryBySlug("pages", "blog");
 const frontmatter = page.data as LayoutProps;
 const pagination = Astro.props.page;
 const { data: posts } = pagination;

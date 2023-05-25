@@ -118,7 +118,7 @@ export default function Navigation({ pageUrl }) {
                     <a
                       href={`${link.link}`}
                       className={`nav-link ${
-                        pageUrl.pathname === link.link ? "active" : ""
+                        pageUrl?.pathname === link.link ? "active" : ""
                       }`}
                     >
                       {link.text}

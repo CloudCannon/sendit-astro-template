@@ -1,36 +1,21 @@
 ---
-import Blocks from "@components/blocks";
-import type { MarkdownLayoutProps } from "astro";
+import Page from "@shared/page";
 import Layout, { SEOProps } from "./Layout.astro";
 
-type Props =
-  | {
-      title: string;
-      content_blocks: Array<Record<string, any>>;
-      seo?: SEOProps;
-    }
-  | MarkdownLayoutProps<{
-      title: string;
-      content_blocks: Array<Record<string, any>>;
-      seo?: SEOProps;
-    }>;
+type Props = {
+  frontmatter: {
+    title: string;
+    content_blocks: Array<Record<string, any>>;
+    seo?: SEOProps;
+  };
+};
 
-const props = Astro.props.frontmatter ?? Astro.props;
-const liveRender = import.meta.env.PUBLIC_LIVE_RENDER === "true";
+if (!Astro.props.frontmatter) {
+  throw new Error("Page frontmatter must be defined");
+}
+const props = Astro.props.frontmatter;
 ---
 
 <Layout {...props}>
-  <main>
-    {
-      liveRender ? (
-        <Blocks
-          contentBlocks={props.content_blocks}
-          client:load
-          dataBinding="#content_blocks"
-        />
-      ) : (
-        <Blocks contentBlocks={props.content_blocks} dataBinding={null} />
-      )
-    }
-  </main>
+  <Page bookshop:live contentBlocks={props.content_blocks} />
 </Layout>
