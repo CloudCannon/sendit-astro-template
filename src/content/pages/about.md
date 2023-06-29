@@ -13,14 +13,6 @@ content_blocks:
   - _bookshop_name: about/team
     title: Our leadership team
     team_members:
-      - name: Zachary Arias
-        designation: Co-founder & CTO
-        image: /images/team/4.jpg
-        image_alt: 'Team member: Zachary Arias'
-      - name: Piers Reyes
-        designation: Head of Marketing
-        image: /images/team/3.jpg
-        image_alt: 'Team member: Piers Reyes'
       - name: Nikolas Mcconnell
         designation: Co-Founder & CEO
         image: /images/team/1.jpg
@@ -29,14 +21,18 @@ content_blocks:
         designation: CMO
         image: /images/team/2.jpg
         image_alt: 'Team member: Keiren Mcculloch'
+      - name: Piers Reyes
+        designation: Head of Marketing
+        image: /images/team/3.jpg
+        image_alt: 'Team member: Piers Reyes'
+      - name: Zachary Arias
+        designation: Co-founder & CTO
+        image: /images/team/4.jpg
+        image_alt: 'Team member: Zachary Arias'
       - name: Harmony Dunlop
         designation: Head of Sales
         image: /images/team/5.jpg
         image_alt: 'Team member: Harmony Dunlop'
-      - name: Fran Figureson
-        designation: Head of People
-        image: /images/team/8.jpg
-        image_alt: 'Team member: Fran Figureson'
       - name: Elize Schwartz
         designation: CRO
         image: /images/team/6.jpg
@@ -45,6 +41,10 @@ content_blocks:
         designation: Head of Design
         image: /images/team/7.jpg
         image_alt: 'Team member: Coen Simmons'
+      - name: Fran Figureson
+        designation: Head of People
+        image: /images/team/8.jpg
+        image_alt: 'Team member: Fran Figureson'
   - _bookshop_name: global/counter
     title: Built for your
     title_suffix: Business
