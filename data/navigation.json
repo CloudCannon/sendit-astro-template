@@ -3,30 +3,56 @@
   "items": [
     {
       "link": "/",
-      "text": "Home"
+      "text": "Home",
+      "enable_dropdown": false,
+      "dropdown": []
     },
     {
-      "link": "/features/",
-      "text": "Features"
+      "link": "/feature/",
+      "text": "Feature",
+      "enable_dropdown": false,
+      "dropdown": []
     },
     {
       "link": "/pricing/",
-      "text": "Pricing"
+      "text": "Pricing",
+      "enable_dropdown": false,
+      "dropdown": []
     },
     {
       "link": "/about/",
-      "text": "About"
+      "text": "About",
+      "enable_dropdown": false,
+      "dropdown": []
     },
     {
       "link": "/blog/",
-      "text": "Blog"
+      "text": "Blog",
+      "enable_dropdown": true,
+      "dropdown": [
+        {
+          "dropdown_text": "All Articles",
+          "dropdown_link": "/blog"
+        },
+        {
+          "dropdown_text": "Marketing",
+          "dropdown_link": "/tags/marketing/"
+        },
+        {
+          "dropdown_text": "Technology",
+          "dropdown_link": "/tags/technology/"
+        }
+      ]
     },
     {
       "link": "/contact/",
-      "text": "Contact"
+      "text": "Contact",
+      "enable_dropdown": false,
+      "dropdown": []
     }
   ],
-  "btn": {
+  "enable_nav_btn": true,
+  "nav_btn": {
     "link": "/signup/",
     "text": "Get Started"
   }
