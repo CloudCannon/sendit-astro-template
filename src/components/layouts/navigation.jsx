@@ -163,17 +163,21 @@ export default function Navigation({ pageUrl }) {
               ))}
             </ul>
           </div>
+          { navigation.enable_nav_btn ? (
+            <>
             <div className="d-none d-lg-block">
               <div className="nav-item">
                 <a
-                  href={`${navigation.btn?.link}`}
+                  href={`${navigation.nav_btn?.link}`}
                   className="btn btn-sm btn-links"
                 >
-                  {navigation.btn?.text}
+                  {navigation.nav_btn?.text}
                 </a>
               </div>
             </div>
-          </div>
+            </>
+          ) : null }
+        </div>
         </nav>
       </header>
     </>
