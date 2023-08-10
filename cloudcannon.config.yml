@@ -98,7 +98,7 @@ collection_groups:
       - pages
   - heading: Blogging
     collections:
-      - blog
+      - posts
   - heading: Site Settings
     collections:
       - data
