@@ -2,11 +2,10 @@ paths:
   data: data
   static: public
   uploads: public/uploads
-data_config:
-  blog-tags: true
+
 collections_config:
   data:
-    path: "data"
+    path: data
     disable_add: true
     disable_add_folder: true
     filter:
@@ -66,7 +65,7 @@ collections_config:
     filter:
       base: strict
   theme_palette:
-    path: "data" 
+    path: data 
     output: true 
     icon: color_lens
     _enabled_editors:
@@ -78,7 +77,7 @@ collections_config:
       include: 
         - theme.json 
   site_navigation:
-    path: "data"
+    path: data
     output: true
     icon: table_rows 
     _enabled_editors:
@@ -227,8 +226,6 @@ _inputs:
     type: image
   categories:
       type: multiselect
-      options: 
-        values: data.blog-tags
   twitter_site:
     type: twitter
     label: Twitter Username
