@@ -77,19 +77,19 @@ collections_config:
       base: none 
       include: 
         - theme.json 
-    site_navigation:
-      path: data
-      output: true
-      icon: table_rows 
-      _enabled_editors:
-        - data
-      disable_add: true
-      disable_add_folder: true
-      filter:
-        base: none
-        include:
-          - navigation.json
-          - footer.json
+  site_navigation:
+    path: data
+    output: true
+    icon: table_rows 
+    _enabled_editors:
+      - data
+    disable_add: true
+    disable_add_folder: true
+    filter:
+      base: none
+      include:
+        - navigation.json
+        - footer.json
 
 
 collection_groups:
@@ -101,9 +101,9 @@ collection_groups:
       - blog
   - heading: Site Settings
     collections:
-      - meta_data
-      - theme_palette
+      - data
       - site_navigation
+      - theme_palette
 
 _structures:
   content_blocks:
