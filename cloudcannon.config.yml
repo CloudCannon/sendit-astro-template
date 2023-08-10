@@ -2,7 +2,8 @@ paths:
   data: data
   static: public
   uploads: public/uploads
-
+data_config:
+  blog-tags: true 
 collections_config:
   data:
     path: data
@@ -226,6 +227,8 @@ _inputs:
     type: image
   categories:
       type: multiselect
+      options: 
+        values: data.blog-tags
   twitter_site:
     type: twitter
     label: Twitter Username
