@@ -228,7 +228,7 @@ _inputs:
   categories:
       type: multiselect
       options: 
-        values: "data.blog-tags"
+        values: data.blog-tags
   twitter_site:
     type: twitter
     label: Twitter Username
