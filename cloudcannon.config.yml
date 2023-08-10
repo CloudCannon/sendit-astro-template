@@ -3,7 +3,8 @@ paths:
   static: public
   uploads: public/uploads
 data_config:
-  blog-tags: true 
+  blog-tags:
+    path: data/blog-tags.json  
 collections_config:
   data:
     path: data
