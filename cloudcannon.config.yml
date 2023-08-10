@@ -2,6 +2,8 @@ paths:
   data: data
   static: public
   uploads: public/uploads
+data_config:
+  blog-tags: true
 collections_config:
   data:
     path: data
