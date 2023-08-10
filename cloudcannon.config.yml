@@ -7,6 +7,11 @@ collections_config:
     path: data
     disable_add: true
     disable_add_folder: true
+    filter:
+      exclude:
+        - footer.json
+        - navigation.json
+        - theme.json
   posts:
     path: src/content/blog
     output: true
@@ -58,6 +63,83 @@ collections_config:
         empty_type: array
     filter:
       base: strict
+  theme_palette:
+    path: data 
+    output: true 
+    icon: color_lens
+    _enabled_editors:
+      - data 
+    disable_add: true
+    disable_add_folder: true 
+    filter:
+      base: none 
+      include: 
+        - theme.json 
+    site_navigation:
+      path: data
+      output: true
+      icon: table_rows 
+      _enabled_editors:
+        - data
+      disable_add: true
+      disable_add_folder: true
+      filter:
+        base: none
+        include:
+          - navigation.json
+          - footer.json
+
+
+collection_groups:
+  - heading: Pages
+    collections:
+      - pages
+  - heading: Blogging
+    collections:
+      - blog
+  - heading: Site Settings
+    collections:
+      - meta_data
+      - theme_palette
+      - site_navigation
+
+_structures:
+  content_blocks:
+    style: modal
+  features:
+    values:
+      - value:
+          item:
+          isActive:
+  dropdown: 
+    values:
+      value:
+        dropdown_text:
+        dropdown_link:
+  social:
+    values:
+      value:
+        link: 
+        icon: 
+        icon_alt:
+  sections:
+    values:
+      value:
+        title:
+        links:  
+  links:
+    values:
+      value:
+        link:
+        text: 
+  items:
+    values: 
+      value: 
+        link: 
+        text: 
+        enable_dropdown:
+        dropdown:
+
 _inputs:
   layout:
     hidden: true
@@ -68,18 +150,22 @@ _inputs:
   page_size:
     type: number
     comment: The number of collection items to list per page
-  social:
+  content:
+    type: markdown
+  icon:
+    type: select
     options:
-      preview:
-        icon: link
-  links:
+      values:
+        - ph-user-square
+  description:
+    type: markdown
     options:
-      preview:
-        icon: link
-  items:
-    options:
-      preview:
-        icon: link
+      bold: true
+      italic: true
+      link: true
+      removeformat: true
+  isActive:
+    type: switch
   social[*].icon:
     type: select
     options:
@@ -89,36 +175,66 @@ _inputs:
         - ph-twitter-logo
         - ph-github-logo
         - ph-youtube-logo
-  logo_url:
-    comment: Link for the logo in the top left of the footer
-  copyright:
-    comment: Automatically prefixed with the current year
-  isActive:
-    type: switch
   page_description:
-    comment: Defaults to the description set in the Site SEO data file
+    comment: If empty, defaults to the description set in the Site SEO data file 
+    type: text 
+  canonical_url:
+    comment: If empty, defaults to the URL of the page 
+    type: text
+  featured_image:
+    comment: If empty, defaults to the image set in the Site SEO data file
+    type: image
+  author_twitter_handle:
+    type: twitter
+    comment: Defaults to the twitter site value set in the Site SEO data file
+  no_index:
+    type: checkbox
+    comment: When selected this removes the page from your sitemap and adds the noindex robots meta tag
+  open_graph_type:
+    type: select
+    options:
+      values: 
+        - website
+        - article
+        - profile
   favicon_icon:
     type: image
     comment: For the shortcut icon meta tag
   faivcon_image:
     type: image
     comment: For the icon meta tag
-  canonical_url:
-    comment: Defaults to the pages url
-  featured_image:
-    comment: Defaults to the image set in the Site SEO data file
-  open_graph_type:
-    comment: Defaults to the type 'website'
-  author_twitter_handle:
-    comment: Defaults to the twitter site value set in the Site SEO data file
-  no_index:
-    type: checkbox
-    comment:
-      When selected this removes the page from your sitemap and adds the noindex
-      robots meta tag
-_structures:
-  features:
-    values:
-      - value:
-          item:
-          isActive:
+  enable_dropdown:
+    type: switch
+  dropdown:
+    type: array
+    options: 
+      structures: _structures.dropdown
+    label: Dropdown Items
+    hidden: "!enable_dropdown"
+  dropdown_link:
+    type: url
+    label: Link
+  dropdown_text:
+    type: text
+    label: Name
+  items: 
+    type: array 
+    options: 
+      structures: _structures.items
+  logo:
+    type: image
+  categories:
+      type: multiselect
+      options: 
+        values: data.blog-tags
+  twitter_site:
+    type: twitter
+    label: Twitter Username
+  logo_url:
+      comment: Link for the logo in the top left of the footer
+  copyright:
+    comment: Automatically prefixed with the current year
+  enable_nav_btn:
+    type: switch
+  nav_btn:
+    hidden: "!enable_nav_btn"
