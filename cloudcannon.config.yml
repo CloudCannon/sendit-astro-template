@@ -203,7 +203,7 @@ _inputs:
   favicon_icon:
     type: image
     comment: For the shortcut icon meta tag
-  faivcon_image:
+  favicon_image:
     type: image
     comment: For the icon meta tag
   enable_dropdown:
