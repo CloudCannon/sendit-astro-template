@@ -1,7 +1,7 @@
 paths:
   data: data
   static: public
-  uploads: public/uploads
+  uploads: public/images
 data_config:
   blog-tags:
     path: data/blog-tags.json  
