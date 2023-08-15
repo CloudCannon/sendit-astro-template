@@ -20,23 +20,25 @@ export default function Navigation({ pageUrl }) {
     navbar.toggleClass("bg-nav");
   };
 
+  
   const handleDropdownClick = (e) => {
-    if (window.innerWidth < 991.98) {
-      e.preventDefault();
+    if (window.innerWidth >= 991.98) return;
   
-      const parentDropdown = e.target.closest('.dropdown');
-      if (!parentDropdown) return;
+    e.preventDefault();
   
-      const wasOpen = parentDropdown.classList.contains('show');
+    const parentDropdown = e.target.closest('.dropdown');
+    if (!parentDropdown) return;
   
-      document.querySelectorAll('.dropdown, .dropdown-menu').forEach(el => el.classList.remove('show'));
+    const wasOpen = parentDropdown.classList.contains('show');
+
+    document.querySelectorAll('.dropdown.show, .dropdown-menu.show').forEach(el => el.classList.remove('show'));
   
-      if (!wasOpen) {
-        parentDropdown.classList.add('show');
-        parentDropdown.querySelector('.dropdown-menu').classList.add('show');
-      }
+    if (!wasOpen) {
+      parentDropdown.classList.add('show');
+      parentDropdown.querySelector('.dropdown-menu').classList.add('show');
     }
   };
+  
   
 
   return (
