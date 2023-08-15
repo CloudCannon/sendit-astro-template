@@ -228,7 +228,7 @@ _inputs:
       structures: _structures.items
   logo:
     type: image
-  categories:
+  tags:
       type: multiselect
       options: 
         values: data.blog-tags
