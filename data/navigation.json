@@ -2,32 +2,32 @@
   "logo": "/images/logo.svg",
   "items": [
     {
-      "link": "/",
       "text": "Home",
+      "link": "/",
       "enable_dropdown": false,
       "dropdown": []
     },
     {
-      "link": "/features/",
       "text": "Features",
+      "link": "/features/",
       "enable_dropdown": false,
       "dropdown": []
     },
     {
-      "link": "/pricing/",
       "text": "Pricing",
+      "link": "/pricing/",
       "enable_dropdown": false,
       "dropdown": []
     },
     {
-      "link": "/about/",
       "text": "About",
+      "link": "/about/",
       "enable_dropdown": false,
       "dropdown": []
     },
     {
-      "link": "/blog/",
       "text": "Blog",
+      "link": "/blog/",
       "enable_dropdown": true,
       "dropdown": [
         {
@@ -45,15 +45,15 @@
       ]
     },
     {
-      "link": "/contact/",
       "text": "Contact",
+      "link": "/contact/",
       "enable_dropdown": false,
       "dropdown": []
     }
   ],
   "enable_nav_btn": true,
   "nav_btn": {
-    "link": "/signup/",
-    "text": "Get Started"
+    "text": "Get Started",
+    "link": "/signup/"
   }
 }
