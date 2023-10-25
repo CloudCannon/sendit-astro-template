@@ -13,10 +13,10 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
 const page = await getEntryBySlug("pages", "blog");
 const frontmatter = page.data as LayoutProps;
 const pagination = Astro.props.page;
-const { data: posts } = pagination;
+const posts = pagination.data.filter((post: any) => !post.data.draft);
 ---
 
 <Layout {...frontmatter}>
   <BlogList posts={posts} page={page.data} />
-  <BlogPagination pagination={pagination} />
+  <BlogPagination pagination={{...pagination, data:posts}} />
 </Layout>

@@ -20,13 +20,32 @@ export default function Navigation({ pageUrl }) {
     navbar.toggleClass("bg-nav");
   };
 
+  
+  const handleDropdownClick = (e) => {
+    if (window.innerWidth >= 991.98) return;
+  
+    e.preventDefault();
+  
+    const parentDropdown = e.target.closest('.dropdown');
+    if (!parentDropdown) return;
+  
+    const wasOpen = parentDropdown.classList.contains('show');
+
+    document.querySelectorAll('.dropdown.show, .dropdown-menu.show').forEach(el => el.classList.remove('show'));
+  
+    if (!wasOpen) {
+      parentDropdown.classList.add('show');
+      parentDropdown.querySelector('.dropdown-menu').classList.add('show');
+    }
+  };
+  
+  
+
   return (
     <>
       <header>
         <nav
-          className={`navbar navbar-expand-lg position-fixed w-100 zindex-dropdown${
-            isSticky ? " sticky-nav" : ""
-          }`}
+          className={`navbar navbar-expand-lg position-fixed w-100 zindex-dropdown${isSticky ? " sticky-nav" : ""}`}
           id="mainnavigationBar"
         >
           <div className="container-fluid">
@@ -107,37 +126,60 @@ export default function Navigation({ pageUrl }) {
                   />
                 </svg>
               </span>
-            </button>
-            <div
-              className="collapse navbar-collapse"
-              id="navbarSupportedContent"
-            >
-              <ul className="navbar-nav mx-auto mb-20 mb-lg-0">
-                {navigation.items.map((link, i) => (
-                  <li key={i} className="nav-item">
+            </button> 
+          <div
+            className="collapse navbar-collapse"
+            id="navbarSupportedContent"
+          >
+            <ul className="navbar-nav mx-auto mb-20 mb-lg-0">
+              {navigation.items.map((item, i) => (
+                <li key={i} className={`nav-item ${item.enable_dropdown && item.dropdown ? 'dropdown' : ''}`}>
+                  {item.enable_dropdown && item.dropdown ? (
+                    <>
+                      <a
+                        href={`${item.link}`}
+                        className={`nav-link dropdown-link ${pageUrl?.pathname === item.link ? "active" : ""}`}
+                        onClick={handleDropdownClick}
+                      >
+                        {item.text}
+                      </a>
+                      <ul className="dropdown-menu">
+                        {item.dropdown.map((dropdown_item, j) => (
+                          <li key={j}>
+                            <a className="dropdown-item" href={dropdown_item.dropdown_link}>
+                              {dropdown_item.dropdown_text}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  ) : (
                     <a
-                      href={`${link.link}`}
-                      className={`nav-link ${
-                        pageUrl?.pathname === link.link ? "active" : ""
-                      }`}
+                      href={`${item.link}`}
+                      className={`nav-link ${pageUrl?.pathname === item.link ? "active" : ""}`}
                     >
-                      {link.text}
+                      {item.text}
                     </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+          { navigation.enable_nav_btn ? (
+            <>
             <div className="d-none d-lg-block">
               <div className="nav-item">
                 <a
-                  href={`${navigation.btn.link}`}
+                  href={`${navigation.nav_btn?.link}`}
                   className="btn btn-sm btn-links"
                 >
-                  {navigation.btn.text}
+                  {navigation.nav_btn?.text}
                 </a>
               </div>
             </div>
-          </div>
+            </>
+          ) : null }
+        </div>
         </nav>
       </header>
     </>
