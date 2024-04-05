@@ -13,7 +13,7 @@ blueprint:
   team_members:
     - name: Cody Fisher
       designation: Co-Founder & CEO
-      image: /images/team/team-member-1.jpg
+      image: /images/team/1.jpg
       image_alt: "Team member: Cody Fisher"
 
 # Overrides any fields in the blueprint when viewing this component in the component browser

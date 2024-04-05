@@ -2,32 +2,58 @@
   "logo": "/images/logo.svg",
   "items": [
     {
+      "text": "Home",
       "link": "/",
-      "text": "Home"
+      "enable_dropdown": false,
+      "dropdown": []
     },
     {
+      "text": "Features",
       "link": "/features/",
-      "text": "Features"
+      "enable_dropdown": false,
+      "dropdown": []
     },
     {
+      "text": "Pricing",
       "link": "/pricing/",
-      "text": "Pricing"
+      "enable_dropdown": false,
+      "dropdown": []
     },
     {
+      "text": "About",
       "link": "/about/",
-      "text": "About"
+      "enable_dropdown": false,
+      "dropdown": []
     },
     {
+      "text": "Blog",
       "link": "/blog/",
-      "text": "Blog"
+      "enable_dropdown": true,
+      "dropdown": [
+        {
+          "dropdown_text": "All Articles",
+          "dropdown_link": "/blog"
+        },
+        {
+          "dropdown_text": "Marketing",
+          "dropdown_link": "/tags/marketing/"
+        },
+        {
+          "dropdown_text": "Technology",
+          "dropdown_link": "/tags/technology/"
+        }
+      ]
     },
     {
+      "text": "Contact",
       "link": "/contact/",
-      "text": "Contact"
+      "enable_dropdown": false,
+      "dropdown": []
     }
   ],
-  "btn": {
-    "link": "/signup/",
-    "text": "Get Started"
+  "enable_nav_btn": true,
+  "nav_btn": {
+    "text": "Get Started",
+    "link": "/signup/"
   }
 }
