@@ -43,6 +43,10 @@
           margin-bottom: $base-margin * 3.3;
         }
       }
+      img {
+        max-height: 104px;
+        max-width: 100%;
+      }
     }
     .social-icon {
       position: relative;
