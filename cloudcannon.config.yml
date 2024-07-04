@@ -146,7 +146,7 @@ _structures:
         dropdown:
 
 _inputs:
-  thumb_image:
+  thumb_image.image:
     type: image
     options:
       width: 500
@@ -194,6 +194,7 @@ _inputs:
     type: text
   featured_image:
     comment: If empty, defaults to the image set in the Site SEO data file
+  featured_image.image:
     type: image
     options:
       width: 1296
