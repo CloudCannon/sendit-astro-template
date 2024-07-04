@@ -83,6 +83,22 @@ module.exports = {
     },
   },
   _inputs: {
+    thumb_image: {
+      type: image,
+      options: {
+        width: 500,
+        height: 413,
+        resize_style: crop
+      }
+    },
+    featured_image: {
+      type: image,
+      options: {
+        width: 1296,
+        height: 710,
+        resize_style: crop
+      }
+    },
     layout: {
       hidden: true,
     },
