@@ -15,6 +15,7 @@ Sendit is a polished, marketing website template for Astro. Browse through a [li
 - Multiple hero options
 - Configurable theme colors
 - Optimised for editing in [CloudCannon](https://cloudcannon.com/)
+- Live, visual editing powered by [Bookshop](https://github.com/CloudCannon/bookshop)
 
 ## Setup
 

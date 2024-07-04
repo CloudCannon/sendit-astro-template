@@ -11,7 +11,7 @@ seo:
 content_blocks:
   - _bookshop_name: privacy/hero
     title: Terms & Conditions
-  - _bookshop_name: privacy/privacy
+  - _bookshop_name: privacy
     terms_and_conditions:
       - heading: Sendit Terms And Conditions
         description: >-
