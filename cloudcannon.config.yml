@@ -146,6 +146,12 @@ _structures:
         dropdown:
 
 _inputs:
+  thumb_image.image:
+    type: image
+    options:
+      width: 500
+      height: 413
+      resize_style: crop
   layout:
     hidden: true
   date:
@@ -188,7 +194,6 @@ _inputs:
     type: text
   featured_image:
     comment: If empty, defaults to the image set in the Site SEO data file
-    type: image
   author_twitter_handle:
     type: twitter
     comment: Defaults to the twitter site value set in the Site SEO data file

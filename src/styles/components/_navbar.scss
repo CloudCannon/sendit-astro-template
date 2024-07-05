@@ -54,6 +54,11 @@
   margin-right: 0;
   font-size: 1.25rem;
   width: 155px;
+
+  img {
+    max-height: 52px;
+    max-width: 155px;
+  }
 }
 
 @include media-breakpoint-down-sm {

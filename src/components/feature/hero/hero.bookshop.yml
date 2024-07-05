@@ -24,3 +24,9 @@ preview:
 _inputs:
   description:
     type: markdown
+  image:
+    type: image
+    options:
+      width: 696
+      height: 721
+      resize_style: crop
