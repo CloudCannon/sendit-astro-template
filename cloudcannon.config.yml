@@ -152,6 +152,11 @@ _inputs:
       width: 500
       height: 413
       resize_style: crop
+  featured_image.image:
+    type: image
+    options:
+      width: 1296
+      resize_style: crop
   layout:
     hidden: true
   date:
