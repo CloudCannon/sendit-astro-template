@@ -10,7 +10,7 @@ thumb_image:
   image: /images/blog/blog-thumb-6.jpg
   image_alt: People working on laptops and looking at charts
 featured_image:
-  image: /images/blog/featured-image-2.jpg
+  image: /uploads/cat-long.jpg
   image_alt: Children looking at a laptop
 seo:
   page_description:
