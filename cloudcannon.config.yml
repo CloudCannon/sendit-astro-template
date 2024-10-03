@@ -29,10 +29,6 @@ collections_config:
         empty_type: string
       author:
         empty_type: string
-      tags:
-        type: multiselect
-        allow_create: true
-        empty_type: array
   pages:
     path: src/content/pages
     url: "/[slug]/"
@@ -234,6 +230,7 @@ _inputs:
     type: image
   tags:
       type: multiselect
+      empty_type: array
       options: 
         values: data.blog-tags
   twitter_site:
