@@ -1,6 +1,6 @@
 {
   "ssg": "astro",
-  "build_configuration": {
+  "build": {
     "preserved_paths": "node_modules/",
     "environment_variables": [{ "key": "PUBLIC_LIVE_RENDER", "value": "true" }],
     "install_command": "npm install",

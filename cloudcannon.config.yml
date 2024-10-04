@@ -1,23 +1,12 @@
 paths:
-  data: data
   static: public
   uploads: public/uploads
 data_config:
   blog-tags:
     path: data/blog-tags.json  
 collections_config:
-  data:
-    path: data
-    disable_add: true
-    disable_add_folder: true
-    filter:
-      exclude:
-        - footer.json
-        - navigation.json
-        - theme.json
   posts:
     path: src/content/blog
-    output: true
     url: "/blog/[slug]/"
     disable_add_folder: true
     _enabled_editors:
@@ -40,14 +29,9 @@ collections_config:
         empty_type: string
       author:
         empty_type: string
-      tags:
-        type: multiselect
-        allow_create: true
-        empty_type: array
   pages:
     path: src/content/pages
     url: "/[slug]/"
-    output: true
     icon: wysiwyg
     disable_add_folder: true
     _enabled_editors:
@@ -68,31 +52,12 @@ collections_config:
         empty_type: array
     filter:
       base: strict
-  theme_palette:
-    path: data 
-    output: true 
-    icon: color_lens
-    _enabled_editors:
-      - data 
-    disable_add: true
-    disable_add_folder: true 
-    filter:
-      base: none 
-      include: 
-        - theme.json 
-  site_navigation:
+  data:
     path: data
-    output: true
-    icon: table_rows 
-    _enabled_editors:
-      - data
     disable_add: true
     disable_add_folder: true
-    filter:
-      base: none
-      include:
-        - navigation.json
-        - footer.json
+    disable_url: true
+    icon: data_usage
 
 
 collection_groups:
@@ -240,6 +205,7 @@ _inputs:
     type: image
   tags:
       type: multiselect
+      empty_type: array
       options: 
         values: data.blog-tags
   twitter_site:

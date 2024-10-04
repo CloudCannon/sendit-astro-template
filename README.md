@@ -38,7 +38,6 @@ Sendit is set up for adding, updating and removing pages, components, posts, por
 ### Posts
 
 - Add, update or remove a post in the _Posts_ collection.
-- The **Staff Author** field links to members in the **Staff** collection.
 - Change the defaults when new posts are created in `content/posts/_defaults.md`.
 
 ### Company details
@@ -49,10 +48,10 @@ Sendit is set up for adding, updating and removing pages, components, posts, por
 ### Nav/footer details
 
 - Reused around the site to save multiple editing locations.
-- Set in the _Data_ section with respective names
+- Set in the _Site Navigation_ section with respective names
 
 ### Theme colors
 
-- Theme colors can be set in _Data_ / _Theme_
+- Theme colors can be set in  _Theme Palette_
 - The main colors are set and variants of them are computed
 - The colors will update on the next build
