@@ -54,35 +54,10 @@ collections_config:
       base: strict
   data:
     path: data
-    glob:
-      - '!footer.json'
-      - '!navigation.json'
-      - '!theme.json'
     disable_add: true
     disable_add_folder: true
     disable_url: true
     icon: data_usage
-  theme_palette:
-    path: data
-    glob: 
-      - "theme.json"
-    icon: color_lens
-    _enabled_editors:
-      - data 
-    disable_add: true
-    disable_add_folder: true 
-    disable_url: true
-  site_navigation:
-    path: data
-    glob:
-      - 'navigation.json'
-      - 'footer.json'
-    icon: table_rows 
-    _enabled_editors:
-      - data
-    disable_add: true
-    disable_add_folder: true
-    disable_url: true
 
 
 collection_groups:
