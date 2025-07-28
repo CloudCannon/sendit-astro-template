@@ -22,13 +22,21 @@ collections_config:
         path: schemas/post.md
     _inputs:
       title:
-        empty_type: string
+        type: text
+        options:
+          empty_type: string
       image:
-        empty_type: string
+        type: image
+        options:
+          empty_type: string
       image_alt:
-        empty_type: string
+        type: text
+        options:
+          empty_type: string
       author:
-        empty_type: string
+        type: text
+        options:
+          empty_type: string
   pages:
     path: src/content/pages
     url: "/[slug]/"
@@ -49,16 +57,15 @@ collections_config:
         path: schemas/paginated-collection.md
     _inputs:
       content_blocks:
-        empty_type: array
-    filter:
-      base: strict
+        type: array
+        options:
+          empty_type: array
   data:
     path: data
     disable_add: true
     disable_add_folder: true
     disable_url: true
     icon: data_usage
-
 
 collection_groups:
   - heading: Pages
@@ -74,8 +81,6 @@ collection_groups:
       - theme_palette
 
 _structures:
-  content_blocks:
-    style: modal
   features:
     values:
       - value:
@@ -83,32 +88,32 @@ _structures:
           isActive:
   dropdown: 
     values:
-      value:
-        dropdown_text:
-        dropdown_link:
+      - value:
+          dropdown_text:
+          dropdown_link:
   social:
     values:
-      value:
-        link: 
-        icon: 
-        icon_alt:
+      - value:
+          link: 
+          icon: 
+          icon_alt:
   sections:
     values:
-      value:
-        title:
-        links:  
+      - value:
+          title:
+          links:  
   links:
     values:
-      value:
-        text: 
-        link:
+      - value:
+          text: 
+          link:
   items:
     values: 
-      value: 
-        link: 
-        text: 
-        enable_dropdown:
-        dropdown:
+      - value: 
+          link: 
+          text: 
+          enable_dropdown:
+          dropdown:
 
 _inputs:
   thumb_image.image:
@@ -125,7 +130,7 @@ _inputs:
   layout:
     hidden: true
   date:
-    instance_value: now
+    instance_value: NOW
   title_suffix:
     comment: Added at the end of the title and highlighted in a different color
   page_size:
@@ -205,8 +210,8 @@ _inputs:
     type: image
   tags:
       type: multiselect
-      empty_type: array
       options: 
+        empty_type: array
         values: data.blog-tags
   twitter_site:
     type: twitter
