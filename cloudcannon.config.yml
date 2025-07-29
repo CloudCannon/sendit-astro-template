@@ -267,6 +267,10 @@ _structures:
             hidden: "!enable_dropdown"
         preview:
           icon: link
+          text:
+            - key: text
+          subtext: 
+            - key: link
   dropdown: 
     values:
       - value:
