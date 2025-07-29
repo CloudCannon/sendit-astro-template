@@ -126,6 +126,11 @@ data_config:
     path: data/blog-tags.json  
 
 _inputs:
+  image:
+    type: image
+    options:
+      max_file_size: 5000
+      max_file_size_message: For page performance, keep images under 5MB. Before uploading, consider processing your image to be a smaller size, or lower quality. If needed, this maximum can be configured in your cloudcannon.config.yml file.
   button:
     type: object
     options:
