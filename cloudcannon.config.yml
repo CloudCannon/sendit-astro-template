@@ -207,6 +207,12 @@ _structures:
           icon_alt:
         preview:
           icon: diversity_1
+          text:
+            - key: icon_alt
+            - Social Link
+          subtext: 
+            - key: link
+            - Update Social Link details
         _inputs:
           icon:
             type: select

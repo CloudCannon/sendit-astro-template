@@ -5,31 +5,31 @@
       "text": "Home",
       "link": "/",
       "enable_dropdown": false,
-      "nav_dropdown": []
+      "dropdown": []
     },
     {
       "text": "Features",
       "link": "/features/",
       "enable_dropdown": false,
-      "nav_dropdown": []
+      "dropdown": []
     },
     {
       "text": "Pricing",
       "link": "/pricing/",
       "enable_dropdown": false,
-      "nav_dropdown": []
+      "dropdown": []
     },
     {
       "text": "About",
       "link": "/about/",
       "enable_dropdown": false,
-      "nav_dropdown": []
+      "dropdown": []
     },
     {
       "text": "Blog",
       "link": "/blog/",
       "enable_dropdown": true,
-      "nav_dropdown": [
+      "dropdown": [
         {
           "dropdown_text": "All Articles",
           "dropdown_link": "/blog"
@@ -48,7 +48,7 @@
       "text": "Contact",
       "link": "/contact/",
       "enable_dropdown": false,
-      "nav_dropdown": []
+      "dropdown": []
     }
   ],
   "enable_nav_btn": true,
