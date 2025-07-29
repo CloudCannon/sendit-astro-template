@@ -2,6 +2,12 @@ paths:
   static: public
   uploads: public/uploads
 
+commit_templates:
+  - label: Default message
+    template_string: '[default_commit_message]'
+  - label: Custom message
+    template_string: '{message}'
+
 collections_config:
   posts:
     path: src/content/blog
@@ -22,10 +28,7 @@ collections_config:
       title:
         type: text
         options:
-          empty_type: string
-      image:
-        type: image
-        options:
+          required: true
           empty_type: string
       image_alt:
         type: text
@@ -35,6 +38,19 @@ collections_config:
         type: text
         options:
           empty_type: string
+      thumb_image.image:
+        type: image
+        options:
+          required: true
+          width: 500
+          height: 413
+          resize_style: crop
+      featured_image.image:
+        type: image
+        comment: The hero image used at the top of the page
+        options:
+          width: 1296
+          resize_style: crop
   pages:
     path: src/content/pages
     url: "/[slug]/"
@@ -115,17 +131,6 @@ _inputs:
     options:
       preview:
         icon: smart_button
-  thumb_image.image:
-    type: image
-    options:
-      width: 500
-      height: 413
-      resize_style: crop
-  featured_image.image:
-    type: image
-    options:
-      width: 1296
-      resize_style: crop
   layout:
     hidden: true
   date:

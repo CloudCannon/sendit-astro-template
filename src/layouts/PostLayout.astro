@@ -69,13 +69,17 @@ const posts = await getCollection("blog");
                 </ul>
               </div>
             </div>
-            <div class="rounded-box mb-xxl-11 mb-8">
-              <img
-                src={featured_image.image}
-                class="w-100"
-                alt={featured_image.image_alt}
-              />
-            </div>
+            {
+              featured_image.image && (
+                <div class="rounded-box mb-xxl-11 mb-8">
+                  <img
+                    src={featured_image.image}
+                    class="w-100"
+                    alt={featured_image.image_alt}
+                  />
+                </div>
+              )
+            }
             <div style={{ "max-width": "900px", margin: "0 auto" }}>
               <slot />
             </div>
