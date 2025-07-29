@@ -5,23 +5,28 @@
   "social": [
     {
       "link": "https://www.facebook.com/mycompany",
-      "social_icon": "ph-facebook-logo"
+      "social_icon": "ph-facebook-logo",
+      "icon_alt": "facebook"
     },
     {
       "link": "https://www.instagram.com/mycompany",
-      "social_icon": "ph-instagram-logo"
+      "social_icon": "ph-instagram-logo",
+      "icon_alt": "instagram"
     },
     {
       "link": "https://www.twitter.com/mycompany",
-      "social_icon": "ph-twitter-logo"
+      "social_icon": "ph-twitter-logo",
+      "icon_alt": "twitter"
     },
     {
       "link": "https://www.github.com/mycompany",
-      "social_icon": "ph-github-logo"
+      "social_icon": "ph-github-logo",
+      "icon_alt": "github"
     },
     {
       "link": "https://www.youtube.com/mycompany",
-      "social_icon": "ph-youtube-logo"
+      "social_icon": "ph-youtube-logo",
+      "icon_alt": "youtube"
     }
   ],
   "sections": [

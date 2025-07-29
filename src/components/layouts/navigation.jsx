@@ -132,7 +132,7 @@ export default function Navigation({ pageUrl }) {
             id="navbarSupportedContent"
           >
             <ul className="navbar-nav mx-auto mb-20 mb-lg-0">
-              {navigation.items.map((item, i) => (
+              {navigation.nav_items.map((item, i) => (
                 <li key={i} className={`nav-item ${item.enable_dropdown && item.dropdown ? 'dropdown' : ''}`}>
                   {item.enable_dropdown && item.dropdown ? (
                     <>
