@@ -1,9 +1,7 @@
 paths:
   static: public
   uploads: public/uploads
-data_config:
-  blog-tags:
-    path: data/blog-tags.json  
+
 collections_config:
   posts:
     path: src/content/blog
@@ -19,7 +17,7 @@ collections_config:
     schemas:
       default:
         name: New Post
-        path: schemas/post.md
+        path: .cloudcannon/schemas/post.md
     _inputs:
       title:
         type: text
@@ -51,10 +49,10 @@ collections_config:
     schemas:
       default:
         name: New Page
-        path: schemas/page.md
+        path: .cloudcannon/schemas/page.md
         new_preview_url: "/"
       paginated_collection:
-        path: schemas/paginated-collection.md
+        path: .cloudcannon/schemas/paginated-collection.md
     _inputs:
       content_blocks:
         type: array
@@ -80,40 +78,9 @@ collection_groups:
       - site_navigation
       - theme_palette
 
-_structures:
-  features:
-    values:
-      - value:
-          item:
-          isActive:
-  dropdown: 
-    values:
-      - value:
-          dropdown_text:
-          dropdown_link:
-  social:
-    values:
-      - value:
-          link: 
-          icon: 
-          icon_alt:
-  sections:
-    values:
-      - value:
-          title:
-          links:  
-  links:
-    values:
-      - value:
-          text: 
-          link:
-  items:
-    values: 
-      - value: 
-          link: 
-          text: 
-          enable_dropdown:
-          dropdown:
+data_config:
+  blog-tags:
+    path: data/blog-tags.json  
 
 _inputs:
   thumb_image.image:
@@ -224,3 +191,38 @@ _inputs:
     type: switch
   nav_btn:
     hidden: "!enable_nav_btn"
+
+_structures:
+  features:
+    values:
+      - value:
+          item:
+          isActive:
+  dropdown: 
+    values:
+      - value:
+          dropdown_text:
+          dropdown_link:
+  social:
+    values:
+      - value:
+          link: 
+          icon: 
+          icon_alt:
+  sections:
+    values:
+      - value:
+          title:
+          links:  
+  links:
+    values:
+      - value:
+          text: 
+          link:
+  items:
+    values: 
+      - value: 
+          link: 
+          text: 
+          enable_dropdown:
+          dropdown:
