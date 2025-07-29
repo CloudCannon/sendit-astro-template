@@ -90,6 +90,9 @@ collections_config:
         type: switch
       nav_btn:
         hidden: "!enable_nav_btn"
+        options:
+          preview:
+            icon: smart_button
 
 collection_groups:
   - heading: Pages
