@@ -70,7 +70,7 @@ collections_config:
         options:
           structures: _structures.social_links
       sections:
-        type: object
+        type: array
         options:
           structures: _structures.sections
       favicon_icon:
@@ -232,12 +232,14 @@ _structures:
           title:
           links:
         preview:
-          icon: insert_link
+          icon: sort
   links:
     values:
       - value:
           text: 
           link:
+        preview:
+          icon: link
   nav_items:
     values: 
       - value: 
