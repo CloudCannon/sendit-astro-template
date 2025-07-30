@@ -10,6 +10,7 @@ commit_templates:
 
 collections_config:
   posts:
+    icon: newspaper
     path: src/content/blog
     url: "/blog/[slug]/"
     disable_add_folder: true
