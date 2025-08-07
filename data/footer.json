@@ -34,20 +34,20 @@
       "title": "Main Pages",
       "links": [
         {
-          "link": "/",
-          "text": "Home"
+          "text": "Home",
+          "link": "/"
         },
         {
-          "link": "/features/",
-          "text": "Features"
+          "text": "Features",
+          "link": "/features/"
         },
         {
-          "link": "/pricing/",
-          "text": "Price"
+          "text": "Price",
+          "link": "/pricing/"
         },
         {
-          "link": "/about/",
-          "text": "About"
+          "text": "About",
+          "link": "/about/"
         }
       ]
     },
@@ -55,12 +55,12 @@
       "title": "Community",
       "links": [
         {
-          "link": "/blog/",
-          "text": "Blog"
+          "text": "Blog",
+          "link": "/blog/"
         },
         {
-          "link": "/feed.xml",
-          "text": "RSS Feed"
+          "text": "RSS Feed",
+          "link": "/feed.xml"
         }
       ]
     },
@@ -68,14 +68,18 @@
       "title": "Company",
       "links": [
         {
-          "link": "/contact/",
-          "text": "Contact"
+          "text": "Contact",
+          "link": "/contact/"
         },
         {
-          "link": "/privacy/",
-          "text": "Privacy Policy"
+          "text": "Privacy Policy",
+          "link": "/privacy/"
         }
       ]
+    },
+    {
+      "title": "A new section",
+      "links": null
     }
   ]
 }
