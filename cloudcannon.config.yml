@@ -253,6 +253,12 @@ _structures:
           links:
         preview:
           icon: sort
+        _inputs:
+          links:
+            type: array
+            options:
+              structures: _structures.links
+              required: true
   links:
     values:
       - value:
