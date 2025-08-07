@@ -1,6 +1,6 @@
 {
   "logo": "/images/logo.svg",
-  "items": [
+  "nav_items": [
     {
       "text": "Home",
       "link": "/",

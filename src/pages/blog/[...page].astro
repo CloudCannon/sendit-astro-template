@@ -1,22 +1,27 @@
 ---
 import BlogList from "@components/blog/list";
 import BlogPagination from "@components/blog/pagination";
-import Layout, { Props as LayoutProps } from "@layouts/Layout.astro";
-import { getCollection, getEntryBySlug } from "astro:content";
+import Layout, { type Props as LayoutProps } from "@layouts/Layout.astro";
+import { getCollection, getEntry } from "astro:content";
 
 export async function getStaticPaths({ paginate }: { paginate: Function }) {
   const posts = await getCollection("blog");
-  const page = await getEntryBySlug("pages", "blog");
-  return paginate(posts, { pageSize: page.data.page_size });
+  const page = await getEntry("pages", "blog");
+  return paginate(posts, { pageSize: page?.data.page_size });
 }
 
-const page = await getEntryBySlug("pages", "blog");
-const frontmatter = page.data as LayoutProps;
+const page = await getEntry("pages", "blog");
+
+if (!page) {
+  throw new Error("Failed to get blog index page data");
+}
+
+const frontmatter = page?.data as LayoutProps;
 const pagination = Astro.props.page;
 const posts = pagination.data.filter((post: any) => !post.data.draft);
 ---
 
 <Layout {...frontmatter}>
   <BlogList posts={posts} page={page.data} />
-  <BlogPagination pagination={{...pagination, data:posts}} />
+  <BlogPagination pagination={{ ...pagination, data: posts }} />
 </Layout>

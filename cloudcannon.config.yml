@@ -1,11 +1,16 @@
 paths:
   static: public
   uploads: public/uploads
-data_config:
-  blog-tags:
-    path: data/blog-tags.json  
+
+commit_templates:
+  - label: Default message
+    template_string: '[default_commit_message]'
+  - label: Custom message
+    template_string: '{message}'
+
 collections_config:
   posts:
+    icon: newspaper
     path: src/content/blog
     url: "/blog/[slug]/"
     disable_add_folder: true
@@ -19,16 +24,34 @@ collections_config:
     schemas:
       default:
         name: New Post
-        path: schemas/post.md
+        path: .cloudcannon/schemas/post.md
     _inputs:
       title:
-        empty_type: string
-      image:
-        empty_type: string
+        type: text
+        options:
+          required: true
+          empty_type: string
       image_alt:
-        empty_type: string
+        type: text
+        options:
+          empty_type: string
       author:
-        empty_type: string
+        type: text
+        options:
+          empty_type: string
+      thumb_image.image:
+        type: image
+        options:
+          required: true
+          width: 500
+          height: 413
+          resize_style: crop
+      featured_image.image:
+        type: image
+        comment: The hero image used at the top of the page
+        options:
+          width: 1296
+          resize_style: crop
   pages:
     path: src/content/pages
     url: "/[slug]/"
@@ -43,22 +66,50 @@ collections_config:
     schemas:
       default:
         name: New Page
-        path: schemas/page.md
+        path: .cloudcannon/schemas/page.md
         new_preview_url: "/"
       paginated_collection:
-        path: schemas/paginated-collection.md
+        path: .cloudcannon/schemas/paginated-collection.md
     _inputs:
       content_blocks:
-        empty_type: array
-    filter:
-      base: strict
+        type: array
+        options:
+          empty_type: array
   data:
     path: data
     disable_add: true
     disable_add_folder: true
     disable_url: true
     icon: data_usage
-
+    _inputs:
+      social:
+        type: array
+        options:
+          structures: _structures.social_links
+      sections:
+        type: array
+        options:
+          structures: _structures.sections
+      favicon_icon:
+        type: image
+        comment: For the shortcut icon meta tag
+      favicon_image:
+        type: image
+        comment: For the icon meta tag
+      twitter_site:
+        type: twitter
+        label: Twitter Username
+      logo_url:
+          comment: Link for the logo in the top left of the footer
+      copyright:
+        comment: Automatically prefixed with the current year
+      enable_nav_btn:
+        type: switch
+      nav_btn:
+        hidden: "!enable_nav_btn"
+        options:
+          preview:
+            icon: smart_button
 
 collection_groups:
   - heading: Pages
@@ -70,62 +121,26 @@ collection_groups:
   - heading: Site Settings
     collections:
       - data
-      - site_navigation
-      - theme_palette
 
-_structures:
-  content_blocks:
-    style: modal
-  features:
-    values:
-      - value:
-          item:
-          isActive:
-  dropdown: 
-    values:
-      value:
-        dropdown_text:
-        dropdown_link:
-  social:
-    values:
-      value:
-        link: 
-        icon: 
-        icon_alt:
-  sections:
-    values:
-      value:
-        title:
-        links:  
-  links:
-    values:
-      value:
-        text: 
-        link:
-  items:
-    values: 
-      value: 
-        link: 
-        text: 
-        enable_dropdown:
-        dropdown:
+data_config:
+  blog-tags:
+    path: data/blog-tags.json  
 
 _inputs:
-  thumb_image.image:
+  image:
     type: image
     options:
-      width: 500
-      height: 413
-      resize_style: crop
-  featured_image.image:
-    type: image
+      max_file_size: 5000
+      max_file_size_message: For page performance, keep images under 5MB. Before uploading, consider processing your image to be a smaller size, or lower quality. If needed, this maximum can be configured in your cloudcannon.config.yml file.
+  button:
+    type: object
     options:
-      width: 1296
-      resize_style: crop
+      preview:
+        icon: smart_button
   layout:
     hidden: true
   date:
-    instance_value: now
+    instance_value: NOW
   title_suffix:
     comment: Added at the end of the title and highlighted in a different color
   page_size:
@@ -145,17 +160,17 @@ _inputs:
       italic: true
       link: true
       removeformat: true
-  isActive:
-    type: switch
-  social[*].icon:
-    type: select
+  seo:
+    type: object
+    comment: Set SEO values for the page. [Site defaults](cloudcannon:collections/data/site.json) will be used if values are not set on the page
     options:
-      values:
-        - ph-facebook-logo
-        - ph-instagram-logo
-        - ph-twitter-logo
-        - ph-github-logo
-        - ph-youtube-logo
+      preview:
+        icon: query_stats
+        text:
+          - 'Search engine optimization'
+        subtext:
+          - key: page_description
+          - 'Update SEO values for the page'
   page_description:
     comment: If empty, defaults to the description set in the Site SEO data file 
     type: text 
@@ -177,45 +192,114 @@ _inputs:
         - website
         - article
         - profile
-  favicon_icon:
-    type: image
-    comment: For the shortcut icon meta tag
-  favicon_image:
-    type: image
-    comment: For the icon meta tag
-  enable_dropdown:
-    type: switch
-  dropdown:
-    type: array
-    options: 
-      structures: _structures.dropdown
-    label: Dropdown Items
-    hidden: "!enable_dropdown"
-  dropdown_link:
-    type: url
-    label: Link
-  dropdown_text:
-    type: text
-    label: Name
-  items: 
+  nav_items: 
     type: array 
     options: 
-      structures: _structures.items
+      structures: _structures.nav_items
   logo:
     type: image
   tags:
       type: multiselect
-      empty_type: array
       options: 
+        empty_type: array
         values: data.blog-tags
-  twitter_site:
-    type: twitter
-    label: Twitter Username
-  logo_url:
-      comment: Link for the logo in the top left of the footer
-  copyright:
-    comment: Automatically prefixed with the current year
-  enable_nav_btn:
-    type: switch
-  nav_btn:
-    hidden: "!enable_nav_btn"
+
+_structures:
+  features:
+    values:
+      - value:
+          item:
+          active_feature:
+        _inputs:
+          active_feature:
+            type: switch
+  social_links:
+    values:
+      - value:
+          link: 
+          icon: 
+          icon_alt:
+        preview:
+          icon: diversity_1
+          text:
+            - key: icon_alt
+            - Social Link
+          subtext: 
+            - key: link
+            - Update Social Link details
+        _inputs:
+          icon:
+            type: select
+            options:
+              values:
+                - name: Facebook
+                  value: ph-facebook-logo
+                - name: Instagram
+                  value: ph-instagram-logo
+                - name: Twitter
+                  value: ph-twitter-logo
+                - name: Github
+                  value: ph-github-logo
+                - name: Youtube
+                  value: ph-youtube-logo
+              value_key: value
+              preview:
+                text:
+                  - key: name
+  sections:
+    values:
+      - value:
+          title:
+          links:
+        preview:
+          icon: sort
+        _inputs:
+          links:
+            type: array
+            options:
+              structures: _structures.links
+              required: true
+  links:
+    values:
+      - value:
+          text: 
+          link:
+        preview:
+          icon: link
+  nav_items:
+    values: 
+      - value: 
+          link: 
+          text: 
+          enable_dropdown:
+          dropdown:
+        _inputs:
+          enable_dropdown:
+            type: switch
+          dropdown:
+            type: array
+            options: 
+              structures: _structures.dropdown
+            label: Dropdown Items
+            hidden: "!enable_dropdown"
+        preview:
+          icon: link
+          text:
+            - key: text
+          subtext: 
+            - key: link
+  dropdown: 
+    values:
+      - value:
+          dropdown_text:
+          dropdown_link:
+        _inputs:
+          dropdown_link:
+            type: url
+            label: Link
+          dropdown_text:
+            type: text
+            label: Name
+        preview:
+          icon: link
+          

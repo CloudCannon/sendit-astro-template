@@ -33,12 +33,12 @@ export default function Footer({}) {
               </div>
             </div>
 
-            {footer.sections.map((section, i) => (
+            {footer.sections?.map((section, i) => (
               <div className="col-6 col-md-3 col-lg-2 order-1" key={i}>
                 <div className="footer-widget">
                   <h3 className="">{section.title}</h3>
                   <ul className="list-unstyled">
-                    {section.links.map((link, i) => (
+                    {section.links?.map((link, i) => (
                       <li key={i}>
                         <a href={`${link.link}`}>{link.text}</a>
                       </li>
