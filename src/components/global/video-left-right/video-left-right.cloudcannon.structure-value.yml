@@ -12,7 +12,7 @@ value:
   video:
     image: /images/works/banner.jpg
     image_alt: Placeholder image for the video
-    link: https://vimeo.com/45830194
+    video_url: https://vimeo.com/45830194
 
 _inputs:
   description:
